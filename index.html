@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulaire Coréen</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #faf8f3;
+            --bg-secondary: #f5f0e8;
+            --text-primary: #4a4a4a;
+            --text-secondary: #7a7a7a;
+            --text-light: #a89fb5;
+            --accent: #c2a8d0;
+            --accent-light: #d4c5e2;
+            --white: #ffffff;
+            --border: #e8e0f0;
+        }
+
+        body.dark-mode {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-light: #808080;
+            --accent: #b89fcf;
+            --accent-light: #9d8bc0;
+            --white: #2d2d2d;
+            --border: #404040;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: var(--accent);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 5px 10px;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        #wordCounter {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: var(--white);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-light);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .form-section {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        select, input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            background: var(--white);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 11px 22px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--accent-light);
+            color: white;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-light);
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 1.3em;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-light);
+            box-shadow: 0 8px 20px rgba(212, 197, 226, 0.3);
+        }
+
+        .game-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .game-title {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .game-desc {
+            font-size: 0.8em;
+            color: var(--text-light);
+        }
+
+        .quiz-container {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .quiz-word {
+            font-size: 2em;
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .quiz-type {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .quiz-option {
+            padding: 15px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            color: var(--text-primary);
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent-light);
+            background: var(--white);
+        }
+
+        .quiz-option.correct {
+            background: #d4f0d4;
+            border-color: #90d090;
+            color: #2d7a2d;
+        }
+
+        .quiz-option.incorrect {
+            background: #f0d4d4;
+            border-color: #d09090;
+            color: #8a5a5a;
+        }
+
+        .writing-input {
+            font-size: 1.2em;
+            padding: 15px !important;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Noto Sans KR', monospace;
+        }
+
+        .writing-feedback {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            min-height: 30px;
+        }
+
+        .writing-feedback.correct {
+            color: #2d7a2d;
+        }
+
+        .writing-feedback.incorrect {
+            color: #8a5a5a;
+        }
+
+        .flashcard {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            margin: 0 auto 30px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            color: white;
+        }
+
+        .flashcard-back {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border) 100%);
+            color: var(--accent);
+            transform: rotateY(180deg);
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 30px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .memory-card:hover:not(.matched) {
+            transform: scale(1.05);
+        }
+
+        .memory-card.flipped {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--border));
+            color: var(--accent);
+        }
+
+        .memory-card.matched {
+            background: #d4f0d4;
+            color: #2d7a2d;
+            cursor: default;
+        }
+
+        .vocab-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .vocab-card {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid var(--accent-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vocab-korean {
+            font-size: 1.2em;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .vocab-french {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            margin-top: 3px;
+        }
+
+        .vocab-meta {
+            font-size: 0.75em;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .filter-section {
+            margin-bottom: 18px;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: var(--text-light);
+            padding: 30px 20px;
+            font-size: 1em;
+        }
+
+        .stats {
+            background: var(--bg-secondary);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-light);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .admin-panel {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: var(--white);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            margin-top: 3px;
+        }
+
+        .admin-table {
+            background: var(--white);
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .admin-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        .admin-table th {
+            background: var(--accent-light);
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .admin-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .form-section {
+                padding: 18px;
+            }
+
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .vocab-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>학습 📚</h1>
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Mode sombre">🌙</button>
+            </div>
+            <p class="subtitle">Vocabulaire Coréen</p>
+            <div id="wordCounter">
+                <span id="totalWordCount">0</span> mots en base
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('jeux')">🎮 Jeux</button>
+            <button class="tab-btn" onclick="switchTab('vocab')">📚 Vocabulaire</button>
+            <button class="tab-btn" onclick="switchTab('admin')">🔐 Admin</button>
+        </div>
+
+        <!-- TAB JEUX -->
+        <div id="jeux" class="tab-content active">
+            <div class="form-section">
+                <h2>Choisir un jeu</h2>
+                
+                <div class="filter-section">
+                    <label for="gameCategory">Catégorie</label>
+                    <select id="gameCategory" onchange="resetGames()">
+                        <option value="">Toutes les catégories</option>
+                        <option value="Général">Général</option>
+                        <option value="Famille">Famille</option>
+                        <option value="Métiers">Métiers</option>
+                        <option value="Nourriture">Nourriture</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Vêtements">Vêtements</option>
+                        <option value="Verbes">Verbes</option>
+                        <option value="Adjectifs">Adjectifs</option>
+                    </select>
+                </div>
+
+                <div class="games-grid">
+                    <button class="game-card" onclick="startGame('quiz')">
+                        <div class="game-icon">❓</div>
+                        <div class="game-title">Quiz</div>
+                        <div class="game-desc">Choisis la réponse</div>
+                    </button>
+                    <button class="game-card" onclick="startGame('quiz-inverse')">
+                        <div class="game-icon">🔄</div>
+                        <div class="game-title">Quiz Inverse</div>
+                        <div class="game-desc">Coréen → Français</div>
+                    </button>
+                    <button class="game-card" onclick="startGame('cartes')">
+                        <div class="game-icon">🃏</div>
+                        <div class="game-title">Cartes</div>
+                        <div class="game-desc">Flashcards</div>
+                    </button>
+                    <button class="game-card" onclick="startGame('memory')">
+                        <div class="game-icon">🧠</div>
+                        <div class="game-title">Mémory</div>
+                        <div class="game-desc">Trouve les paires</div>
+                    </button>
+                    <button class="game-card" onclick="startGame('ecriture')">
+                        <div class="game-icon">✍️</div>
+                        <div class="game-title">Écriture</div>
+                        <div class="game-desc">Tape le coréen</div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="gameContainer" style="display: none;"></div>
+        </div>
+
+        <!-- TAB VOCABULAIRE -->
+        <div id="vocab" class="tab-content">
+            <div class="form-section">
+                <h2>Ajouter des mots</h2>
+                
+                <div class="form-group">
+                    <label for="userName">Ton nom (optionnel)</label>
+                    <input type="text" id="userName" placeholder="Laisse vide pour anonyme">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Catégorie</label>
+                    <select id="category">
+                        <option value="Général">Général</option>
+                        <option value="Famille">Famille</option>
+                        <option value="Métiers">Métiers</option>
+                        <option value="Nourriture">Nourriture</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Vêtements">Vêtements</option>
+                        <option value="Verbes">Verbes</option>
+                        <option value="Adjectifs">Adjectifs</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="newWords">Format: coréen, français</label>
+                    <textarea id="newWords" placeholder="홍차, thé noir&#10;모자, chapeau"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="addWords()">+ Ajouter</button>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Tous les mots</h2>
+                
+                <div class="filter-section">
+                    <label for="filterCategory">Filtrer</label>
+                    <select id="filterCategory" onchange="displayVocab()">
+                        <option value="">Toutes les catégories</option>
+                        <option value="Général">Général</option>
+                        <option value="Famille">Famille</option>
+                        <option value="Métiers">Métiers</option>
+                        <option value="Nourriture">Nourriture</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Vêtements">Vêtements</option>
+                        <option value="Verbes">Verbes</option>
+                        <option value="Adjectifs">Adjectifs</option>
+                    </select>
+                </div>
+
+                <div class="stats" id="stats"></div>
+                <div id="vocabList" class="vocab-list">
+                    <div style="text-align: center; padding: 20px;"><span class="loading"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB ADMIN -->
+        <div id="admin" class="tab-content">
+            <div class="form-section">
+                <h2>Accès Admin</h2>
+                <div id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminPassword">Mot de passe admin</label>
+                        <input type="password" id="adminPassword" placeholder="Rentre le mot de passe">
+                    </div>
+                    <button class="btn-primary" onclick="loginAdmin()">Accéder</button>
+                </div>
+                <div id="adminPanel" style="display: none;">
+                    <h3 style="color: var(--text-secondary); margin-bottom: 15px;">📊 Dashboard</h3>
+                    <div class="admin-stats">
+                        <div class="stat-box">
+                            <div class="stat-number" id="totalWords">0</div>
+                            <div class="stat-label">Mots</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="totalCategories">0</div>
+                            <div class="stat-label">Catégories</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" onclick="exportAdminData()">📥 Exporter JSON</button>
+                    <button class="btn-secondary" onclick="logoutAdmin()" style="margin-left: 10px;">Déconnexion</button>
+
+                    <div class="admin-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Coréen</th>
+                                    <th>Français</th>
+                                    <th>Catégorie</th>
+                                    <th>Par</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody">
+                                <tr><td colspan="5" style="text-align: center;"><span class="loading"></span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://lkhcemzurtyyaqctdedb.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxraGNlbXp1cnR5eWFxY3RkZWRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MTcwMjgsImV4cCI6MjA3NzM5MzAyOH0.-BjUQu7NhRPQGKEyeDHowiWeU2cDgdUqlOeNmdy5Rgc';
+        const ADMIN_PASSWORD = 'admin123';
+        
+        const { createClient } = supabase;
+        const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        let adminLoggedIn = false;
+        let currentGame = null;
+        let currentGameSet = [];
+        let currentGameIndex = 0;
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            const btn = document.querySelector('.dark-mode-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        function loadDarkMode() {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.dark-mode-toggle').textContent = '☀️';
+            }
+        }
+
+        async function init() {
+            loadDarkMode();
+            await displayVocab();
+            await loadAdminData();
+            await updateWordCounter();
+            subscribeToChanges();
+        }
+
+        async function updateWordCounter() {
+            const { data, error } = await client.from('vocabulary').select('id', { count: 'exact' });
+            if (!error && data) {
+                document.getElementById('totalWordCount').innerText = data.length;
+            }
+        }
+
+        function subscribeToChanges() {
+            client.channel('vocabulary-changes')
+                .on('postgres_changes', 
+                    { event: '*', schema: 'public', table: 'vocabulary' },
+                    () => {
+                        displayVocab();
+                        loadAdminData();
+                        updateWordCounter();
+                    }
+                )
+                .subscribe();
+        }
+
+        async function addWords() {
+            const input = document.getElementById('newWords').value.trim();
+            const category = document.getElementById('category').value;
+            const userName = document.getElementById('userName').value.trim() || 'Anonyme';
+
+            if (!input) {
+                alert('Ajoute au moins un mot !');
+                return;
+            }
+
+            const lines = input.split('\n').filter(line => line.trim());
+            const wordsToAdd = [];
+
+            lines.forEach(line => {
+                const parts = line.split(',').map(p => p.trim());
+                if (parts.length === 2) {
+                    wordsToAdd.push({
+                        korean: parts[0],
+                        french: parts[1],
+                        category: category,
+                        added_by: userName
+                    });
+                }
+            });
+
+            if (wordsToAdd.length === 0) {
+                alert('Format invalide ! Utilise: coréen, français');
+                return;
+            }
+
+            const { error } = await client.from('vocabulary').insert(wordsToAdd);
+
+            if (error) {
+                alert('❌ Erreur: ' + error.message);
+            } else {
+                document.getElementById('newWords').value = '';
+                alert(`✅ ${wordsToAdd.length} mot(s) ajouté(s) !`);
+            }
+        }
+
+        async function displayVocab() {
+            const filter = document.getElementById('filterCategory').value;
+            let query = client.from('vocabulary').select('*').order('created_at', { ascending: false });
+
+            if (filter) {
+                query = query.eq('category', filter);
+            }
+
+            const { data, error } = await query;
+
+            if (error) return;
+
+            const list = document.getElementById('vocabList');
+            const stats = document.getElementById('stats');
+
+            stats.innerHTML = `${data.length} mot${data.length > 1 ? 's' : ''}`;
+
+            if (data.length === 0) {
+                list.innerHTML = '<p class="empty-message">Aucun mot</p>';
+                return;
+            }
+
+            list.innerHTML = data.map(item => {
+                const date = new Date(item.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+                return `
+                    <div class="vocab-card">
+                        <div>
+                            <div class="vocab-korean">${item.korean}</div>
+                            <div class="vocab-french">${item.french}</div>
+                            <div class="vocab-meta">${item.category} • ${item.added_by} • ${date}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function startGame(gameType) {
+            const category = document.getElementById('gameCategory').value;
+            let query = client.from('vocabulary').select('*');
+
+            if (category) {
+                query = query.eq('category', category);
+            }
+
+            query.then(({ data, error }) => {
+                if (error || data.length === 0) {
+                    alert('❌ Aucun mot pour cette catégorie');
+                    return;
+                }
+
+                const shuffledData = data.sort(() => Math.random() - 0.5);
+
+                currentGame = gameType;
+                currentGameSet = shuffledData;
+                currentGameIndex = 0;
+
+                window.memoryCards = null;
+                window.memoryMatched = null;
+                window.memoryFlipped = null;
+
+                document.querySelector('.games-grid').parentElement.style.display = 'none';
+                const container = document.getElementById('gameContainer');
+                container.style.display = 'block';
+
+                if (gameType === 'quiz') showQuizQuestion();
+                else if (gameType === 'quiz-inverse') showQuizInverseQuestion();
+                else if (gameType === 'cartes') showFlashcard();
+                else if (gameType === 'memory') showMemory();
+                else if (gameType === 'ecriture') showWritingQuestion();
+            });
+        }
+
+        function resetGames() {
+            document.querySelector('.games-grid').parentElement.style.display = 'block';
+            document.getElementById('gameContainer').style.display = 'none';
+        }
+
+        function showQuizQuestion() {
+            const container = document.getElementById('gameContainer');
+            if (currentGameIndex >= currentGameSet.length) {
+                container.innerHTML = `
+                    <div class="quiz-container">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🎉</div>
+                        <h2 style="color: var(--accent); margin-bottom: 10px;">Quiz terminé !</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Tu as fini tous les mots</p>
+                        <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const current = currentGameSet[currentGameIndex];
+            const options = [current.french];
+            const otherVocab = currentGameSet.filter(v => v.id !== current.id);
+
+            for (let i = 0; i < 3 && otherVocab.length > 0; i++) {
+                const random = otherVocab.splice(Math.floor(Math.random() * otherVocab.length), 1)[0];
+                options.push(random.french);
+            }
+
+            options.sort(() => Math.random() - 0.5);
+
+            container.innerHTML = `
+                <div class="quiz-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div class="quiz-type">Question ${currentGameIndex + 1}/${currentGameSet.length}</div>
+                        <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
+                    </div>
+                    <div class="quiz-word">${current.korean}</div>
+                    <div class="quiz-options">
+                        ${options.map(opt => `
+                            <button class="quiz-option" onclick="checkQuizAnswer('${opt}', '${current.french}')">${opt}</button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkQuizAnswer(selected, correct) {
+            const buttons = document.querySelectorAll('.quiz-option');
+            buttons.forEach(btn => {
+                if (btn.textContent === correct) btn.classList.add('correct');
+                if (btn.textContent === selected && selected !== correct) btn.classList.add('incorrect');
+                btn.disabled = true;
+            });
+
+            setTimeout(() => {
+                currentGameIndex++;
+                showQuizQuestion();
+            }, 1000);
+        }
+
+        function showQuizInverseQuestion() {
+            const container = document.getElementById('gameContainer');
+            if (currentGameIndex >= currentGameSet.length) {
+                container.innerHTML = `
+                    <div class="quiz-container">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🎉</div>
+                        <h2 style="color: var(--accent); margin-bottom: 10px;">Quiz Inverse terminé !</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Excellent travail !</p>
+                        <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const current = currentGameSet[currentGameIndex];
+            const options = [current.korean];
+            const otherVocab = currentGameSet.filter(v => v.id !== current.id);
+
+            for (let i = 0; i < 3 && otherVocab.length > 0; i++) {
+                const random = otherVocab.splice(Math.floor(Math.random() * otherVocab.length), 1)[0];
+                options.push(random.korean);
+            }
+
+            options.sort(() => Math.random() - 0.5);
+
+            container.innerHTML = `
+                <div class="quiz-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div class="quiz-type">Question ${currentGameIndex + 1}/${currentGameSet.length}</div>
+                        <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
+                    </div>
+                    <div class="quiz-word">${current.french}</div>
+                    <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 15px;">Quel est le mot coréen ?</div>
+                    <div class="quiz-options">
+                        ${options.map(opt => `
+                            <button class="quiz-option" onclick="checkQuizInverseAnswer('${opt}', '${current.korean}')">${opt}</button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkQuizInverseAnswer(selected, correct) {
+            const buttons = document.querySelectorAll('.quiz-option');
+            buttons.forEach(btn => {
+                if (btn.textContent === correct) btn.classList.add('correct');
+                if (btn.textContent === selected && selected !== correct) btn.classList.add('incorrect');
+                btn.disabled = true;
+            });
+
+            setTimeout(() => {
+                currentGameIndex++;
+                showQuizInverseQuestion();
+            }, 1000);
+        }
+
+        function showFlashcard() {
+            const container = document.getElementById('gameContainer');
+            if (currentGameIndex >= currentGameSet.length) {
+                container.innerHTML = `
+                    <div class="quiz-container">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">✨</div>
+                        <h2 style="color: var(--accent);">Cartes terminées !</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Bien joué !</p>
+                        <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const current = currentGameSet[currentGameIndex];
+            container.innerHTML = `
+                <div class="quiz-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div class="quiz-type">${currentGameIndex + 1}/${currentGameSet.length}</div>
+                        <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
+                    </div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">${current.korean}</div>
+                            <div class="flashcard-back">${current.french}</div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="currentGameIndex++; showFlashcard();">Suivant →</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showMemory() {
+            const container = document.getElementById('gameContainer');
+            
+            if (!window.memoryCards) {
+                const memorySet = currentGameSet.slice(0, 6);
+                const cards = [];
+                memorySet.forEach(word => {
+                    cards.push({ value: word.korean, id: word.id });
+                    cards.push({ value: word.korean, id: word.id });
+                });
+                cards.sort(() => Math.random() - 0.5);
+                window.memoryCards = cards;
+                window.memoryMatched = [];
+                window.memoryFlipped = [];
+            }
+
+            const cards = window.memoryCards;
+            const matched = window.memoryMatched;
+            const flipped = window.memoryFlipped;
+            const totalPairs = cards.length / 2;
+            const foundPairs = matched.length / 2;
+
+            container.innerHTML = `
+                <div class="quiz-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div class="quiz-type">Mémory - ${foundPairs}/${totalPairs} paires trouvées</div>
+                        <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
+                    </div>
+                    <div class="memory-grid">
+                        ${cards.map((card, idx) => `
+                            <button class="memory-card ${matched.includes(idx) ? 'matched' : ''} ${flipped.includes(idx) ? 'flipped' : ''}" 
+                                onclick="flipMemoryCard(${idx})" id="card-${idx}">
+                                ${(matched.includes(idx) || flipped.includes(idx)) ? card.value : '?'}
+                            </button>
+                        `).join('')}
+                    </div>
+                    ${foundPairs === totalPairs ? `
+                        <div style="margin-top: 20px; text-align: center;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🎉</div>
+                            <p style="color: var(--text-secondary); margin-bottom: 15px;">Tu as trouvé toutes les paires !</p>
+                            <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function flipMemoryCard(idx) {
+            const cards = window.memoryCards;
+            const matched = window.memoryMatched;
+            const flipped = window.memoryFlipped;
+
+            if (matched.includes(idx) || flipped.includes(idx) || flipped.length >= 2) return;
+
+            flipped.push(idx);
+            showMemory();
+
+            if (flipped.length === 2) {
+                const card1 = cards[flipped[0]];
+                const card2 = cards[flipped[1]];
+
+                if (card1.value === card2.value && flipped[0] !== flipped[1]) {
+                    matched.push(flipped[0]);
+                    matched.push(flipped[1]);
+                    window.memoryFlipped = [];
+                    setTimeout(() => showMemory(), 500);
+                } else {
+                    setTimeout(() => {
+                        window.memoryFlipped = [];
+                        showMemory();
+                    }, 1000);
+                }
+            }
+        }
+
+        function showWritingQuestion() {
+            const container = document.getElementById('gameContainer');
+            if (currentGameIndex >= currentGameSet.length) {
+                container.innerHTML = `
+                    <div class="quiz-container">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">✍️</div>
+                        <h2 style="color: var(--accent); margin-bottom: 10px;">Écriture terminée !</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Bravo !</p>
+                        <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const current = currentGameSet[currentGameIndex];
+            container.innerHTML = `
+                <div class="quiz-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div class="quiz-type">Écriture ${currentGameIndex + 1}/${currentGameSet.length}</div>
+                        <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
+                    </div>
+                    <div class="quiz-word">${current.french}</div>
+                    <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 15px;">Écris le mot en coréen</div>
+                    <input type="text" id="writingInput" class="writing-input" placeholder="Tape ici..." onkeypress="if(event.key==='Enter') checkWritingAnswer()">
+                    <div id="writingFeedback" class="writing-feedback"></div>
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="checkWritingAnswer()">Vérifier</button>
+                        <button class="btn-secondary" onclick="skipWritingQuestion()">Passer</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('writingInput').focus();
+        }
+
+        function checkWritingAnswer() {
+            const input = document.getElementById('writingInput').value.trim();
+            const current = currentGameSet[currentGameIndex];
+            const feedback = document.getElementById('writingFeedback');
+
+            if (!input) {
+                feedback.textContent = '❌ Écris quelque chose !';
+                feedback.className = 'writing-feedback incorrect';
+                return;
+            }
+
+            if (input === current.korean) {
+                feedback.textContent = '✅ Correct !';
+                feedback.className = 'writing-feedback correct';
+                setTimeout(() => {
+                    currentGameIndex++;
+                    showWritingQuestion();
+                }, 1500);
+            } else {
+                feedback.textContent = `❌ Non, c'est "${current.korean}"`;
+                feedback.className = 'writing-feedback incorrect';
+            }
+        }
+
+        function skipWritingQuestion() {
+            currentGameIndex++;
+            showWritingQuestion();
+        }
+
+        function loginAdmin() {
+            const pass = document.getElementById('adminPassword').value;
+            if (pass === ADMIN_PASSWORD) {
+                adminLoggedIn = true;
+                document.getElementById('adminLoginForm').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadAdminData();
+            } else {
+                alert('❌ Mot de passe incorrect');
+            }
+        }
+
+        function logoutAdmin() {
+            adminLoggedIn = false;
+            document.getElementById('adminLoginForm').style.display = 'block';
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        async function loadAdminData() {
+            if (!adminLoggedIn) return;
+
+            const { data, error } = await client.from('vocabulary').select('*').order('created_at', { ascending: false });
+
+            if (error) return;
+
+            document.getElementById('totalWords').innerText = data.length;
+            const categories = new Set(data.map(v => v.category));
+            document.getElementById('totalCategories').innerText = categories.size;
+
+            const tbody = document.getElementById('adminTableBody');
+            tbody.innerHTML = data.map(item => {
+                const date = new Date(item.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+                return `
+                    <tr>
+                        <td><strong>${item.korean}</strong></td>
+                        <td>${item.french}</td>
+                        <td>${item.category}</td>
+                        <td>${item.added_by}</td>
+                        <td>${date}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function exportAdminData() {
+            client.from('vocabulary').select('*').then(({ data }) => {
+                const dataStr = JSON.stringify(data, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `korean-vocab-${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+            });
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        init();
+    </script>
+</body>
+</html>
