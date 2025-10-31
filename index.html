@@ -969,19 +969,23 @@
                     </div>
                     <div class="quiz-word">${current.korean}</div>
                     <div class="quiz-options">
-                        ${options.map(opt => `
-                            <button class="quiz-option" onclick="checkQuizAnswer('${opt}', '${current.french}')">${opt}</button>
+                        ${options.map((opt, idx) => `
+                            <button class="quiz-option" onclick="checkQuizAnswer(${currentGameIndex}, ${idx})">${opt}</button>
                         `).join('')}
                     </div>
                 </div>
             `;
         }
 
-        function checkQuizAnswer(selected, correct) {
+        function checkQuizAnswer(questionIndex, selectedIdx) {
+            const current = currentGameSet[questionIndex];
             const buttons = document.querySelectorAll('.quiz-option');
-            buttons.forEach(btn => {
-                if (btn.textContent === correct) btn.classList.add('correct');
-                if (btn.textContent === selected && selected !== correct) btn.classList.add('incorrect');
+            
+            const correctIdx = Array.from(buttons).findIndex(btn => btn.textContent === current.french);
+            
+            buttons.forEach((btn, idx) => {
+                if (idx === correctIdx) btn.classList.add('correct');
+                if (idx === selectedIdx && selectedIdx !== correctIdx) btn.classList.add('incorrect');
                 btn.disabled = true;
             });
 
@@ -1025,19 +1029,23 @@
                     <div class="quiz-word">${current.french}</div>
                     <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 15px;">Quel est le mot coréen ?</div>
                     <div class="quiz-options">
-                        ${options.map(opt => `
-                            <button class="quiz-option" onclick="checkQuizInverseAnswer('${opt}', '${current.korean}')">${opt}</button>
+                        ${options.map((opt, idx) => `
+                            <button class="quiz-option" onclick="checkQuizInverseAnswer(${currentGameIndex}, ${idx})">${opt}</button>
                         `).join('')}
                     </div>
                 </div>
             `;
         }
 
-        function checkQuizInverseAnswer(selected, correct) {
+        function checkQuizInverseAnswer(questionIndex, selectedIdx) {
+            const current = currentGameSet[questionIndex];
             const buttons = document.querySelectorAll('.quiz-option');
-            buttons.forEach(btn => {
-                if (btn.textContent === correct) btn.classList.add('correct');
-                if (btn.textContent === selected && selected !== correct) btn.classList.add('incorrect');
+            
+            const correctIdx = Array.from(buttons).findIndex(btn => btn.textContent === current.korean);
+            
+            buttons.forEach((btn, idx) => {
+                if (idx === correctIdx) btn.classList.add('correct');
+                if (idx === selectedIdx && selectedIdx !== correctIdx) btn.classList.add('incorrect');
                 btn.disabled = true;
             });
 
