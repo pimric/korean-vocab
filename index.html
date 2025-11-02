@@ -2286,33 +2286,36 @@ async function getWordsForSession(category) {
             const matched = window.memoryMatched;
             const flipped = window.memoryFlipped;
 
-            // Ne pas autoriser plus de 2 cartes retournées ou cartes déjà matchées
-            if (matched.includes(idx) || flipped.includes(idx) || flipped.length >= 2) return;
+            // Empêcher les clics si: en cours de traitement, carte déjà matchée, carte déjà retournée, ou 2 cartes déjà retournées
+            if (window.memoryProcessing || matched.includes(idx) || flipped.includes(idx) || flipped.length >= 2) return;
 
             flipped.push(idx);
             showMemory();
 
             if (flipped.length === 2) {
+                // Bloquer temporairement les clics pendant l'animation
+                window.memoryProcessing = true;
+                
                 const card1 = cards[flipped[0]];
                 const card2 = cards[flipped[1]];
 
                 if (card1.value === card2.value && flipped[0] !== flipped[1]) {
+                    // C'est une paire !
                     // ========== NOUVEAU ========== 
                     questionsAnswered++;
                     // ========== FIN NOUVEAU ========== 
-                    window.memoryMatched++;
-                    card1.matched = true;
-                    card2.matched = true;
                     matched.push(flipped[0]);
                     matched.push(flipped[1]);
-                    // Vider immédiatement pour permettre de cliquer sur d'autres cartes
                     window.memoryFlipped = [];
                     setTimeout(() => {
+                        window.memoryProcessing = false; // Débloquer
                         showMemory();
                     }, 500);
                 } else {
+                    // Pas une paire
                     setTimeout(() => {
                         window.memoryFlipped = [];
+                        window.memoryProcessing = false; // Débloquer
                         showMemory();
                     }, 1000);
                 }
