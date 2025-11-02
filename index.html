@@ -2304,8 +2304,10 @@ async function getWordsForSession(category) {
                     card2.matched = true;
                     matched.push(flipped[0]);
                     matched.push(flipped[1]);
-                    window.memoryFlipped = [];
-                    setTimeout(() => showMemory(), 500);
+                    setTimeout(() => {
+                        window.memoryFlipped = [];
+                        showMemory();
+                    }, 500);
                 } else {
                     setTimeout(() => {
                         window.memoryFlipped = [];
@@ -2366,6 +2368,8 @@ async function getWordsForSession(category) {
 
         function checkWritingAnswer() {
             const input = document.getElementById('writingInput').value.trim();
+            const current = currentGameSet[currentGameIndex];
+            const feedback = document.getElementById('writingFeedback');
             if (!input) { return; }
 
             // ========== NOUVEAU ==========
