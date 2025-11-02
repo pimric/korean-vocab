@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocabulaire 한국어</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='70' font-family='Arial, sans-serif' font-size='70' font-weight='bold' fill='%23d4c5e2' text-anchor='middle'>한</text></svg>" type="image/svg+xml">
 
@@ -25,6 +26,10 @@
             --accent-light: #d4c5e2;
             --white: #ffffff;
             --border: #e8e0f0;
+            --success: #90d090;
+            --success-bg: #d4f0d4;
+            --error: #d09090;
+            --error-bg: #f0d4d4;
         }
 
         body.dark-mode {
@@ -96,6 +101,24 @@
             margin-top: 10px;
             font-size: 0.9em;
             color: var(--text-light);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+        }
+
+        .user-badge {
+            background: var(--accent-light);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 500;
         }
 
         .tabs {
@@ -223,10 +246,21 @@
             color: white;
         }
 
+        .btn-danger {
+            background: var(--error);
+            color: white;
+        }
+
         h2 {
             margin-bottom: 15px;
             color: var(--text-secondary);
             font-size: 1.3em;
+        }
+
+        h3 {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            font-size: 1.1em;
         }
 
         .games-grid {
@@ -313,14 +347,14 @@
         }
 
         .quiz-option.correct {
-            background: #d4f0d4;
-            border-color: #90d090;
+            background: var(--success-bg);
+            border-color: var(--success);
             color: #2d7a2d;
         }
 
         .quiz-option.incorrect {
-            background: #f0d4d4;
-            border-color: #d09090;
+            background: var(--error-bg);
+            border-color: var(--error);
             color: #8a5a5a;
         }
 
@@ -424,7 +458,7 @@
         }
 
         .memory-card.matched {
-            background: #d4f0d4;
+            background: var(--success-bg);
             color: #2d7a2d;
             cursor: default;
         }
@@ -484,28 +518,7 @@
             font-size: 0.95em;
         }
 
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent-light);
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .admin-panel {
-            background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .admin-stats {
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 12px;
@@ -514,9 +527,10 @@
 
         .stat-box {
             background: var(--white);
-            padding: 12px;
+            padding: 15px;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .stat-number {
@@ -529,6 +543,28 @@
             font-size: 0.8em;
             color: var(--text-secondary);
             margin-top: 3px;
+        }
+
+        .chart-container {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-light);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         .admin-table {
@@ -558,6 +594,152 @@
             color: var(--text-primary);
         }
 
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-light);
+            transition: width 0.3s ease;
+        }
+
+        .alert {
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .alert-success {
+            background: var(--success-bg);
+            color: #2d7a2d;
+            border-left: 4px solid var(--success);
+        }
+
+        .alert-error {
+            background: var(--error-bg);
+            color: #8a5a5a;
+            border-left: 4px solid var(--error);
+        }
+
+        .alert-info {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-light);
+        }
+
+/* ========== NOUVEAU: Radio buttons pour modes ========== */
+.mode-selector {
+    background: var(--bg-secondary);
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.mode-selector-title {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mode-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mode-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-option:hover {
+    border-color: var(--accent-light);
+    background: var(--bg-primary);
+}
+
+.mode-option.selected {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(212, 197, 226, 0.1) 0%, rgba(194, 168, 208, 0.1) 100%);
+}
+
+.mode-option input[type="radio"] {
+    margin: 0;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.mode-label {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.mode-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mode-emoji {
+    font-size: 1.2em;
+}
+
+.mode-name {
+    font-weight: 500;
+    font-size: 0.9em;
+    color: var(--text-primary);
+}
+
+.mode-option.selected .mode-name {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.mode-count {
+    font-size: 0.8em;
+    color: var(--text-light);
+    background: var(--bg-secondary);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.mode-option.selected .mode-count {
+    background: var(--accent-light);
+    color: white;
+}
+
+.mode-note {
+    font-size: 0.8em;
+    color: var(--text-light);
+    margin-top: 8px;
+    font-style: italic;
+}
+/* ========== FIN NOUVEAU CSS ========== */
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.5em;
@@ -583,7 +765,13 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
+
     </style>
 </head>
 <body>
@@ -597,62 +785,122 @@
             <div id="wordCounter">
                 <span id="totalWordCount">0</span> mots en base
             </div>
+            <div class="user-info" id="userInfo"></div>
         </header>
 
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('jeux')">🎮 Jeux</button>
             <button class="tab-btn" onclick="switchTab('vocab')">📚 Vocabulaire</button>
+            <button class="tab-btn" onclick="switchTab('compte')">👤 Mon Compte</button>
             <button class="tab-btn" onclick="switchTab('admin')">🔐 Admin</button>
         </div>
 
         <!-- TAB JEUX -->
         <div id="jeux" class="tab-content active">
-            <div class="form-section">
-                <h2>Choisir un jeu</h2>
-                
-                <div class="filter-section">
-                    <label for="gameCategory">Catégorie</label>
-                    <select id="gameCategory" onchange="resetGames()">
-                        <option value="">Toutes les catégories</option>
-                        <option value="Général">Général</option>
-                        <option value="Famille">Famille</option>
-                        <option value="Métiers">Métiers</option>
-                        <option value="Nourriture">Nourriture</option>
-                        <option value="Sports">Sports</option>
-                        <option value="Vêtements">Vêtements</option>
-                        <option value="Verbes">Verbes</option>
-                        <option value="Adjectifs">Adjectifs</option>
-                    </select>
-                </div>
 
-                <div class="games-grid">
-                    <button class="game-card" onclick="startGame('quiz')">
-                        <div class="game-icon">❓</div>
-                        <div class="game-title">Quiz</div>
-                        <div class="game-desc">Choisis la réponse</div>
-                    </button>
-                    <button class="game-card" onclick="startGame('quiz-inverse')">
-                        <div class="game-icon">🔄</div>
-                        <div class="game-title">Quiz Inverse</div>
-                        <div class="game-desc">Coréen → Français</div>
-                    </button>
-                    <button class="game-card" onclick="startGame('cartes')">
-                        <div class="game-icon">🃏</div>
-                        <div class="game-title">Cartes</div>
-                        <div class="game-desc">Flashcards</div>
-                    </button>
-                    <button class="game-card" onclick="startGame('memory')">
-                        <div class="game-icon">🧠</div>
-                        <div class="game-title">Mémory</div>
-                        <div class="game-desc">Trouve les paires</div>
-                    </button>
-                    <button class="game-card" onclick="startGame('ecriture')">
-                        <div class="game-icon">✍️</div>
-                        <div class="game-title">Écriture</div>
-                        <div class="game-desc">Tape le coréen</div>
-                    </button>
+            <div class="form-section">
+    <h2>🎮 Choisir un jeu</h2>
+    
+    <!-- ÉTAPE 1 : Catégorie -->
+    <div class="filter-section">
+        <label for="gameCategory">📂 Catégorie</label>
+        <select id="gameCategory" onchange="updateModeCounts()">
+            <option value="">Toutes les catégories</option>
+            <option value="Général">Général</option>
+            <option value="Famille">Famille</option>
+            <option value="Métiers">Métiers</option>
+            <option value="Nourriture">Nourriture</option>
+            <option value="Sports">Sports</option>
+            <option value="Vêtements">Vêtements</option>
+            <option value="Verbes">Verbes</option>
+            <option value="Adjectifs">Adjectifs</option>
+        </select>
+    </div>
+
+    <!-- ÉTAPE 2 : Mode de révision (NOUVEAU) -->
+    <div class="mode-selector">
+        <div class="mode-selector-title">
+            ⚙️ Mode de révision
+        </div>
+        <div class="mode-options">
+            <label class="mode-option selected" data-mode="all">
+                <input type="radio" name="sessionMode" value="all" checked onclick="selectMode('all')">
+                <div class="mode-label">
+                    <div class="mode-info">
+                        <span class="mode-emoji">🌍</span>
+                        <span class="mode-name">Tous les mots</span>
+                    </div>
+                    <span class="mode-count" id="modeCountAll">-</span>
                 </div>
-            </div>
+            </label>
+            
+            <label class="mode-option" data-mode="new">
+                <input type="radio" name="sessionMode" value="new" onclick="selectMode('new')">
+                <div class="mode-label">
+                    <div class="mode-info">
+                        <span class="mode-emoji">✨</span>
+                        <span class="mode-name">Nouveaux mots</span>
+                    </div>
+                    <span class="mode-count" id="modeCountNew">-</span>
+                </div>
+            </label>
+            
+            <label class="mode-option" data-mode="review">
+                <input type="radio" name="sessionMode" value="review" onclick="selectMode('review')">
+                <div class="mode-label">
+                    <div class="mode-info">
+                        <span class="mode-emoji">🔄</span>
+                        <span class="mode-name">Révision</span>
+                    </div>
+                    <span class="mode-count" id="modeCountReview">-</span>
+                </div>
+            </label>
+            
+            <label class="mode-option" data-mode="difficult">
+                <input type="radio" name="sessionMode" value="difficult" onclick="selectMode('difficult')">
+                <div class="mode-label">
+                    <div class="mode-info">
+                        <span class="mode-emoji">🎯</span>
+                        <span class="mode-name">Mots difficiles</span>
+                    </div>
+                    <span class="mode-count" id="modeCountDifficult">-</span>
+                </div>
+            </label>
+        </div>
+        <div class="mode-note">
+            💡 Chaque session contient maximum 10-15 mots
+        </div>
+    </div>
+
+    <!-- ÉTAPE 3 : Jeux -->
+    <div class="games-grid">
+        <button class="game-card" onclick="startGame('quiz')">
+            <div class="game-icon">❓</div>
+            <div class="game-title">Quiz</div>
+            <div class="game-desc">Choisis la réponse</div>
+        </button>
+        <button class="game-card" onclick="startGame('quiz-inverse')">
+            <div class="game-icon">🔄</div>
+            <div class="game-title">Quiz Inverse</div>
+            <div class="game-desc">Coréen → Français</div>
+        </button>
+        <button class="game-card" onclick="startGame('cartes')">
+            <div class="game-icon">🃏</div>
+            <div class="game-title">Cartes</div>
+            <div class="game-desc">Flashcards</div>
+        </button>
+        <button class="game-card" onclick="startGame('memory')">
+            <div class="game-icon">🧠</div>
+            <div class="game-title">Mémory</div>
+            <div class="game-desc">Trouve les paires</div>
+        </button>
+        <button class="game-card" onclick="startGame('ecriture')">
+            <div class="game-icon">✍️</div>
+            <div class="game-title">Écriture</div>
+            <div class="game-desc">Tape le coréen</div>
+        </button>
+    </div>
+</div>
 
             <div id="gameContainer" style="display: none;"></div>
         </div>
@@ -716,6 +964,90 @@
             </div>
         </div>
 
+        <!-- TAB MON COMPTE -->
+        <div id="compte" class="tab-content">
+            <!-- Section Login/Register -->
+            <div id="authSection" class="form-section">
+                <h2>Se connecter ou créer un compte</h2>
+                <div class="alert alert-info">
+                    Crée un compte pour sauvegarder tes statistiques et progresser ! 🚀
+                </div>
+
+                <div class="form-group">
+                    <label for="authUsername">Pseudo</label>
+                    <input type="text" id="authUsername" placeholder="Ton pseudo">
+                </div>
+
+                <div class="form-group">
+                    <label for="authPassword">Mot de passe</label>
+                    <input type="password" id="authPassword" placeholder="Minimum 6 caractères">
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="loginUser()">Se connecter</button>
+                    <button class="btn-secondary" onclick="registerUser()">Créer un compte</button>
+                </div>
+
+                <div id="authMessage" style="margin-top: 15px;"></div>
+            </div>
+
+            <!-- Section Profil (caché par défaut) -->
+            <div id="profileSection" style="display: none;">
+                <div class="form-section">
+                    <h2>Mon Profil</h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <div style="font-size: 1.2em; font-weight: 600; color: var(--accent); margin-bottom: 5px;" id="profileUsername"></div>
+                            <div style="font-size: 0.85em; color: var(--text-light);" id="profileJoinDate"></div>
+                        </div>
+                        <button class="btn-secondary" onclick="logoutUser()">Déconnexion</button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number" id="userTotalSessions">0</div>
+                            <div class="stat-label">Sessions</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="userTotalGames">0</div>
+                            <div class="stat-label">Jeux joués</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="userSuccessRate">0%</div>
+                            <div class="stat-label">Taux de réussite</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="userStreak">0</div>
+                            <div class="stat-label">Jours d'affilée</div>
+                        </div>
+                    </div>
+
+                    <h3>📊 Statistiques Globales</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                        <div class="stat-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <div class="stat-number" id="totalWordsLearned">-</div>
+                            <div class="stat-label" style="color: rgba(255,255,255,0.9);">Mots Appris</div>
+                        </div>
+                        <div class="stat-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                            <div class="stat-number" id="globalSuccessRate">-</div>
+                            <div class="stat-label" style="color: rgba(255,255,255,0.9);">Taux de Réussite Global</div>
+                        </div>
+                    </div>
+
+                    <h3>💡 Recommandations de Révision</h3>
+                    <div id="recommendationsList" style="margin-bottom: 25px; padding: 15px; background: var(--bg-secondary); border-radius: 10px; min-height: 80px;">
+                        <p style="color: var(--text-secondary); font-style: italic; margin: 0;">Analyse de vos faiblesses en cours...</p>
+                    </div>
+
+                    <h3>Progression par catégorie</h3>
+                    <div id="categoryProgress"></div>
+
+                    <h3 style="margin-top: 25px;">Historique récent</h3>
+                    <div id="recentActivity"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- TAB ADMIN -->
         <div id="admin" class="tab-content">
             <div class="form-section">
@@ -727,22 +1059,61 @@
                     </div>
                     <button class="btn-primary" onclick="loginAdmin()">Accéder</button>
                 </div>
+
                 <div id="adminPanel" style="display: none;">
-                    <h3 style="color: var(--text-secondary); margin-bottom: 15px;">📊 Dashboard</h3>
-                    <div class="admin-stats">
+                    <h3 style="color: var(--text-secondary); margin-bottom: 15px;">📊 Dashboard Admin</h3>
+                    
+                    <div class="stats-grid">
                         <div class="stat-box">
-                            <div class="stat-number" id="totalWords">0</div>
+                            <div class="stat-number" id="adminTotalWords">0</div>
                             <div class="stat-label">Mots</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-number" id="totalCategories">0</div>
-                            <div class="stat-label">Catégories</div>
+                            <div class="stat-number" id="adminTotalUsers">0</div>
+                            <div class="stat-label">Utilisateurs</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="adminActiveUsers">0</div>
+                            <div class="stat-label">Actifs (7j)</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="adminTotalSessions">0</div>
+                            <div class="stat-label">Sessions totales</div>
                         </div>
                     </div>
 
-                    <button class="btn-primary" onclick="exportAdminData()">📥 Exporter JSON</button>
-                    <button class="btn-secondary" onclick="logoutAdmin()" style="margin-left: 10px;">Déconnexion</button>
+                    <div class="chart-container">
+                        <h3>Activité des 7 derniers jours</h3>
+                        <canvas id="activityChart"></canvas>
+                    </div>
 
+                    <div class="chart-container" style="max-width: 500px; margin: 0 auto;">
+                        <h3>Jeux les plus populaires</h3>
+                        <canvas id="gamesChart" style="max-height: 300px;"></canvas>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-primary" onclick="exportAdminData()">📥 Exporter JSON</button>
+                        <button class="btn-primary" onclick="exportStatsReport()">📊 Rapport Stats</button>
+                        <button class="btn-danger" onclick="cleanInactiveUsers()">🗑️ Nettoyer inactifs</button>
+                        <button class="btn-secondary" onclick="logoutAdmin()">Déconnexion</button>
+                    </div>
+
+                    <h3 style="margin-top: 25px;">Vocabulaire</h3>
+                    <div class="form-group" style="margin-bottom: 15px; max-width: 300px;">
+                        <label for="adminCategoryFilter">🔍 Filtrer par catégorie</label>
+                        <select id="adminCategoryFilter" onchange="filterVocabByCategory()">
+                            <option value="">📋 Toutes les catégories</option>
+                            <option value="Général">Général</option>
+                            <option value="Famille">Famille</option>
+                            <option value="Métiers">Métiers</option>
+                            <option value="Nourriture">Nourriture</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Vêtements">Vêtements</option>
+                            <option value="Verbes">Verbes</option>
+                            <option value="Adjectifs">Adjectifs</option>
+                        </select>
+                    </div>
                     <div class="admin-table">
                         <table>
                             <thead>
@@ -752,9 +1123,28 @@
                                     <th>Catégorie</th>
                                     <th>Par</th>
                                     <th>Date</th>
+                                    <th style="width: 150px;">Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="adminTableBody">
+                                <tr><td colspan="6" style="text-align: center;"><span class="loading"></span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 style="margin-top: 25px;">Utilisateurs</h3>
+                    <div class="admin-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pseudo</th>
+                                    <th>Sessions</th>
+                                    <th>Dernière activité</th>
+                                    <th>Membre depuis</th>
+                                    <th style="width: 200px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminUsersTable">
                                 <tr><td colspan="5" style="text-align: center;"><span class="loading"></span></td></tr>
                             </tbody>
                         </table>
@@ -772,11 +1162,29 @@
         const { createClient } = supabase;
         const client = createClient(SUPABASE_URL, SUPABASE_KEY);
 
+        let currentUser = null;
+        let currentSession = null;
         let adminLoggedIn = false;
         let currentGame = null;
         let currentGameSet = [];
         let currentGameIndex = 0;
+        let activityChart = null;
+        let gamesChart = null;
 
+        // ========== NOUVEAU: Variables de validation de session ==========
+        let sessionStartTime = null;        // Timestamp de début
+        let questionsAnswered = 0;          // Nombre de questions répondues
+        let sessionValid = false;           // Session valide ou non
+        let sessionInProgress = false;      // Indicateur de session active
+        // ========== FIN NOUVEAU ==========
+
+        // ========== NOUVEAU: Système de sessions progressives ==========
+const SESSION_WORD_LIMIT = 15; // Limite de mots par session
+let sessionMode = 'all'; // 'all', 'new', 'review', 'difficult'
+let allVocabulary = []; // Cache du vocabulaire complet
+// ========== FIN NOUVEAU ==========
+
+        // ========== INITIALIZATION ==========
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
@@ -793,9 +1201,10 @@
 
         async function init() {
             loadDarkMode();
+            await checkUserSession();
             await displayVocab();
-            await loadAdminData();
             await updateWordCounter();
+            await updateModeCounts(); // ← AJOUTER CETTE LIGNE
             subscribeToChanges();
         }
 
@@ -812,17 +1221,540 @@
                     { event: '*', schema: 'public', table: 'vocabulary' },
                     () => {
                         displayVocab();
-                        loadAdminData();
                         updateWordCounter();
+                        if (adminLoggedIn) loadAdminData();
                     }
                 )
                 .subscribe();
         }
 
+        // ========== USER AUTHENTICATION ==========
+        async function checkUserSession() {
+            const savedUser = localStorage.getItem('koreanAppUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                updateUserUI();
+                await loadUserStats();
+            }
+        }
+
+        function updateUserUI() {
+            const userInfo = document.getElementById('userInfo');
+            if (currentUser) {
+                userInfo.innerHTML = `
+                    <span class="user-badge">👤 ${currentUser.username}</span>
+                `;
+                document.getElementById('authSection').style.display = 'none';
+                document.getElementById('profileSection').style.display = 'block';
+                document.getElementById('profileUsername').textContent = currentUser.username;
+                
+                const joinDate = new Date(currentUser.created_at).toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                document.getElementById('profileJoinDate').textContent = `Membre depuis le ${joinDate}`;
+                
+                // ========== AJOUTÉ ==========
+                updateModeCounts(); // Mettre à jour les compteurs de mots difficiles
+                // ========== FIN AJOUT ==========
+            } else {
+                userInfo.innerHTML = '<span style="color: var(--text-light);">Mode anonyme</span>';
+                document.getElementById('authSection').style.display = 'block';
+                document.getElementById('profileSection').style.display = 'none';
+            }
+        }
+
+        async function registerUser() {
+            const username = document.getElementById('authUsername').value.trim();
+            const password = document.getElementById('authPassword').value;
+            const messageDiv = document.getElementById('authMessage');
+
+            if (!username || username.length < 3) {
+                messageDiv.innerHTML = '<div class="alert alert-error">Le pseudo doit faire au moins 3 caractères</div>';
+                return;
+            }
+
+            if (!password || password.length < 6) {
+                messageDiv.innerHTML = '<div class="alert alert-error">Le mot de passe doit faire au moins 6 caractères</div>';
+                return;
+            }
+
+            // Check if username exists
+            const { data: existing } = await client
+                .from('users')
+                .select('id')
+                .eq('username', username)
+                .single();
+
+            if (existing) {
+                messageDiv.innerHTML = '<div class="alert alert-error">Ce pseudo est déjà pris</div>';
+                return;
+            }
+
+            // Create user
+            const { data, error } = await client
+                .from('users')
+                .insert([{ username, password }])
+                .select()
+                .single();
+
+            if (error) {
+                messageDiv.innerHTML = '<div class="alert alert-error">Erreur: ' + error.message + '</div>';
+                return;
+            }
+
+            currentUser = data;
+            localStorage.setItem('koreanAppUser', JSON.stringify(data));
+            messageDiv.innerHTML = '<div class="alert alert-success">✅ Compte créé avec succès !</div>';
+            
+            setTimeout(() => {
+                updateUserUI();
+                messageDiv.innerHTML = '';
+            }, 1500);
+        }
+
+        async function loginUser() {
+            const username = document.getElementById('authUsername').value.trim();
+            const password = document.getElementById('authPassword').value;
+            const messageDiv = document.getElementById('authMessage');
+
+            if (!username || !password) {
+                messageDiv.innerHTML = '<div class="alert alert-error">Remplis tous les champs</div>';
+                return;
+            }
+
+            const { data, error } = await client
+                .from('users')
+                .select('*')
+                .eq('username', username)
+                .eq('password', password)
+                .single();
+
+            if (error || !data) {
+                messageDiv.innerHTML = '<div class="alert alert-error">Pseudo ou mot de passe incorrect</div>';
+                return;
+            }
+
+            currentUser = data;
+            localStorage.setItem('koreanAppUser', JSON.stringify(data));
+            messageDiv.innerHTML = '<div class="alert alert-success">✅ Connexion réussie !</div>';
+            
+            setTimeout(() => {
+                updateUserUI();
+                loadUserStats();
+                messageDiv.innerHTML = '';
+            }, 1000);
+        }
+
+        function logoutUser() {
+            currentUser = null;
+            localStorage.removeItem('koreanAppUser');
+            updateUserUI();
+            document.getElementById('authUsername').value = '';
+            document.getElementById('authPassword').value = '';
+        }
+
+        // ========== USER STATS ==========
+        async function loadUserStats() {
+            if (!currentUser) return;
+
+            // Load sessions
+            const { data: sessions } = await client
+                .from('user_sessions')
+                .select('*')
+                .eq('user_id', currentUser.id)
+                .order('created_at', { ascending: false });
+
+            document.getElementById('userTotalSessions').textContent = sessions?.length || 0;
+
+            // Load game results
+            const { data: results } = await client
+                .from('game_results')
+                .select('*')
+                .eq('user_id', currentUser.id);
+
+            document.getElementById('userTotalGames').textContent = results?.length || 0;
+
+            if (results && results.length > 0) {
+                const totalCorrect = results.reduce((sum, r) => sum + r.correct_answers, 0);
+                const totalQuestions = results.reduce((sum, r) => sum + r.total_questions, 0);
+                const successRate = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+                document.getElementById('userSuccessRate').textContent = successRate + '%';
+                
+                // ========== NOUVELLES STATISTIQUES GLOBALES ==========
+                
+                // 1. Nombre total de mots appris (mots avec au moins 1 bonne réponse)
+                const wordsLearned = await calculateWordsLearned(results);
+                document.getElementById('totalWordsLearned').textContent = wordsLearned;
+                
+                // 2. Taux de réussite global (déjà calculé ci-dessus)
+                document.getElementById('globalSuccessRate').textContent = successRate + '%';
+                
+                // 3. Recommandations basées sur les faiblesses
+                await generateRecommendations(results);
+            } else {
+                // Valeurs par défaut si aucun résultat
+                document.getElementById('totalWordsLearned').textContent = '0';
+                document.getElementById('globalSuccessRate').textContent = '0%';
+                document.getElementById('recommendationsList').innerHTML = '<p style="color: var(--text-secondary); font-style: italic; margin: 0;">Commence à jouer pour recevoir des recommandations personnalisées ! 🎮</p>';
+            }
+
+            // Calculate streak
+            const streak = calculateStreak(sessions);
+            document.getElementById('userStreak').textContent = streak;
+
+            // Load progress by category
+            await loadCategoryProgress();
+
+            // Load recent activity
+            await loadRecentActivity();
+        }
+        
+        // ========== CALCUL DES MOTS APPRIS ==========
+        async function calculateWordsLearned(results) {
+            if (!results || results.length === 0) return 0;
+            
+            // Compter le nombre de mots uniques appris basé sur les catégories jouées
+            // et le taux de réussite (estimation)
+            const categoriesPlayed = new Set();
+            let totalCorrect = 0;
+            
+            results.forEach(result => {
+                if (result.category) {
+                    categoriesPlayed.add(result.category);
+                }
+                totalCorrect += result.correct_answers || 0;
+            });
+            
+            // Estimer le nombre de mots appris comme le nombre total de bonnes réponses
+            // divisé par 2 (car un mot peut être vu plusieurs fois)
+            const estimatedWords = Math.max(1, Math.floor(totalCorrect / 2));
+            
+            return estimatedWords;
+        }
+        
+        // ========== GÉNÉRATION DES RECOMMANDATIONS ==========
+        async function generateRecommendations(results) {
+            if (!results || results.length === 0) return;
+            
+            // Analyser les erreurs par catégorie
+            const categoryErrors = {};
+            const wordErrors = {};
+            
+            results.forEach(result => {
+                const category = result.category || 'Non catégorisé';
+                
+                if (!categoryErrors[category]) {
+                    categoryErrors[category] = {
+                        correct: 0,
+                        incorrect: 0,
+                        total: 0
+                    };
+                }
+                
+                categoryErrors[category].correct += result.correct_answers || 0;
+                categoryErrors[category].incorrect += (result.total_questions - result.correct_answers) || 0;
+                categoryErrors[category].total += result.total_questions || 0;
+                
+                // Analyser les erreurs par mot si les détails sont disponibles
+                if (result.details && Array.isArray(result.details)) {
+                    result.details.forEach(detail => {
+                        if (!detail.correct && detail.word) {
+                            const wordKey = detail.word.korean || detail.word;
+                            wordErrors[wordKey] = (wordErrors[wordKey] || 0) + 1;
+                        }
+                    });
+                }
+            });
+            
+            // Générer les recommandations
+            let html = '';
+            
+            // 1. Catégories à travailler (taux de réussite < 70%)
+            const weakCategories = Object.entries(categoryErrors)
+                .map(([cat, stats]) => ({
+                    category: cat,
+                    rate: (stats.correct / stats.total) * 100,
+                    total: stats.total
+                }))
+                .filter(c => c.rate < 70 && c.total >= 5)
+                .sort((a, b) => a.rate - b.rate);
+            
+            if (weakCategories.length > 0) {
+                html += '<div style="margin-bottom: 15px;"><strong style="color: var(--accent);">📚 Catégories à réviser :</strong><ul style="margin: 8px 0 0 20px; color: var(--text-secondary);">';
+                weakCategories.slice(0, 3).forEach(cat => {
+                    html += `<li><strong>${cat.category}</strong> (${cat.rate.toFixed(0)}% de réussite) - Utilise le mode "Mots difficiles" !</li>`;
+                });
+                html += '</ul></div>';
+            }
+            
+            // 2. Mots les plus difficiles (erreurs répétées)
+            const difficultWords = Object.entries(wordErrors)
+                .map(([word, errors]) => ({ word, errors }))
+                .filter(w => w.errors >= 3)
+                .sort((a, b) => b.errors - a.errors)
+                .slice(0, 5);
+            
+            if (difficultWords.length > 0) {
+                html += '<div style="margin-bottom: 15px;"><strong style="color: var(--accent);">🎯 Mots à revoir en priorité :</strong><ul style="margin: 8px 0 0 20px; color: var(--text-secondary);">';
+                difficultWords.forEach(w => {
+                    html += `<li><strong>${w.word}</strong> (${w.errors} erreur${w.errors > 1 ? 's' : ''})</li>`;
+                });
+                html += '</ul></div>';
+            }
+            
+            // 3. Encouragements et conseils
+            const totalCorrect = results.reduce((sum, r) => sum + r.correct_answers, 0);
+            const totalQuestions = results.reduce((sum, r) => sum + r.total_questions, 0);
+            const globalRate = (totalCorrect / totalQuestions) * 100;
+            
+            if (globalRate >= 80) {
+                html += '<div style="padding: 10px; background: var(--success-bg); border-radius: 8px; color: var(--text-primary);"><strong>🌟 Excellent travail !</strong> Continue comme ça, tu maîtrises très bien le vocabulaire !</div>';
+            } else if (globalRate >= 60) {
+                html += '<div style="padding: 10px; background: #fff9e6; border-radius: 8px; color: var(--text-primary);"><strong>💪 Bon rythme !</strong> Continue de pratiquer régulièrement pour progresser encore plus.</div>';
+            } else {
+                html += '<div style="padding: 10px; background: var(--error-bg); border-radius: 8px; color: var(--text-primary);"><strong>🚀 Ne lâche rien !</strong> La pratique régulière est la clé. Concentre-toi sur les catégories ci-dessus.</div>';
+            }
+            
+            // Si aucune faiblesse détectée
+            if (html === '') {
+                html = '<div style="padding: 10px; background: var(--success-bg); border-radius: 8px; color: var(--text-primary);"><strong>🎉 Félicitations !</strong> Tu n\'as pas de faiblesses majeures détectées. Continue à t\'entraîner pour maintenir ton niveau !</div>';
+            }
+            
+            document.getElementById('recommendationsList').innerHTML = html;
+        }
+
+        function calculateStreak(sessions) {
+            if (!sessions || sessions.length === 0) return 0;
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            let streak = 0;
+            let currentDate = new Date(today);
+
+            const sessionDates = sessions.map(s => {
+                const d = new Date(s.created_at);
+                d.setHours(0, 0, 0, 0);
+                return d.getTime();
+            });
+
+            const uniqueDates = [...new Set(sessionDates)].sort((a, b) => b - a);
+
+            for (let i = 0; i < uniqueDates.length; i++) {
+                if (uniqueDates[i] === currentDate.getTime()) {
+                    streak++;
+                    currentDate.setDate(currentDate.getDate() - 1);
+                } else if (uniqueDates[i] < currentDate.getTime()) {
+                    break;
+                }
+            }
+
+            return streak;
+        }
+
+        async function loadCategoryProgress() {
+            if (!currentUser) return;
+
+            const { data: results } = await client
+                .from('game_results')
+                .select('category, correct_answers, total_questions')
+                .eq('user_id', currentUser.id);
+
+            if (!results || results.length === 0) {
+                document.getElementById('categoryProgress').innerHTML = '<p class="empty-message">Aucune progression pour le moment</p>';
+                return;
+            }
+
+            const categoryStats = {};
+            results.forEach(r => {
+                if (!categoryStats[r.category]) {
+                    categoryStats[r.category] = { correct: 0, total: 0 };
+                }
+                categoryStats[r.category].correct += r.correct_answers;
+                categoryStats[r.category].total += r.total_questions;
+            });
+
+            let html = '';
+            for (const [category, stats] of Object.entries(categoryStats)) {
+                const percentage = Math.round((stats.correct / stats.total) * 100);
+                const displayCategory = category || 'Général';  // Remplacer null par "Général"
+                html += `
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="font-weight: 500; color: var(--text-secondary);">${displayCategory}</span>
+                            <span style="color: var(--accent);">${percentage}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            document.getElementById('categoryProgress').innerHTML = html;
+        }
+
+        async function loadRecentActivity() {
+            if (!currentUser) return;
+
+            const { data: sessions } = await client
+                .from('user_sessions')
+                .select('*')
+                .eq('user_id', currentUser.id)
+                .order('created_at', { ascending: false })
+                .limit(5);
+
+            if (!sessions || sessions.length === 0) {
+                document.getElementById('recentActivity').innerHTML = '<p class="empty-message">Aucune activité récente</p>';
+                return;
+            }
+
+            let html = '<div class="vocab-list">';
+            sessions.forEach(session => {
+                const date = new Date(session.created_at).toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'short',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                const duration = session.duration_seconds ? Math.round(session.duration_seconds / 60) : 0;
+                html += `
+                    <div class="vocab-card">
+                        <div>
+                            <div style="font-weight: 600; color: var(--accent);">Session de ${session.game_type}</div>
+                            <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 3px;">
+                                ${session.category || 'Toutes catégories'} • ${duration} min
+                            </div>
+                            <div style="font-size: 0.75em; color: var(--text-light); margin-top: 3px;">${date}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+
+            document.getElementById('recentActivity').innerHTML = html;
+        }
+
+        // ========== SESSION TRACKING ==========
+        async function startSession(gameType, category) {
+            if (!currentUser) return null;
+
+            const { data, error } = await client
+                .from('user_sessions')
+                .insert([{
+                    user_id: currentUser.id,
+                    game_type: gameType,
+                    category: category || null
+                }])
+                .select()
+                .single();
+
+            if (!error && data) {
+                currentSession = data;
+                // ========== NOUVEAU ==========
+                sessionStartTime = Date.now();
+                questionsAnswered = 0;
+                sessionValid = false;
+                sessionInProgress = true;
+                // ========== FIN NOUVEAU ==========
+                return data;
+            }
+            return null;
+        }
+
+        async function endSession() {
+            if (!currentSession) return;
+
+            // ========== NOUVEAU: Validation de session ==========
+            const duration = Math.round((Date.now() - sessionStartTime) / 1000);
+            const isValidSession = duration >= 5 && questionsAnswered >= 1;
+            
+            if (isValidSession) {
+                // Session valide → enregistrer normalement
+                await client
+                    .from('user_sessions')
+                    .update({ duration_seconds: duration })
+                    .eq('id', currentSession.id);
+                
+                console.log('✅ Session valide enregistrée:', { duration, questionsAnswered });
+            } else {
+                // Session invalide → supprimer de la base
+                await client
+                    .from('user_sessions')
+                    .delete()
+                    .eq('id', currentSession.id);
+                
+                console.log('❌ Session invalide supprimée:', { duration, questionsAnswered });
+            }
+            // ========== FIN NOUVEAU ==========
+
+            currentSession = null;
+            sessionInProgress = false;
+            sessionStartTime = null;
+            questionsAnswered = 0;
+        }
+
+        // ========== NOUVEAU: Messages dynamiques selon score ==========
+        function getDynamicMessage(correctCount, totalQuestions) {
+            const percentage = Math.round((correctCount / totalQuestions) * 100);
+            
+            let emoji = '';
+            let title = '';
+            let message = '';
+            
+            if (percentage === 100) {
+                emoji = '🌟';
+                title = 'PARFAIT !';
+                message = 'Score parfait ! Tu maîtrises complètement le sujet !';
+            } else if (percentage >= 90) {
+                emoji = '🎉';
+                title = 'Excellent !';
+                message = 'Presque parfait ! Continue comme ça !';
+            } else if (percentage >= 70) {
+                emoji = '💪';
+                title = 'Très bien !';
+                message = 'Bonne maîtrise ! Encore un petit effort !';
+            } else if (percentage >= 50) {
+                emoji = '👍';
+                title = 'Pas mal !';
+                message = 'Un peu de révision et ce sera parfait !';
+            } else {
+                emoji = '📚';
+                title = 'Continue !';
+                message = 'Révise ces mots et retente ta chance !';
+            }
+            
+            return { emoji, title, message, percentage };
+        }
+        // ========== FIN NOUVEAU ==========
+
+        async function saveGameResult(gameType, category, correctAnswers, totalQuestions) {
+            if (!currentUser) return;
+
+            await client
+                .from('game_results')
+                .insert([{
+                    user_id: currentUser.id,
+                    session_id: currentSession?.id || null,
+                    game_type: gameType,
+                    category: category || null,
+                    correct_answers: correctAnswers,
+                    total_questions: totalQuestions
+                }]);
+
+            if (currentUser) {
+                await loadUserStats();
+            }
+        }
+
+        // ========== VOCABULARY ==========
         async function addWords() {
             const input = document.getElementById('newWords').value.trim();
             const category = document.getElementById('category').value;
-            const userName = document.getElementById('userName').value.trim() || 'Anonyme';
+            const userName = document.getElementById('userName').value.trim() || 
+                            (currentUser ? currentUser.username : 'Anonyme');
 
             if (!input) {
                 alert('Ajoute au moins un mot !');
@@ -895,59 +1827,235 @@
             }).join('');
         }
 
-        function startGame(gameType) {
-            const category = document.getElementById('gameCategory').value;
-            let query = client.from('vocabulary').select('*');
+// ========== NOUVEAU: Gestion des modes de session ==========
 
-            if (category) {
-                query = query.eq('category', category);
+/**
+ * Sélectionne un mode de révision
+ * @param {string} mode - 'all', 'new', 'review', ou 'difficult'
+ */
+function selectMode(mode) {
+    sessionMode = mode;
+    
+    // Mise à jour visuelle des radio buttons
+    document.querySelectorAll('.mode-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    document.querySelector(`[data-mode="${mode}"]`).classList.add('selected');
+}
+
+/**
+ * Met à jour les compteurs de mots pour chaque mode
+ */
+async function updateModeCounts() {
+    const category = document.getElementById('gameCategory').value;
+    let query = client.from('vocabulary').select('*');
+    
+    if (category) {
+        query = query.eq('category', category);
+    }
+    
+    const { data: vocab } = await query;
+    if (!vocab) return;
+    
+    allVocabulary = vocab;
+    
+    // Tous les mots
+    const allCount = Math.min(vocab.length, SESSION_WORD_LIMIT);
+    document.getElementById('modeCountAll').textContent = `${allCount} mots`;
+    
+    // Nouveaux mots (ajoutés dans les 7 derniers jours)
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const newWords = vocab.filter(w => new Date(w.created_at) >= sevenDaysAgo);
+    const newCount = Math.min(newWords.length, SESSION_WORD_LIMIT);
+    document.getElementById('modeCountNew').textContent = `${newCount} mots`;
+    
+    // Mots en révision (vus mais pas récents)
+    const reviewWords = vocab.filter(w => new Date(w.created_at) < sevenDaysAgo);
+    const reviewCount = Math.min(reviewWords.length, SESSION_WORD_LIMIT);
+    document.getElementById('modeCountReview').textContent = `${reviewCount} mots`;
+    
+    // Mots difficiles (basé sur les erreurs de l'utilisateur)
+    if (currentUser) {
+        const difficultWords = await getDifficultWords(vocab);
+        const difficultCount = Math.min(difficultWords.length, SESSION_WORD_LIMIT);
+        document.getElementById('modeCountDifficult').textContent = `${difficultCount} mots`;
+    } else {
+        document.getElementById('modeCountDifficult').textContent = '0 mots';
+    }
+}
+
+/**
+ * Identifie les mots difficiles basés sur les performances
+ * @param {Array} vocabSet - Ensemble de vocabulaire
+ * @returns {Array} - Mots des catégories difficiles
+ */
+async function getDifficultWords(vocabSet) {
+    if (!currentUser) return [];
+    
+    // Récupérer les résultats de l'utilisateur
+    const { data: results } = await client
+        .from('game_results')
+        .select('*')
+        .eq('user_id', currentUser.id);
+    
+    if (!results || results.length === 0) return [];
+    
+    // Analyser les erreurs par catégorie
+    const categoryErrors = {};
+    results.forEach(r => {
+        const category = r.category || 'Général';
+        if (!categoryErrors[category]) {
+            categoryErrors[category] = { correct: 0, total: 0 };
+        }
+        categoryErrors[category].correct += r.correct_answers || 0;
+        categoryErrors[category].total += r.total_questions || 0;
+    });
+    
+    // Filtrer les catégories avec faible taux de réussite (< 70%)
+    const difficultCategories = Object.entries(categoryErrors)
+        .filter(([cat, stats]) => {
+            const rate = stats.total > 0 ? (stats.correct / stats.total) : 1;
+            return rate < 0.7;
+        })
+        .map(([cat]) => cat);
+    
+    return vocabSet.filter(w => difficultCategories.includes(w.category));
+}
+
+/**
+ * Récupère les mots pour la session selon le mode sélectionné
+ * @param {string} category - Catégorie sélectionnée (optionnel)
+ * @returns {Array} - Mots filtrés et limités
+ */
+async function getWordsForSession(category) {
+    let words = allVocabulary;
+    
+    // Filtrer par catégorie si nécessaire
+    if (category) {
+        words = words.filter(w => w.category === category);
+    }
+    
+    // Appliquer le mode de session
+    switch(sessionMode) {
+        case 'new':
+            // Mots ajoutés dans les 7 derniers jours
+            const sevenDaysAgo = new Date();
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+            words = words.filter(w => new Date(w.created_at) >= sevenDaysAgo);
+            break;
+            
+        case 'review':
+            // Mots plus anciens que 7 jours
+            const reviewDate = new Date();
+            reviewDate.setDate(reviewDate.getDate() - 7);
+            words = words.filter(w => new Date(w.created_at) < reviewDate);
+            break;
+            
+        case 'difficult':
+            // Mots difficiles basés sur les performances
+            words = await getDifficultWords(words);
+            break;
+            
+        case 'all':
+        default:
+            // Tous les mots (déjà filtré par catégorie si nécessaire)
+            break;
+    }
+    
+    // Mélanger et limiter à SESSION_WORD_LIMIT
+    words = words.sort(() => Math.random() - 0.5);
+    return words.slice(0, SESSION_WORD_LIMIT);
+}
+
+// ========== FIN NOUVELLES FONCTIONS ==========
+
+        // ========== GAMES ==========
+        async function startGame(gameType) {
+            const category = document.getElementById('gameCategory').value;
+            
+            // ========== MODIFIÉ: Utiliser getWordsForSession ==========
+            const words = await getWordsForSession(category);
+
+            if (words.length === 0) {
+                alert('❌ Aucun mot disponible pour ce mode et cette catégorie');
+                return;
             }
 
-            query.then(({ data, error }) => {
-                if (error || data.length === 0) {
-                    alert('❌ Aucun mot pour cette catégorie');
-                    return;
-                }
+            const shuffledData = words.sort(() => Math.random() - 0.5);
+            // ========== FIN MODIFICATION ==========
 
-                const shuffledData = data.sort(() => Math.random() - 0.5);
+            currentGame = gameType;
+            currentGameSet = shuffledData;
+            currentGameIndex = 0;
 
-                currentGame = gameType;
-                currentGameSet = shuffledData;
-                currentGameIndex = 0;
+            window.memoryCards = null;
+            window.memoryMatched = null;
+            window.memoryFlipped = null;
 
-                window.memoryCards = null;
-                window.memoryMatched = null;
-                window.memoryFlipped = null;
+            await startSession(gameType, category);
 
-                document.querySelector('.games-grid').parentElement.style.display = 'none';
-                const container = document.getElementById('gameContainer');
-                container.style.display = 'block';
+            document.querySelector('.games-grid').parentElement.style.display = 'none';
+            const container = document.getElementById('gameContainer');
+            container.style.display = 'block';
 
-                if (gameType === 'quiz') showQuizQuestion();
-                else if (gameType === 'quiz-inverse') showQuizInverseQuestion();
-                else if (gameType === 'cartes') showFlashcard();
-                else if (gameType === 'memory') showMemory();
-                else if (gameType === 'ecriture') showWritingQuestion();
-            });
+            if (gameType === 'quiz') showQuizQuestion();
+            else if (gameType === 'quiz-inverse') showQuizInverseQuestion();
+            else if (gameType === 'cartes') showFlashcard();
+            else if (gameType === 'memory') showMemory();
+            else if (gameType === 'ecriture') showWritingQuestion();
         }
 
         function resetGames() {
+            // ========== NOUVEAU: Confirmation si session en cours ==========
+            if (sessionInProgress && questionsAnswered > 0) {
+                const confirmed = confirm(
+                    '⚠️ Es-tu sûr de vouloir quitter ?\n\n' +
+                    'Ta progression sera perdue.\n' +
+                    `Questions répondues : ${questionsAnswered}`
+                );
+                
+                if (!confirmed) {
+                    return; // L'utilisateur annule, on reste dans le jeu
+                }
+            }
+            // ========== FIN NOUVEAU ==========
+            
+            if (currentSession) {
+                endSession();
+            }
             document.querySelector('.games-grid').parentElement.style.display = 'block';
+            document.querySelector('.mode-selector').style.display = 'block';
             document.getElementById('gameContainer').style.display = 'none';
         }
 
         function showQuizQuestion() {
             const container = document.getElementById('gameContainer');
             if (currentGameIndex >= currentGameSet.length) {
+                const correctCount = window.quizCorrectCount || 0;
+                saveGameResult('quiz', document.getElementById('gameCategory').value, correctCount, currentGameSet.length);
+                endSession();
+                
+                // ========== NOUVEAU: Message dynamique ==========
+                const dynamicMsg = getDynamicMessage(correctCount, currentGameSet.length);
+
                 container.innerHTML = `
                     <div class="quiz-container">
-                        <div style="font-size: 2.5em; margin-bottom: 15px;">🎉</div>
-                        <h2 style="color: var(--accent); margin-bottom: 10px;">Quiz terminé !</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Tu as fini tous les mots</p>
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">${dynamicMsg.emoji}</div>
+                        <h2 style="color: var(--accent); margin-bottom: 10px;">${dynamicMsg.title}</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 1.1em;">${dynamicMsg.message}</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 10px;">Score: ${correctCount}/${currentGameSet.length}</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Taux de réussite: ${dynamicMsg.percentage}%</p>
                         <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
                     </div>
                 `;
+                // ========== FIN NOUVEAU ==========
+                window.quizCorrectCount = 0;
                 return;
+            }
+
+            if (currentGameIndex === 0) {
+                window.quizCorrectCount = 0;
             }
 
             const current = currentGameSet[currentGameIndex];
@@ -978,10 +2086,17 @@
         }
 
         function checkQuizAnswer(questionIndex, selectedIdx) {
+            // ========== NOUVEAU ==========
+            questionsAnswered++;
+            // ========== FIN NOUVEAU ==========
             const current = currentGameSet[questionIndex];
             const buttons = document.querySelectorAll('.quiz-option');
             
             const correctIdx = Array.from(buttons).findIndex(btn => btn.textContent === current.french);
+            
+            if (selectedIdx === correctIdx) {
+                window.quizCorrectCount = (window.quizCorrectCount || 0) + 1;
+            }
             
             buttons.forEach((btn, idx) => {
                 if (idx === correctIdx) btn.classList.add('correct');
@@ -998,15 +2113,30 @@
         function showQuizInverseQuestion() {
             const container = document.getElementById('gameContainer');
             if (currentGameIndex >= currentGameSet.length) {
+                const correctCount = window.quizInverseCorrectCount || 0;
+                saveGameResult('quiz-inverse', document.getElementById('gameCategory').value, correctCount, currentGameSet.length);
+                endSession();
+                
+                // ========== NOUVEAU: Message dynamique ==========
+                const dynamicMsg = getDynamicMessage(correctCount, currentGameSet.length);
+
                 container.innerHTML = `
                     <div class="quiz-container">
-                        <div style="font-size: 2.5em; margin-bottom: 15px;">🎉</div>
-                        <h2 style="color: var(--accent); margin-bottom: 10px;">Quiz Inverse terminé !</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Excellent travail !</p>
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">${dynamicMsg.emoji}</div>
+                        <h2 style="color: var(--accent); margin-bottom: 10px;">${dynamicMsg.title}</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 1.1em;">${dynamicMsg.message}</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 10px;">Score: ${correctCount}/${currentGameSet.length}</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Taux de réussite: ${dynamicMsg.percentage}%</p>
                         <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
                     </div>
                 `;
+                // ========== FIN NOUVEAU ==========
+                window.quizInverseCorrectCount = 0;
                 return;
+            }
+
+            if (currentGameIndex === 0) {
+                window.quizInverseCorrectCount = 0;
             }
 
             const current = currentGameSet[currentGameIndex];
@@ -1038,10 +2168,17 @@
         }
 
         function checkQuizInverseAnswer(questionIndex, selectedIdx) {
+            // ========== NOUVEAU ==========
+            questionsAnswered++;
+            // ========== FIN NOUVEAU ==========
             const current = currentGameSet[questionIndex];
             const buttons = document.querySelectorAll('.quiz-option');
             
             const correctIdx = Array.from(buttons).findIndex(btn => btn.textContent === current.korean);
+            
+            if (selectedIdx === correctIdx) {
+                window.quizInverseCorrectCount = (window.quizInverseCorrectCount || 0) + 1;
+            }
             
             buttons.forEach((btn, idx) => {
                 if (idx === correctIdx) btn.classList.add('correct');
@@ -1058,6 +2195,9 @@
         function showFlashcard() {
             const container = document.getElementById('gameContainer');
             if (currentGameIndex >= currentGameSet.length) {
+                saveGameResult('cartes', document.getElementById('gameCategory').value, currentGameSet.length, currentGameSet.length);
+                endSession();
+                
                 container.innerHTML = `
                     <div class="quiz-container">
                         <div style="font-size: 2.5em; margin-bottom: 15px;">✨</div>
@@ -1083,7 +2223,7 @@
                         </div>
                     </div>
                     <div class="button-group">
-                        <button class="btn-primary" onclick="currentGameIndex++; showFlashcard();">Suivant →</button>
+                        <button class="btn-primary" onclick="questionsAnswered++; currentGameIndex++; showFlashcard();">Suivant →</button>
                     </div>
                 </div>
             `;
@@ -1110,6 +2250,11 @@
             const flipped = window.memoryFlipped;
             const totalPairs = cards.length / 2;
             const foundPairs = matched.length / 2;
+
+            if (foundPairs === totalPairs && foundPairs > 0) {
+                saveGameResult('memory', document.getElementById('gameCategory').value, totalPairs, totalPairs);
+                endSession();
+            }
 
             container.innerHTML = `
                 <div class="quiz-container">
@@ -1151,6 +2296,12 @@
                 const card2 = cards[flipped[1]];
 
                 if (card1.value === card2.value && flipped[0] !== flipped[1]) {
+                    // ========== NOUVEAU ========== 
+                    questionsAnswered++;
+                    // ========== FIN NOUVEAU ========== 
+                    window.memoryMatched++;
+                    card1.matched = true;
+                    card2.matched = true;
                     matched.push(flipped[0]);
                     matched.push(flipped[1]);
                     window.memoryFlipped = [];
@@ -1167,15 +2318,30 @@
         function showWritingQuestion() {
             const container = document.getElementById('gameContainer');
             if (currentGameIndex >= currentGameSet.length) {
+                const correctCount = window.writingCorrectCount || 0;
+                saveGameResult('ecriture', document.getElementById('gameCategory').value, correctCount, currentGameSet.length);
+                endSession();
+                
+                // ========== NOUVEAU: Message dynamique ==========
+                const dynamicMsg = getDynamicMessage(correctCount, currentGameSet.length);
+
                 container.innerHTML = `
                     <div class="quiz-container">
-                        <div style="font-size: 2.5em; margin-bottom: 15px;">✍️</div>
-                        <h2 style="color: var(--accent); margin-bottom: 10px;">Écriture terminée !</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Bravo !</p>
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">${dynamicMsg.emoji}</div>
+                        <h2 style="color: var(--accent); margin-bottom: 10px;">${dynamicMsg.title}</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 1.1em;">${dynamicMsg.message}</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 10px;">Score: ${correctCount}/${currentGameSet.length}</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px;">Taux de réussite: ${dynamicMsg.percentage}%</p>
                         <button class="btn-primary" onclick="resetGames()" style="width: 150px;">← Retour</button>
                     </div>
                 `;
+                // ========== FIN NOUVEAU ==========
+                window.writingCorrectCount = 0;
                 return;
+            }
+
+            if (currentGameIndex === 0) {
+                window.writingCorrectCount = 0;
             }
 
             const current = currentGameSet[currentGameIndex];
@@ -1200,16 +2366,14 @@
 
         function checkWritingAnswer() {
             const input = document.getElementById('writingInput').value.trim();
-            const current = currentGameSet[currentGameIndex];
-            const feedback = document.getElementById('writingFeedback');
+            if (!input) { return; }
 
-            if (!input) {
-                feedback.textContent = '❌ Écris quelque chose !';
-                feedback.className = 'writing-feedback incorrect';
-                return;
-            }
+            // ========== NOUVEAU ==========
+            questionsAnswered++;
+            // ========== FIN NOUVEAU ==========
 
             if (input === current.korean) {
+                window.writingCorrectCount = (window.writingCorrectCount || 0) + 1;
                 feedback.textContent = '✅ Correct !';
                 feedback.className = 'writing-feedback correct';
                 setTimeout(() => {
@@ -1227,6 +2391,7 @@
             showWritingQuestion();
         }
 
+        // ========== ADMIN ==========
         function loginAdmin() {
             const pass = document.getElementById('adminPassword').value;
             if (pass === ADMIN_PASSWORD) {
@@ -1244,21 +2409,44 @@
             document.getElementById('adminLoginForm').style.display = 'block';
             document.getElementById('adminPanel').style.display = 'none';
             document.getElementById('adminPassword').value = '';
+            
+            if (activityChart) activityChart.destroy();
+            if (gamesChart) gamesChart.destroy();
         }
 
         async function loadAdminData() {
             if (!adminLoggedIn) return;
 
-            const { data, error } = await client.from('vocabulary').select('*').order('created_at', { ascending: false });
+            // Get selected category filter
+            const categoryFilter = document.getElementById('adminCategoryFilter')?.value || '';
 
-            if (error) return;
+            // Load vocabulary stats with filter
+            let vocabQuery = client.from('vocabulary').select('*');
+            if (categoryFilter) {
+                vocabQuery = vocabQuery.eq('category', categoryFilter);
+            }
+            const { data: vocab } = await vocabQuery.order('created_at', { ascending: false });
+            
+            // Update count with filtered results
+            document.getElementById('adminTotalWords').innerText = vocab?.length || 0;
 
-            document.getElementById('totalWords').innerText = data.length;
-            const categories = new Set(data.map(v => v.category));
-            document.getElementById('totalCategories').innerText = categories.size;
+            // Load users stats
+            const { data: users } = await client.from('users').select('*');
+            document.getElementById('adminTotalUsers').innerText = users?.length || 0;
 
+            // Load sessions
+            const { data: sessions } = await client.from('user_sessions').select('*');
+            document.getElementById('adminTotalSessions').innerText = sessions?.length || 0;
+
+            // Active users (last 7 days)
+            const sevenDaysAgo = new Date();
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+            const activeUsers = new Set(sessions?.filter(s => new Date(s.created_at) >= sevenDaysAgo).map(s => s.user_id));
+            document.getElementById('adminActiveUsers').innerText = activeUsers.size;
+
+            // Load vocabulary table
             const tbody = document.getElementById('adminTableBody');
-            tbody.innerHTML = data.map(item => {
+            tbody.innerHTML = vocab?.map(item => {
                 const date = new Date(item.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
                 return `
                     <tr>
@@ -1267,21 +2455,431 @@
                         <td>${item.category}</td>
                         <td>${item.added_by}</td>
                         <td>${date}</td>
+                        <td>
+                            <button class="btn-danger" style="padding: 5px 10px; font-size: 0.85em;" onclick="deleteVocabWord('${item.id}', '${item.korean}')">🗑️ Supprimer</button>
+                        </td>
                     </tr>
                 `;
-            }).join('');
+            }).join('') || '<tr><td colspan="6" style="text-align: center;">Aucune donnée</td></tr>';
+
+            // Load users table
+            const usersTable = document.getElementById('adminUsersTable');
+            const usersWithStats = await Promise.all((users || []).map(async (user) => {
+                const userSessions = sessions?.filter(s => s.user_id === user.id) || [];
+                const lastActivity = userSessions.length > 0 ? 
+                    new Date(Math.max(...userSessions.map(s => new Date(s.created_at)))).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) : 
+                    'Jamais';
+                const joinDate = new Date(user.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+                
+                return {
+                    id: user.id,
+                    username: user.username,
+                    sessions: userSessions.length,
+                    lastActivity,
+                    joinDate
+                };
+            }));
+
+            usersTable.innerHTML = usersWithStats.map(user => `
+                <tr>
+                    <td><strong>${user.username}</strong></td>
+                    <td>${user.sessions}</td>
+                    <td>${user.lastActivity}</td>
+                    <td>${user.joinDate}</td>
+                    <td>
+                        <button class="btn-secondary" style="padding: 5px 10px; font-size: 0.85em; margin-right: 5px;" onclick="viewUserDetails('${user.id}')">👁️ Voir</button>
+                        <button class="btn-danger" style="padding: 5px 10px; font-size: 0.85em;" onclick="deleteUser('${user.id}', '${user.username}')">🗑️</button>
+                    </td>
+                </tr>
+            `).join('') || '<tr><td colspan="5" style="text-align: center;">Aucun utilisateur</td></tr>';
+
+            // Load charts
+            await loadActivityChart(sessions);
+            await loadGamesChart(sessions);
         }
 
-        function exportAdminData() {
-            client.from('vocabulary').select('*').then(({ data }) => {
-                const dataStr = JSON.stringify(data, null, 2);
-                const dataBlob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(dataBlob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `korean-vocab-${new Date().toISOString().split('T')[0]}.json`;
-                link.click();
+        async function loadActivityChart(sessions) {
+            const ctx = document.getElementById('activityChart');
+            
+            // Prepare data for last 7 days
+            const labels = [];
+            const data = [];
+            
+            for (let i = 6; i >= 0; i--) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                date.setHours(0, 0, 0, 0);
+                
+                const dateStr = date.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric' });
+                labels.push(dateStr);
+                
+                const dayEnd = new Date(date);
+                dayEnd.setHours(23, 59, 59, 999);
+                
+                const count = sessions?.filter(s => {
+                    const sessionDate = new Date(s.created_at);
+                    return sessionDate >= date && sessionDate <= dayEnd;
+                }).length || 0;
+                
+                data.push(count);
+            }
+
+            if (activityChart) activityChart.destroy();
+
+            activityChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Sessions',
+                        data: data,
+                        borderColor: 'rgb(212, 197, 226)',
+                        backgroundColor: 'rgba(212, 197, 226, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
             });
+        }
+
+        async function loadGamesChart(sessions) {
+            const ctx = document.getElementById('gamesChart');
+            
+            const gameTypes = ['quiz', 'quiz-inverse', 'cartes', 'memory', 'ecriture'];
+            const gameLabels = ['Quiz', 'Quiz Inverse', 'Cartes', 'Mémory', 'Écriture'];
+            const data = gameTypes.map(type => 
+                sessions?.filter(s => s.game_type === type).length || 0
+            );
+
+            if (gamesChart) gamesChart.destroy();
+
+            gamesChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: gameLabels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            '#9b59b6', // Quiz - Violet
+                            '#3498db', // Quiz Inverse - Bleu
+                            '#e74c3c', // Cartes - Rouge
+                            '#f39c12', // Mémory - Orange
+                            '#2ecc71'  // Écriture - Vert
+                        ],
+                        borderWidth: 3,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                padding: 15,
+                                font: {
+                                    size: 13
+                                },
+                                generateLabels: function(chart) {
+                                    const data = chart.data;
+                                    if (data.labels.length && data.datasets.length) {
+                                        return data.labels.map((label, i) => {
+                                            const value = data.datasets[0].data[i];
+                                            return {
+                                                text: `${label}: ${value}`,
+                                                fillStyle: data.datasets[0].backgroundColor[i],
+                                                hidden: false,
+                                                index: i
+                                            };
+                                        });
+                                    }
+                                    return [];
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed || 0;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function exportAdminData() {
+            const { data: vocab } = await client.from('vocabulary').select('*');
+            const { data: users } = await client.from('users').select('*');
+            const { data: sessions } = await client.from('user_sessions').select('*');
+            const { data: results } = await client.from('game_results').select('*');
+
+            const exportData = {
+                vocabulary: vocab,
+                users: users?.map(u => ({ ...u, password: undefined })), // Remove passwords
+                sessions: sessions,
+                results: results,
+                exported_at: new Date().toISOString()
+            };
+
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `korean-vocab-full-export-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+        }
+
+        async function exportStatsReport() {
+            const { data: vocab } = await client.from('vocabulary').select('*');
+            const { data: users } = await client.from('users').select('*');
+            const { data: sessions } = await client.from('user_sessions').select('*');
+            const { data: results } = await client.from('game_results').select('*');
+
+            // Calculate stats
+            const totalWords = vocab?.length || 0;
+            const totalUsers = users?.length || 0;
+            const totalSessions = sessions?.length || 0;
+            
+            const sevenDaysAgo = new Date();
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+            const activeUsers = new Set(sessions?.filter(s => new Date(s.created_at) >= sevenDaysAgo).map(s => s.user_id)).size;
+            
+            const avgSessionDuration = sessions?.reduce((sum, s) => sum + (s.duration_seconds || 0), 0) / sessions?.length || 0;
+            
+            const gameStats = {};
+            sessions?.forEach(s => {
+                gameStats[s.game_type] = (gameStats[s.game_type] || 0) + 1;
+            });
+
+            const totalCorrect = results?.reduce((sum, r) => sum + r.correct_answers, 0) || 0;
+            const totalQuestions = results?.reduce((sum, r) => sum + r.total_questions, 0) || 0;
+            const avgSuccessRate = totalQuestions > 0 ? ((totalCorrect / totalQuestions) * 100).toFixed(1) : 0;
+
+            // Calculate category stats
+            const categoryStats = {};
+            vocab?.forEach(v => {
+                categoryStats[v.category] = (categoryStats[v.category] || 0) + 1;
+            });
+
+            // Calculate engagement rate
+            const engagementRate = totalUsers > 0 ? ((activeUsers / totalUsers) * 100).toFixed(1) : 0;
+
+            // Calculate retention (users with 2+ sessions)
+            const userSessionCounts = {};
+            sessions?.forEach(s => {
+                userSessionCounts[s.user_id] = (userSessionCounts[s.user_id] || 0) + 1;
+            });
+            const returningUsers = Object.values(userSessionCounts).filter(count => count >= 2).length;
+            const retentionRate = totalUsers > 0 ? ((returningUsers / totalUsers) * 100).toFixed(1) : 0;
+
+            // Top performers
+            const userPerformance = {};
+            results?.forEach(r => {
+                if (!userPerformance[r.user_id]) {
+                    userPerformance[r.user_id] = { correct: 0, total: 0 };
+                }
+                userPerformance[r.user_id].correct += r.correct_answers;
+                userPerformance[r.user_id].total += r.total_questions;
+            });
+
+            const report = `
+╔════════════════════════════════════════════════════════════════╗
+║   📊 RAPPORT COMPLET - Application Vocabulaire Coréen 한국어    ║
+╚════════════════════════════════════════════════════════════════╝
+
+📅 Date du rapport: ${new Date().toLocaleDateString('fr-FR', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+})}
+
+═══════════════════════════════════════════════════════════════
+
+📚 VOCABULAIRE
+────────────────────────────────────────────────────────────────
+  • Mots en base: ${totalWords}
+  • Catégories actives: ${Object.keys(categoryStats).length}
+
+  📋 Répartition par catégorie:
+${Object.entries(categoryStats)
+    .sort((a, b) => b[1] - a[1])
+    .map(([cat, count]) => `     - ${cat}: ${count} mots`)
+    .join('\n')}
+
+═══════════════════════════════════════════════════════════════
+
+👥 UTILISATEURS
+────────────────────────────────────────────────────────────────
+  • Total d'utilisateurs: ${totalUsers}
+  • Actifs (7 derniers jours): ${activeUsers}
+  • Taux d'engagement: ${engagementRate}%
+  • Utilisateurs récurrents: ${returningUsers}
+  • Taux de rétention: ${retentionRate}%
+
+═══════════════════════════════════════════════════════════════
+
+🎮 ACTIVITÉ ET ENGAGEMENT
+────────────────────────────────────────────────────────────────
+  • Sessions totales: ${totalSessions}
+  • Sessions par utilisateur (moyenne): ${totalUsers > 0 ? (totalSessions / totalUsers).toFixed(1) : 0}
+  • Durée moyenne par session: ${Math.round(avgSessionDuration / 60)} minutes
+  • Taux de réussite moyen: ${avgSuccessRate}%
+  • Questions répondues: ${totalQuestions}
+  • Réponses correctes: ${totalCorrect}
+
+═══════════════════════════════════════════════════════════════
+
+🏆 JEUX LES PLUS POPULAIRES
+────────────────────────────────────────────────────────────────
+${Object.entries(gameStats)
+    .sort((a, b) => b[1] - a[1])
+    .map(([game, count], idx) => {
+        const percentage = totalSessions > 0 ? ((count / totalSessions) * 100).toFixed(1) : 0;
+        const medals = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
+        return `  ${medals[idx] || '📊'} ${game}: ${count} sessions (${percentage}%)`;
+    })
+    .join('\n')}
+
+═══════════════════════════════════════════════════════════════
+
+📊 PERFORMANCES PAR CATÉGORIE
+────────────────────────────────────────────────────────────────
+${(() => {
+    const catPerf = {};
+    results?.forEach(r => {
+        if (r.category) {
+            if (!catPerf[r.category]) catPerf[r.category] = { correct: 0, total: 0 };
+            catPerf[r.category].correct += r.correct_answers;
+            catPerf[r.category].total += r.total_questions;
+        }
+    });
+    return Object.entries(catPerf)
+        .sort((a, b) => {
+            const rateA = a[1].total > 0 ? (a[1].correct / a[1].total) : 0;
+            const rateB = b[1].total > 0 ? (b[1].correct / b[1].total) : 0;
+            return rateB - rateA;
+        })
+        .map(([cat, perf]) => {
+            const rate = perf.total > 0 ? ((perf.correct / perf.total) * 100).toFixed(1) : 0;
+            return `  • ${cat}: ${rate}% de réussite (${perf.correct}/${perf.total})`;
+        })
+        .join('\n') || '  Aucune donnée disponible';
+})()}
+
+═══════════════════════════════════════════════════════════════
+
+📈 ANALYSES ET INSIGHTS
+────────────────────────────────────────────────────────────────
+
+${activeUsers >= totalUsers * 0.7 ? '✅ EXCELLENT: Taux d\'engagement supérieur à 70%' : ''}
+${activeUsers >= totalUsers * 0.5 && activeUsers < totalUsers * 0.7 ? '⚠️ BON: Taux d\'engagement autour de 50-70%' : ''}
+${activeUsers < totalUsers * 0.5 && totalUsers > 0 ? '⚠️ ATTENTION: Taux d\'engagement inférieur à 50% - envisager des notifications' : ''}
+
+${avgSuccessRate >= 75 ? '✅ EXCELLENT: Taux de réussite supérieur à 75%' : ''}
+${avgSuccessRate >= 60 && avgSuccessRate < 75 ? '✅ BON: Taux de réussite entre 60-75%' : ''}
+${avgSuccessRate < 60 && totalQuestions > 0 ? '⚠️ ATTENTION: Taux de réussite bas - vocabulaire peut-être trop difficile' : ''}
+
+${retentionRate >= 70 ? '✅ EXCELLENT: Plus de 70% des utilisateurs reviennent' : ''}
+${retentionRate >= 50 && retentionRate < 70 ? '✅ BON: Environ 50-70% de rétention' : ''}
+${retentionRate < 50 && totalUsers > 0 ? '⚠️ À AMÉLIORER: Moins de 50% de rétention - gamification recommandée' : ''}
+
+${totalSessions < totalUsers * 3 && totalUsers > 0 ? '💡 SUGGESTION: Moyenne de sessions faible - promouvoir davantage l\'utilisation' : ''}
+${avgSessionDuration / 60 < 3 && totalSessions > 0 ? '💡 SUGGESTION: Sessions courtes - envisager du contenu plus engageant' : ''}
+
+═══════════════════════════════════════════════════════════════
+
+🎯 RECOMMANDATIONS STRATÉGIQUES
+────────────────────────────────────────────────────────────────
+
+Pour présenter à l'institut:
+
+1. POINTS FORTS À METTRE EN AVANT:
+   ${engagementRate >= 70 ? '✓ Excellent taux d\'engagement des étudiants' : ''}
+   ${avgSuccessRate >= 70 ? '✓ Résultats d\'apprentissage probants' : ''}
+   ${retentionRate >= 60 ? '✓ Forte fidélisation des utilisateurs' : ''}
+   ${totalSessions >= 50 ? '✓ Utilisation régulière et intensive' : ''}
+
+2. MÉTRIQUES CLÉS POUR LA PRÉSENTATION:
+   • ${activeUsers} étudiants actifs sur ${totalUsers} (${engagementRate}%)
+   • ${totalSessions} sessions d'apprentissage
+   • ${avgSuccessRate}% de taux de réussite moyen
+   • ${Math.round(avgSessionDuration / 60)} minutes d'engagement moyen
+
+3. BÉNÉFICES MESURABLES:
+   • Apprentissage autonome et gamifié
+   • Suivi personnalisé de la progression
+   • ${totalQuestions} questions pratiquées
+   • Engagement mesurable et quantifiable
+
+4. PROCHAINES ÉTAPES SUGGÉRÉES:
+   ${totalUsers < 20 ? '• Déployer auprès de plus d\'étudiants' : ''}
+   ${avgSuccessRate < 70 ? '• Ajuster la difficulté du vocabulaire' : ''}
+   • Ajouter plus de catégories thématiques
+   • Implémenter la répétition espacée
+   • Créer des défis inter-étudiants
+
+═══════════════════════════════════════════════════════════════
+
+💼 VALEUR AJOUTÉE POUR L'INSTITUT
+────────────────────────────────────────────────────────────────
+
+Cette application démontre:
+✓ Innovation pédagogique avec gamification
+✓ Données d'apprentissage mesurables et exploitables
+✓ Engagement étudiant quantifiable
+✓ Outil développé par et pour les étudiants
+✓ Scalable pour d'autres langues/matières
+
+═══════════════════════════════════════════════════════════════
+
+📧 Contact: [Ton email/contact]
+🔗 Application: [URL de l'app]
+📅 Période analysée: ${(() => {
+    if (!sessions || sessions.length === 0) return 'Aucune donnée';
+    const dates = sessions.map(s => new Date(s.created_at));
+    const oldest = new Date(Math.min(...dates));
+    const newest = new Date(Math.max(...dates));
+    return `${oldest.toLocaleDateString('fr-FR')} - ${newest.toLocaleDateString('fr-FR')}`;
+})()}
+
+════════════════════════════════════════════════════════════════
+Rapport généré automatiquement • Korean Vocab App v2.0
+════════════════════════════════════════════════════════════════
+            `.trim();
+
+            const blob = new Blob([report], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `rapport-complet-korean-vocab-${new Date().toISOString().split('T')[0]}.txt`;
+            link.click();
         }
 
         function switchTab(tabName) {
@@ -1289,6 +2887,198 @@
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
+
+            if (tabName === 'compte' && currentUser) {
+                loadUserStats();
+            }
+        }
+
+        // ========== ADMIN MANAGEMENT FUNCTIONS ==========
+
+        async function deleteUser(userId, username) {
+            if (!confirm(`⚠️ Confirmer la suppression de l'utilisateur "${username}" ?\n\nCela supprimera aussi toutes ses sessions et résultats.`)) {
+                return;
+            }
+
+            const { error } = await client
+                .from('users')
+                .delete()
+                .eq('id', userId);
+
+            if (error) {
+                alert('❌ Erreur lors de la suppression: ' + error.message);
+            } else {
+                alert('✅ Utilisateur supprimé avec succès');
+                loadAdminData();
+            }
+        }
+
+        async function viewUserDetails(userId) {
+            // Get user data
+            const { data: user } = await client.from('users').select('*').eq('id', userId).single();
+            const { data: sessions } = await client.from('user_sessions').select('*').eq('user_id', userId).order('created_at', { ascending: false });
+            const { data: results } = await client.from('game_results').select('*').eq('user_id', userId);
+
+            if (!user) {
+                alert('❌ Utilisateur introuvable');
+                return;
+            }
+
+            // Calculate stats
+            const totalSessions = sessions?.length || 0;
+            const totalGames = results?.length || 0;
+            const totalCorrect = results?.reduce((sum, r) => sum + r.correct_answers, 0) || 0;
+            const totalQuestions = results?.reduce((sum, r) => sum + r.total_questions, 0) || 0;
+            const successRate = totalQuestions > 0 ? ((totalCorrect / totalQuestions) * 100).toFixed(1) : 0;
+
+            // Game breakdown
+            const gameBreakdown = {};
+            sessions?.forEach(s => {
+                gameBreakdown[s.game_type] = (gameBreakdown[s.game_type] || 0) + 1;
+            });
+
+            let details = `
+╔════════════════════════════════════════════════╗
+║  👤 DÉTAILS UTILISATEUR                        ║
+╚════════════════════════════════════════════════╝
+
+📋 INFORMATIONS
+  • Pseudo: ${user.username}
+  • ID: ${user.id}
+  • Membre depuis: ${new Date(user.created_at).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+  • Dernière connexion: ${new Date(user.last_login).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+
+📊 STATISTIQUES
+  • Sessions totales: ${totalSessions}
+  • Jeux joués: ${totalGames}
+  • Taux de réussite: ${successRate}%
+  • Questions répondues: ${totalQuestions}
+  • Réponses correctes: ${totalCorrect}
+
+🎮 RÉPARTITION PAR JEU
+${Object.entries(gameBreakdown)
+    .sort((a, b) => b[1] - a[1])
+    .map(([game, count]) => `  • ${game}: ${count} sessions`)
+    .join('\n') || '  Aucune activité'}
+
+📜 HISTORIQUE RÉCENT (5 dernières sessions)
+${sessions?.slice(0, 5).map(s => {
+    const date = new Date(s.created_at).toLocaleDateString('fr-FR', { 
+        day: 'numeric', 
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    const duration = s.duration_seconds ? Math.round(s.duration_seconds / 60) : 0;
+    return `  • ${date}: ${s.game_type} (${s.category || 'Toutes catégories'}) - ${duration}min`;
+}).join('\n') || '  Aucune session'}
+
+════════════════════════════════════════════════
+            `.trim();
+
+            // Create modal-like display
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                padding: 20px;
+            `;
+
+            const content = document.createElement('div');
+            content.style.cssText = `
+                background: var(--white);
+                padding: 30px;
+                border-radius: 15px;
+                max-width: 600px;
+                max-height: 80vh;
+                overflow-y: auto;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            `;
+
+            content.innerHTML = `
+                <h2 style="color: var(--accent); margin-bottom: 20px;">Détails de l'utilisateur</h2>
+                <pre style="white-space: pre-wrap; font-family: monospace; font-size: 0.9em; color: var(--text-primary); line-height: 1.6;">${details}</pre>
+                <div style="margin-top: 20px; display: flex; gap: 10px;">
+                    <button class="btn-danger" onclick="deleteUser('${userId}', '${user.username}'); this.closest('div[style*=fixed]').remove();" style="flex: 1;">🗑️ Supprimer</button>
+                    <button class="btn-secondary" onclick="this.closest('div[style*=fixed]').remove();" style="flex: 1;">Fermer</button>
+                </div>
+            `;
+
+            modal.appendChild(content);
+            modal.onclick = (e) => {
+                if (e.target === modal) modal.remove();
+            };
+            document.body.appendChild(modal);
+        }
+
+        async function deleteVocabWord(wordId, korean) {
+            if (!confirm(`⚠️ Supprimer le mot "${korean}" ?\n\nCette action est irréversible.`)) {
+                return;
+            }
+
+            const { error } = await client
+                .from('vocabulary')
+                .delete()
+                .eq('id', wordId);
+
+            if (error) {
+                alert('❌ Erreur: ' + error.message);
+            } else {
+                alert('✅ Mot supprimé avec succès');
+                loadAdminData();
+                displayVocab();
+                updateWordCounter();
+            }
+        }
+
+        async function cleanInactiveUsers() {
+            if (!confirm('⚠️ ATTENTION: Cela supprimera tous les utilisateurs qui n\'ont JAMAIS joué (0 sessions).\n\nContinuer ?')) {
+                return;
+            }
+
+            // Get all users and sessions
+            const { data: users } = await client.from('users').select('id, username');
+            const { data: sessions } = await client.from('user_sessions').select('user_id');
+
+            if (!users || !sessions) {
+                alert('❌ Erreur de chargement des données');
+                return;
+            }
+
+            // Find users with no sessions
+            const activeUserIds = new Set(sessions.map(s => s.user_id));
+            const inactiveUsers = users.filter(u => !activeUserIds.has(u.id));
+
+            if (inactiveUsers.length === 0) {
+                alert('ℹ️ Aucun utilisateur inactif à supprimer');
+                return;
+            }
+
+            if (!confirm(`Supprimer ${inactiveUsers.length} utilisateur(s) inactif(s) ?\n\n${inactiveUsers.map(u => u.username).join(', ')}`)) {
+                return;
+            }
+
+            let deleted = 0;
+            for (const user of inactiveUsers) {
+                const { error } = await client.from('users').delete().eq('id', user.id);
+                if (!error) deleted++;
+            }
+
+            alert(`✅ ${deleted} utilisateur(s) inactif(s) supprimé(s)`);
+            loadAdminData();
+        }
+
+        function filterVocabByCategory() {
+            // Cette fonction est maintenant appelée automatiquement lors du changement de sélection
+            loadAdminData();
         }
 
         init();
