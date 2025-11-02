@@ -2286,6 +2286,7 @@ async function getWordsForSession(category) {
             const matched = window.memoryMatched;
             const flipped = window.memoryFlipped;
 
+            // Ne pas autoriser plus de 2 cartes retournées ou cartes déjà matchées
             if (matched.includes(idx) || flipped.includes(idx) || flipped.length >= 2) return;
 
             flipped.push(idx);
@@ -2304,8 +2305,9 @@ async function getWordsForSession(category) {
                     card2.matched = true;
                     matched.push(flipped[0]);
                     matched.push(flipped[1]);
+                    // Vider immédiatement pour permettre de cliquer sur d'autres cartes
+                    window.memoryFlipped = [];
                     setTimeout(() => {
-                        window.memoryFlipped = [];
                         showMemory();
                     }, 500);
                 } else {
