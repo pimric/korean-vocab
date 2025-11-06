@@ -2041,6 +2041,30 @@ async function getWordsForSession(category) {
             document.getElementById('gameContainer').style.display = 'none';
         }
 
+// Helper function to get conjugation distractors
+function getConjugationDistractors(currentWord, allVocab, count = 3) {
+    const distractors = [];
+    const correctConjugation = currentWord.conjugations.present;
+
+    // Filter out the current word and non-verbs
+    const otherVerbs = allVocab.filter(
+        v => v.id !== currentWord.id && v.category === 'Verbes' && v.conjugations && v.conjugations.present
+    );
+
+    // Collect unique conjugations from other verbs
+    const availableConjugations = [...new Set(otherVerbs.map(v => v.conjugations.present))];
+
+    // Add random distractors, ensuring they are not the correct answer
+    while (distractors.length < count && availableConjugations.length > 0) {
+        const randomIndex = Math.floor(Math.random() * availableConjugations.length);
+        const potentialDistractor = availableConjugations.splice(randomIndex, 1)[0];
+        if (potentialDistractor !== correctConjugation) {
+            distractors.push(potentialDistractor);
+        }
+    }
+    return distractors;
+}
+
         function showQuizQuestion() {
             const container = document.getElementById('gameContainer');
             if (currentGameIndex >= currentGameSet.length) {
@@ -2071,12 +2095,23 @@ async function getWordsForSession(category) {
             }
 
             const current = currentGameSet[currentGameIndex];
-            const options = [current.french];
-            const otherVocab = currentGameSet.filter(v => v.id !== current.id);
+            let questionText;
+            let correctAnswer;
+            let options = [];
 
-            for (let i = 0; i < 3 && otherVocab.length > 0; i++) {
-                const random = otherVocab.splice(Math.floor(Math.random() * otherVocab.length), 1)[0];
-                options.push(random.french);
+            if (current.category === 'Verbes' && current.conjugations && current.conjugations.present) {
+                questionText = `${current.conjugations.infinitive} (Présent)`;
+                correctAnswer = current.conjugations.present;
+                options = [correctAnswer, ...getConjugationDistractors(current, allVocabulary, 3)];
+            } else {
+                questionText = current.korean;
+                correctAnswer = current.french;
+                const otherVocab = currentGameSet.filter(v => v.id !== current.id);
+                options = [correctAnswer];
+                for (let i = 0; i < 3 && otherVocab.length > 0; i++) {
+                    const random = otherVocab.splice(Math.floor(Math.random() * otherVocab.length), 1)[0];
+                    options.push(random.french);
+                }
             }
 
             options.sort(() => Math.random() - 0.5);
@@ -2087,24 +2122,24 @@ async function getWordsForSession(category) {
                         <div class="quiz-type">Question ${currentGameIndex + 1}/${currentGameSet.length}</div>
                         <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
                     </div>
-                    <div class="quiz-word">${current.korean}</div>
+                    <div class="quiz-word">${questionText}</div>
                     <div class="quiz-options">
                         ${options.map((opt, idx) => `
-                            <button class="quiz-option" onclick="checkQuizAnswer(${currentGameIndex}, ${idx})">${opt}</button>
+                            <button class="quiz-option" onclick="checkQuizAnswer(${currentGameIndex}, ${idx}, '${correctAnswer.replace(/'/g, "\'")}')">${opt}</button>
                         `).join('')}
                     </div>
                 </div>
             `;
         }
 
-        function checkQuizAnswer(questionIndex, selectedIdx) {
+        function checkQuizAnswer(questionIndex, selectedIdx, expectedAnswer) {
             // ========== NOUVEAU ==========
             questionsAnswered++;
             // ========== FIN NOUVEAU ==========
             const current = currentGameSet[questionIndex];
             const buttons = document.querySelectorAll('.quiz-option');
             
-            const correctIdx = Array.from(buttons).findIndex(btn => btn.textContent === current.french);
+            const correctIdx = Array.from(buttons).findIndex(btn => btn.textContent === expectedAnswer);
             
             if (selectedIdx === correctIdx) {
                 window.quizCorrectCount = (window.quizCorrectCount || 0) + 1;
@@ -2364,14 +2399,25 @@ async function getWordsForSession(category) {
             }
 
             const current = currentGameSet[currentGameIndex];
+            let questionText;
+            let promptText;
+
+            if (current.category === 'Verbes' && current.conjugations && current.conjugations.present) {
+                questionText = `${current.french} (Présent)`;
+                promptText = 'Écris la conjugaison au présent';
+            } else {
+                questionText = current.french;
+                promptText = 'Écris le mot en coréen';
+            }
+
             container.innerHTML = `
                 <div class="quiz-container">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                         <div class="quiz-type">Écriture ${currentGameIndex + 1}/${currentGameSet.length}</div>
                         <button class="btn-secondary" style="padding: 8px 16px; font-size: 0.9em;" onclick="resetGames()">← Retour</button>
                     </div>
-                    <div class="quiz-word">${current.french}</div>
-                    <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 15px;">Écris le mot en coréen</div>
+                    <div class="quiz-word">${questionText}</div>
+                    <div style="font-size: 0.9em; color: var(--text-light); margin-bottom: 15px;">${promptText}</div>
                     <input type="text" id="writingInput" class="writing-input" placeholder="Tape ici..." onkeypress="if(event.key==='Enter') checkWritingAnswer()">
                     <div id="writingFeedback" class="writing-feedback"></div>
                     <div class="button-group">
@@ -2393,7 +2439,9 @@ async function getWordsForSession(category) {
             questionsAnswered++;
             // ========== FIN NOUVEAU ==========
 
-            if (input === current.korean) {
+            const expectedAnswer = (current.category === 'Verbes' && current.conjugations) ? current.conjugations.present : current.korean;
+
+            if (input === expectedAnswer) {
                 window.writingCorrectCount = (window.writingCorrectCount || 0) + 1;
                 feedback.textContent = '✅ Correct !';
                 feedback.className = 'writing-feedback correct';
@@ -2402,7 +2450,7 @@ async function getWordsForSession(category) {
                     showWritingQuestion();
                 }, 1500);
             } else {
-                feedback.textContent = `❌ Non, c'est "${current.korean}"`;
+                feedback.textContent = `❌ Non, c'est "${expectedAnswer}"`;
                 feedback.className = 'writing-feedback incorrect';
             }
         }
