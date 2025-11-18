@@ -691,7 +691,7 @@ function getPresentTense(infinitive) {
 async function addWords() {
     const input = document.getElementById('newWords').value.trim();
     const category = document.getElementById('category').value;
-    const userName = document.getElementById('userName').value.trim() || 
+    const userName = document.getElementById('userName').value.trim() ||
                     (currentUser ? currentUser.username : 'Anonyme');
 
     if (!input) {
@@ -699,15 +699,35 @@ async function addWords() {
         return;
     }
 
+    // Fetch existing words to prevent duplicates
+    const { data: existingWordsData, error: fetchError } = await client
+        .from('vocabulary')
+        .select('korean');
+
+    if (fetchError) {
+        alert('❌ Erreur lors de la vérification des doublons: ' + fetchError.message);
+        return;
+    }
+
+    const existingKoreanWords = new Set(existingWordsData.map(w => w.korean));
     const lines = input.split('\n').filter(line => line.trim());
     const wordsToAdd = [];
+    const wordsSkipped = [];
 
     lines.forEach(line => {
         const parts = line.split(',').map(p => p.trim());
         if (parts.length === 2) {
+            const koreanWord = parts[0];
+            const frenchWord = parts[1];
+
+            if (existingKoreanWords.has(koreanWord)) {
+                wordsSkipped.push(koreanWord);
+                return; // Skip to next iteration
+            }
+
             const newWord = {
-                korean: parts[0],
-                french: parts[1],
+                korean: koreanWord,
+                french: frenchWord,
                 category: category,
                 added_by: userName
             };
@@ -723,21 +743,32 @@ async function addWords() {
             }
 
             wordsToAdd.push(newWord);
+            existingKoreanWords.add(koreanWord); // Also prevent duplicates within the same batch
         }
     });
 
-    if (wordsToAdd.length === 0) {
-        alert('Format invalide ! Utilise: coréen, français');
-        return;
+    let message = '';
+
+    if (wordsToAdd.length > 0) {
+        const { error } = await client.from('vocabulary').insert(wordsToAdd);
+        if (error) {
+            message += `❌ Erreur lors de l'ajout: ${error.message}\n`;
+        } else {
+            document.getElementById('newWords').value = '';
+            message += `✅ ${wordsToAdd.length} mot(s) ajouté(s) !\n`;
+        }
     }
 
-    const { error } = await client.from('vocabulary').insert(wordsToAdd);
+    if (wordsSkipped.length > 0) {
+        message += `ℹ️ ${wordsSkipped.length} mot(s) ignoré(s) car déjà existant(s): ${wordsSkipped.join(', ')}\n`;
+    }
 
-    if (error) {
-        alert('❌ Erreur: ' + error.message);
+    if (message) {
+        alert(message.trim());
+    } else if (lines.length > 0) {
+        alert('Aucun nouveau mot à ajouter. Le format est peut-être invalide ou les mots existent déjà.');
     } else {
-        document.getElementById('newWords').value = '';
-        alert(`✅ ${wordsToAdd.length} mot(s) ajouté(s) !`);
+        alert('Format invalide ! Utilise: coréen, français');
     }
 }
 
