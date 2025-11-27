@@ -1,0 +1,206 @@
+Vocabulaire Chapitres 1-3 :
+
+# NOMBRES NATIFS CORÉENS
+하나 - un
+둘 - deux
+셋 - trois
+넷 - quatre
+다섯 - cinq
+여섯 - six
+일곱 - sept
+여덟 - huit
+아홉 - neuf
+열 - dix
+열하나 - onze
+열둘 - douze
+스물 - vingt
+서른 - trente
+마흔 - quarante
+쉰 - cinquante
+예순 - soixante
+일흔 - soixante-dix
+여든 - quatre-vingts
+아흔 - quatre-vingt-dix
+
+# NOMBRES SINO-CORÉENS
+영 - zéro
+공 - zéro (pour numéros)
+일 - un
+이 - deux
+삼 - trois
+사 - quatre
+오 - cinq
+육 - six
+칠 - sept
+팔 - huit
+구 - neuf
+십 - dix
+이십 - vingt
+삼십 - trente
+사십 - quarante
+오십 - cinquante
+육십 - soixante
+칠십 - soixante-dix
+팔십 - quatre-vingts
+구십 - quatre-vingt-dix
+백 - cent
+천 - mille
+만 - dix mille
+
+# TEMPS (MOIS, JOURS, DATE)
+월 - mois
+일 - jour
+시 - heure
+분 - minute
+일월 - janvier
+이월 - février
+삼월 - mars
+사월 - avril
+오월 - mai
+유월 - juin
+칠월 - juillet
+팔월 - août
+구월 - septembre
+시월 - octobre
+십일월 - novembre
+십이월 - décembre
+오늘 - aujourd'hui
+며칠 - quel jour (du mois)
+몇 월 - quel mois
+몇 시 - quelle heure
+
+# SAISONS
+봄 - printemps
+여름 - été
+가을 - automne
+겨울 - hiver
+
+# EXPRESSIONS
+오늘 며칠이에요? - Quelle est la date aujourd'hui ?
+오늘 몇 월 며칠이에요? - Quelle est la date aujourd'hui ?
+몇 월이에요? - Quel mois sommes-nous ?
+어디에 있어요? - Où est-ce ?
+어디에서 와요? - D'où venez-vous ?
+어디를 가요? - Où allez-vous ?
+몇 시예요? - Quelle heure est-il ?
+뭐 있어요? - Qu'y a-t-il ?
+어디 있어요? - Où est-ce ?
+네, 알겠어요 - Oui, j'ai compris
+잘 모르겠어요 - Je ne sais pas bien
+안 나왔어요 - Il/Elle n'est pas sorti(e)
+예를 들면 - Par exemple
+
+# VERBES
+있다 - être (présence/existence)
+받다 - recevoir
+가다 - aller
+오다 - venir
+나오다 - sortir
+알다 - savoir
+모르다 - ne pas savoir
+
+# CONJUGAISON - Verbes irréguliers en ㅡ
+예쁘다 - être joli
+예뻐요 - c'est joli (forme polie)
+크다 - être grand
+커요 - c'est grand (forme polie)
+쓰다 - écrire
+써요 - j'écris (forme polie)
+바쁘다 - être occupé
+바빠요 - je suis occupé (forme polie)
+
+# CONJUGAISON - Verbes irréguliers en ㄹ
+배부르다 - être rassasié
+배불러요 - je suis rassasié (forme polie)
+나쁘다 - être mauvais
+나빠요 - c'est mauvais (forme polie)
+
+# CONJUGAISON - Verbes en ㄱ
+잠그다 - fermer
+잠가요 - je ferme (forme polie)
+
+# LIEUX
+가게 - magasin
+역 - gare
+지하철 - métro
+시장 - marché
+마트 - supermarché
+약국 - pharmacie
+병원 - hôpital
+카페 - café
+호텔 - hôtel
+은행 - banque
+영화관 - cinéma
+교실 - salle de classe
+집 - maison
+
+# PRÉPOSITIONS DE LIEU
+앞 - devant
+뒤 - derrière
+옆 - à côté
+안 - dans
+밖 - dehors
+위 - sur
+아래 - en dessous
+밑 - sous
+사이 - entre
+
+# OBJETS
+가방 - sac
+책 - livre
+연필 - crayon
+종이 - papier
+가위 - ciseaux
+의자 - chaise
+책상 - bureau (meuble)
+
+# PERSONNES
+의사 - médecin
+가수 - chanteur
+남자 - homme
+여자 - femme
+어린이 - enfant
+사람 - personne
+
+# TRANSPORTS
+버스 - bus
+전화 - téléphone
+번호 - numéro
+
+# NOURRITURE
+라면 - ramyeon
+차 - thé
+
+# CULTURE
+드라마 - série
+
+# ANIMAUX
+소 - vache
+
+# COMPTEURS
+명 - compteur pour personnes
+마리 - compteur pour animaux
+개 - compteur pour objets
+병 - compteur pour bouteilles
+권 - compteur pour livres
+
+# GRAMMAIRE
+이/가 - particule du sujet
+은/는 - particule du thème
+을/를 - particule d'objet
+에 - particule de lieu (statique)
+에서 - particule de lieu (action)
+로 - particule de direction
+와/과 - particule avec/et
+
+# ADJECTIFS
+좋다 - être bon
+작다 - être petit
+많다 - être nombreux
+적다 - être peu
+춥다 - avoir froid
+덥다 - avoir chaud
+
+# EXPRESSIONS TEMPORELLES
+추울 때 - quand il fait froid
+더울 때 - quand il fait chaud
