@@ -23,6 +23,7 @@
 
         <div class="tabs">
             <button class="tab-btn active" data-tab="jeux">🎮 Jeux</button>
+            <button class="tab-btn" data-tab="lecons">📖 Leçons</button>
             <button class="tab-btn" data-tab="vocab">📚 Vocabulaire</button>
             <button class="tab-btn" data-tab="compte">👤 Mon Compte</button>
             <button class="tab-btn" data-tab="admin">🔐 Admin</button>
@@ -162,6 +163,36 @@
                 </div>
             </div>
             <div id="gameContainer" style="display: none;"></div>
+        </div>
+
+        <!-- TAB LEÇONS -->
+        <div id="lecons" class="tab-content">
+            <div class="form-section">
+                <h2>📖 Leçons King Sejong</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9em;">
+                    Programme officiel King Sejong Institute — Le Coréen Pratique
+                </p>
+
+                <!-- Sélecteur de volume -->
+                <div class="volume-selector">
+                    <button class="volume-btn active" data-volume="1" onclick="selectVolume(1)">
+                        Vol. 1 — Débutant
+                    </button>
+                    <button class="volume-btn" data-volume="2" onclick="selectVolume(2)">
+                        Vol. 2 — Intermédiaire
+                    </button>
+                </div>
+
+                <!-- Grille des leçons -->
+                <div id="lessonsGrid" class="lessons-grid">
+                    <div style="text-align:center; padding:30px; grid-column: 1/-1;">
+                        <span class="loading"></span>
+                    </div>
+                </div>
+
+                <!-- Détail d'une leçon (caché par défaut) -->
+                <div id="lessonDetail" style="display:none;"></div>
+            </div>
         </div>
 
         <!-- TAB VOCABULAIRE -->

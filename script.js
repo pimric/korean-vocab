@@ -47,8 +47,10 @@ function switchTab(tabId) {
     // Action spécifique à l'onglet
     if (tabId === 'admin' && adminLoggedIn) {
         loadAdminData();
-    } else if (tabId === 'account' && currentUser) {
+    } else if (tabId === 'compte' && currentUser) {
         loadUserStats();
+    } else if (tabId === 'lecons') {
+        loadLessons();
     }
 }
 
@@ -1712,7 +1714,7 @@ async function deleteUser(id, username) {
     await client.from('game_results').delete().eq('user_id', id);
     
     // Puis supprimer l'utilisateur
-    const { error } = await client.from('users').delete().eq('id', wordId);
+    const { error } = await client.from('users').delete().eq('id', id);
     
     if (error) {
         alert('❌ Erreur: ' + error.message);
@@ -1862,4 +1864,190 @@ async function cleanInactiveUsers() {
     
     alert(`✅ ${inactiveUsers.length} utilisateur(s) supprimé(s)`);
     loadAdminData();
+}
+
+// ========== LEÇONS KING SEJONG ==========
+const VOL2_LESSON_OFFSET = 14; // Vol.2 lessons stockées en 15-28
+let currentVolume = 1;
+
+function selectVolume(vol) {
+    currentVolume = vol;
+    document.querySelectorAll('.volume-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.volume-btn[data-volume="${vol}"]`).classList.add('active');
+    loadLessons();
+}
+
+async function loadLessons() {
+    const grid = document.getElementById('lessonsGrid');
+    grid.style.display = 'grid';
+    grid.innerHTML = '<div style="text-align:center;padding:30px;grid-column:1/-1;"><span class="loading"></span></div>';
+    document.getElementById('lessonDetail').style.display = 'none';
+
+    const minNum = currentVolume === 1 ? 1 : VOL2_LESSON_OFFSET + 1;
+    const maxNum = currentVolume === 1 ? VOL2_LESSON_OFFSET : VOL2_LESSON_OFFSET + 14;
+
+    const { data: lessons, error } = await client
+        .from('lessons')
+        .select('*')
+        .gte('lesson_number', minNum)
+        .lte('lesson_number', maxNum)
+        .order('lesson_number');
+
+    if (error || !lessons || lessons.length === 0) {
+        grid.innerHTML = '<p class="empty-message" style="grid-column:1/-1;">Aucune leçon trouvée. Lance <code>node importer_king_sejong.js</code> pour importer les données.</p>';
+        return;
+    }
+
+    const { data: items } = await client
+        .from('items')
+        .select('lesson_number, type')
+        .gte('lesson_number', minNum)
+        .lte('lesson_number', maxNum);
+
+    const counts = {};
+    (items || []).forEach(item => {
+        if (!counts[item.lesson_number]) counts[item.lesson_number] = { vocabulary: 0, expression: 0, grammar: 0 };
+        counts[item.lesson_number][item.type] = (counts[item.lesson_number][item.type] || 0) + 1;
+    });
+
+    grid.innerHTML = lessons.map(lesson => {
+        const displayNum = currentVolume === 1 ? lesson.lesson_number : lesson.lesson_number - VOL2_LESSON_OFFSET;
+        const c = counts[lesson.lesson_number] || {};
+        const total = (c.vocabulary || 0) + (c.expression || 0) + (c.grammar || 0);
+        return `
+            <div class="lesson-card" onclick="showLesson(${lesson.lesson_number})">
+                <div class="lesson-number">Leçon ${displayNum}</div>
+                <div class="lesson-title-ko">${lesson.title_ko}</div>
+                <div class="lesson-title-fr">${lesson.title_fr}</div>
+                <div class="lesson-topic-badge">${lesson.topic_fr}</div>
+                <div class="lesson-stats">
+                    ${c.vocabulary ? `<span>📝 ${c.vocabulary} mots</span>` : ''}
+                    ${c.expression ? `<span>💬 ${c.expression} expressions</span>` : ''}
+                    ${c.grammar ? `<span>📐 ${c.grammar} grammaire</span>` : ''}
+                    ${total === 0 ? '<span>Aucun contenu</span>' : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+async function showLesson(lessonNumber) {
+    const grid = document.getElementById('lessonsGrid');
+    const detail = document.getElementById('lessonDetail');
+    grid.style.display = 'none';
+    detail.style.display = 'block';
+    detail.innerHTML = '<div style="text-align:center;padding:30px;"><span class="loading"></span></div>';
+
+    const [{ data: lesson }, { data: items }] = await Promise.all([
+        client.from('lessons').select('*').eq('lesson_number', lessonNumber).single(),
+        client.from('items').select('*').eq('lesson_number', lessonNumber).order('sort_order')
+    ]);
+
+    if (!lesson) {
+        detail.innerHTML = '<p class="empty-message">Leçon introuvable.</p>';
+        return;
+    }
+
+    const displayNum = currentVolume === 1 ? lesson.lesson_number : lesson.lesson_number - VOL2_LESSON_OFFSET;
+    const vocabulary = (items || []).filter(i => i.type === 'vocabulary');
+    const expressions = (items || []).filter(i => i.type === 'expression');
+    const grammar = (items || []).filter(i => i.type === 'grammar');
+
+    const renderItems = (list) => list.map(item => `
+        <div class="lesson-item-card">
+            <div>
+                <div class="lesson-item-ko">${item.korean}</div>
+                ${item.grammar_explanation ? `<div class="lesson-grammar-note">${item.grammar_explanation}</div>` : ''}
+            </div>
+            <div class="lesson-item-fr">${item.french}</div>
+        </div>
+    `).join('');
+
+    detail.innerHTML = `
+        <button class="btn-secondary" onclick="backToLessons()" style="margin-bottom:20px;">← Retour aux leçons</button>
+
+        <div class="lesson-detail-header">
+            <div class="lesson-detail-num">Leçon ${displayNum}</div>
+            <div>
+                <div class="lesson-detail-title-ko">${lesson.title_ko}</div>
+                <div class="lesson-detail-title-fr">${lesson.title_fr}</div>
+                <div class="lesson-topic-badge" style="margin-top:6px;">${lesson.topic_fr}</div>
+            </div>
+        </div>
+
+        <div class="lesson-game-buttons">
+            <button class="lesson-game-btn" onclick="startLessonGame(${lessonNumber}, 'quiz')">❓ Quiz</button>
+            <button class="lesson-game-btn" onclick="startLessonGame(${lessonNumber}, 'quiz-inverse')">🔄 Quiz Inverse</button>
+            <button class="lesson-game-btn" onclick="startLessonGame(${lessonNumber}, 'cartes')">🃏 Cartes</button>
+            <button class="lesson-game-btn" onclick="startLessonGame(${lessonNumber}, 'ecriture')">✍️ Écriture</button>
+        </div>
+
+        ${vocabulary.length > 0 ? `
+            <div class="lesson-section-title">📝 Vocabulaire (${vocabulary.length})</div>
+            ${renderItems(vocabulary)}
+        ` : ''}
+
+        ${expressions.length > 0 ? `
+            <div class="lesson-section-title">💬 Expressions (${expressions.length})</div>
+            ${renderItems(expressions)}
+        ` : ''}
+
+        ${grammar.length > 0 ? `
+            <div class="lesson-section-title">📐 Grammaire (${grammar.length})</div>
+            ${renderItems(grammar)}
+        ` : ''}
+    `;
+}
+
+function backToLessons() {
+    document.getElementById('lessonDetail').style.display = 'none';
+    document.getElementById('lessonsGrid').style.display = 'grid';
+}
+
+async function startLessonGame(lessonNumber, gameType) {
+    const { data: items } = await client
+        .from('items')
+        .select('*')
+        .eq('lesson_number', lessonNumber)
+        .eq('type', 'vocabulary');
+
+    if (!items || items.length === 0) {
+        alert('Aucun vocabulaire disponible pour cette leçon.');
+        return;
+    }
+
+    const displayNum = currentVolume === 1 ? lessonNumber : lessonNumber - VOL2_LESSON_OFFSET;
+    const sessionLabel = `Vol.${currentVolume} L.${displayNum}`;
+
+    // Convertir au format vocabulary pour les jeux existants
+    const words = items.map(item => ({
+        id: `lesson_${item.id}`,
+        korean: item.korean,
+        french: item.french,
+        category: sessionLabel,
+        created_at: new Date().toISOString()
+    }));
+
+    currentGame = gameType;
+    currentGameSet = words.sort(() => Math.random() - 0.5).slice(0, SESSION_WORD_LIMIT);
+    currentGameIndex = 0;
+    window.quizCorrectCount = 0;
+    window.memoryCards = null;
+    window.memoryMatched = null;
+    window.memoryFlipped = null;
+
+    // Basculer vers l'onglet jeux
+    switchTab('jeux');
+
+    await startSession(gameType, sessionLabel);
+
+    document.querySelector('.games-grid').parentElement.style.display = 'none';
+    document.querySelector('.mode-selector').style.display = 'none';
+    const container = document.getElementById('gameContainer');
+    container.style.display = 'block';
+
+    if (gameType === 'quiz') showQuizQuestion();
+    else if (gameType === 'quiz-inverse') showQuizInverseQuestion();
+    else if (gameType === 'cartes') showFlashcard();
+    else if (gameType === 'ecriture') showWritingQuestion();
 }

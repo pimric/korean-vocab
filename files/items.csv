@@ -1,0 +1,438 @@
+id,lesson_number,type,korean,french,grammar_explanation,grammar_form_note,example_sentence,sort_order
+1,1,vocabulary,꽃다발,bouquet de fleurs,,,,1
+2,1,vocabulary,향수,parfum,,,,2
+3,1,vocabulary,손목시계,montre bracelet,,,,3
+4,1,vocabulary,넥타이,cravate,,,,4
+5,1,vocabulary,목도리,cache-nez / écharpe,,,,5
+6,1,vocabulary,화장품,cosmétiques,,,,6
+7,1,vocabulary,장갑,gants,,,,7
+8,1,vocabulary,만년필,stylo plume,,,,8
+9,1,vocabulary,와인,vin,,,,9
+10,1,vocabulary,소설책,roman,,,,10
+11,1,vocabulary,스마트폰,smartphone,,,,11
+12,1,vocabulary,열쇠고리,porte-clés,,,,12
+13,1,vocabulary,콘서트 입장권,billet de concert,,,,13
+14,1,vocabulary,상품권,bon cadeau / chèque-cadeau,,,,14
+15,1,vocabulary,그릇,vaisselle / bols,,,,15
+16,1,vocabulary,엽서,carte postale,,,,16
+17,1,vocabulary,기념품,souvenir,,,,17
+18,1,vocabulary,금반지,bague en or,,,,18
+19,1,vocabulary,벽시계,horloge murale,,,,19
+20,1,vocabulary,대학원,école doctorale / master,,,,20
+21,1,vocabulary,졸업식,cérémonie de remise des diplômes,,,,21
+22,1,vocabulary,졸업하다,obtenir son diplôme,,,,22
+23,1,vocabulary,합격하다,réussir un examen,,,,23
+24,1,vocabulary,취직하다,trouver un emploi,,,,24
+25,1,vocabulary,결혼하다,se marier,,,,25
+26,1,vocabulary,아이를 낳다,accoucher / mettre un enfant au monde,,,,26
+27,1,vocabulary,깜짝 선물,cadeau surprise,,,,27
+28,1,vocabulary,깜짝 파티,fête surprise,,,,28
+29,1,vocabulary,케이크,gâteau,,,,29
+30,1,expression,축하해요,félicitations,,,,1
+31,1,expression,정말 축하해요,toutes mes félicitations,,,,2
+32,1,expression,꼭 찍으세요,n'oubliez pas de prendre des photos,,,,3
+33,1,expression,걱정 마세요,ne vous inquiétez pas,,,,4
+34,1,grammar,"이나/나, -거나",Relie deux ou plusieurs noms/actions pour exprimer 'ou' — indique la possibilité de choisir entre plusieurs options,Relie deux ou plusieurs noms/actions pour exprimer 'ou' — indique la possibilité de choisir entre plusieurs options,"이나/나 s'utilise après un nom, -거나 après un verbe ou adjectif",빵이나 밥을 먹어요 (Je mange du pain ou du riz),1
+35,1,grammar,-아서/-어서/-여서,Relie deux actions séquentielles étroitement liées,Relie deux actions séquentielles étroitement liées,La première action mène naturellement à la seconde,백화점에 가서 선물을 사요 (Je vais au grand magasin pour acheter un cadeau),2
+36,2,vocabulary,잘 지내다,aller bien,,,,1
+37,2,vocabulary,오랜만이다,cela fait longtemps,,,,2
+38,2,vocabulary,어떻게 지내다,comment allez-vous,,,,3
+39,2,vocabulary,별일 없다,rien de spécial,,,,4
+40,2,vocabulary,얼굴이 좋아 보이다,avoir l'air bien,,,,5
+41,2,vocabulary,얼굴이 안 좋아 보이다,avoir l'air fatigué,,,,6
+42,2,vocabulary,일이 많다,avoir beaucoup de travail,,,,7
+43,2,vocabulary,일이 별로 없다,ne pas avoir beaucoup de travail,,,,8
+44,2,vocabulary,한가하다,être libre / ne pas être occupé,,,,9
+45,2,vocabulary,그냥 그래요,comme ci comme ça,,,,10
+46,2,vocabulary,덕분에,grâce à vous,,,,11
+47,2,vocabulary,학교에 들어가다,entrer à l'école,,,,12
+48,2,vocabulary,회사에 들어가다,rejoindre une entreprise,,,,13
+49,2,vocabulary,친구를 사귀다,se faire des amis,,,,14
+50,2,vocabulary,일자리를 알아보다,chercher un emploi,,,,15
+51,2,vocabulary,여자/남자 친구가 생기다,avoir une petite amie / un petit ami,,,,16
+52,2,vocabulary,대학원에 입학하다,entrer en master/doctorat,,,,17
+53,2,vocabulary,휴가를 다녀오다,revenir de vacances,,,,18
+54,2,vocabulary,방학을 하다,commencer les vacances scolaires,,,,19
+55,2,vocabulary,개학을 하다,retourner à l'école,,,,20
+56,2,vocabulary,회사를 그만두다,quitter son emploi,,,,21
+57,2,vocabulary,일을 잠시 쉬다,faire une pause dans le travail,,,,22
+58,2,vocabulary,회사를 옮기다,changer d'entreprise,,,,23
+59,2,vocabulary,얼마 전,il y a quelques jours,,,,24
+60,2,vocabulary,잠시,pendant un court moment,,,,25
+61,2,expression,잘 지내셨습니까?,comment allez-vous ? (formel),,,,1
+62,2,expression,덕분에 잘 지냈어요,"je vais bien, merci",,,,2
+63,2,expression,그동안 어떻게 지내셨습니까?,comment vous êtes-vous porté tout ce temps ?,,,,3
+64,2,expression,오랜만입니다,cela fait longtemps (formel),,,,4
+65,2,grammar,"-습니다/-브니다, -습니까?/-브니까?",Forme polie formelle pour s'adresser à un supérieur ou une personne âgée,Forme polie formelle pour s'adresser à un supérieur ou une personne âgée,"-습니다/-니다 pour les déclarations, -습니까?/-브니까? pour les questions",어떻게 지내십니까? (Comment allez-vous ?),1
+66,2,grammar,-고 (séquence),Relie deux actions dans l'ordre chronologique,Relie deux actions dans l'ordre chronologique,L'état de la première action n'est pas maintenu dans la seconde,밥을 먹고 커피를 마셨어요 (J'ai mangé puis bu du café),2
+67,3,vocabulary,지하철,métro,,,,1
+68,3,vocabulary,버스,bus,,,,2
+69,3,vocabulary,택시,taxi,,,,3
+70,3,vocabulary,기차,train,,,,4
+71,3,vocabulary,비행기,avion,,,,5
+72,3,vocabulary,배,bateau,,,,6
+73,3,vocabulary,오토바이,moto,,,,7
+74,3,vocabulary,자전거,vélo,,,,8
+75,3,vocabulary,걸어서 가다,aller à pied,,,,9
+76,3,vocabulary,타다,prendre / monter dans,,,,10
+77,3,vocabulary,갈아타다,changer (transport),,,,11
+78,3,vocabulary,내리다,descendre (transport),,,,12
+79,3,vocabulary,횡단보도를 건너다,traverser le passage piétons,,,,13
+80,3,vocabulary,계단으로 가다,prendre les escaliers,,,,14
+81,3,vocabulary,에스컬레이터를 타다,prendre l'escalator,,,,15
+82,3,vocabulary,엘리베이터를 타다,prendre l'ascenseur,,,,16
+83,3,vocabulary,사거리,carrefour,,,,17
+84,3,vocabulary,오른쪽,droite,,,,18
+85,3,vocabulary,왼쪽,gauche,,,,19
+86,3,vocabulary,직진하다,aller tout droit,,,,20
+87,3,vocabulary,보이다,être visible / apparaître,,,,21
+88,3,vocabulary,걸리다,prendre (temps),,,,22
+89,3,vocabulary,얼마나 걸리다,combien de temps cela prend-il,,,,23
+90,3,expression,어떻게 가요?,comment y aller ?,,,,1
+91,3,expression,얼마나 걸려요?,combien de temps faut-il ?,,,,2
+92,3,expression,무엇을 타고 가요?,comment vous déplacez-vous ?,,,,3
+93,3,expression,실례합니다,excusez-moi,,,,4
+94,3,expression,~에서 내리세요,descendez à ~,,,,5
+95,3,expression,~으로 가세요,allez vers ~,,,,6
+96,3,grammar,으로/로,"Indique le moyen, l'outil ou la direction utilisé pour une action","Indique le moyen, l'outil ou la direction utilisé pour une action","으로 après consonne (sauf ㄹ), 로 après voyelle ou ㄹ",지하철로 가요 (Je prends le métro) / 한국어로 말해요 (Je parle en coréen),1
+97,3,grammar,-에서/부터 -까지,Indique la distance ou la durée entre deux points (lieu ou temps),Indique la distance ou la durée entre deux points (lieu ou temps),"에서/부터 = point de départ, 까지 = point d'arrivée","여기에서 시청역까지 10분 걸려요 (De ici à la mairie, ça prend 10 minutes)",2
+98,4,vocabulary,피자,pizza,,,,1
+99,4,vocabulary,샐러드,salade,,,,2
+100,4,vocabulary,케이크,gâteau,,,,3
+101,4,vocabulary,과일,fruits,,,,4
+102,4,vocabulary,떡,gâteau de riz,,,,5
+103,4,vocabulary,샌드위치,sandwich,,,,6
+104,4,vocabulary,음료수,boisson,,,,7
+105,4,vocabulary,맥주,bière,,,,8
+106,4,vocabulary,라면,ramen / nouilles instantanées,,,,9
+107,4,vocabulary,떡볶이,ddukbokki (gâteau de riz épicé),,,,10
+108,4,vocabulary,닭갈비,poulet mariné grillé,,,,11
+109,4,vocabulary,국수,nouilles,,,,12
+110,4,vocabulary,달다,être doux / sucré,,,,13
+111,4,vocabulary,짜다,être salé,,,,14
+112,4,vocabulary,시다,être aigre,,,,15
+113,4,vocabulary,쓰다,être amer,,,,16
+114,4,vocabulary,맵다,être épicé / pimenté,,,,17
+115,4,vocabulary,인분,(nombre de) portions,,,,18
+116,4,vocabulary,시키다,commander,,,,19
+117,4,vocabulary,음료,boisson,,,,20
+118,4,vocabulary,무료,gratuit,,,,21
+119,4,vocabulary,카레,curry,,,,22
+120,4,vocabulary,치킨집,restaurant de poulet,,,,23
+121,4,vocabulary,간장 치킨,poulet sauce soja,,,,24
+122,4,vocabulary,마라탕,soupe épicée (malatang),,,,25
+123,4,expression,잘 먹죠?,"vous mangez bien ~, n'est-ce pas ?",,,,1
+124,4,expression,여기요!,excusez-moi ! (pour appeler le serveur),,,,2
+125,4,expression,~인분 주세요,~ portions s'il vous plaît,,,,3
+126,4,expression,더 필요한 거 없으세요?,avez-vous besoin d'autre chose ?,,,,4
+127,4,expression,잘 먹겠습니다,bon appétit (avant de manger),,,,5
+128,4,expression,맛있게 드세요,bon appétit (dit par le serveur),,,,6
+129,4,grammar,-을래요/-ㄹ래요,Exprime la volonté ou l'intention de faire quelque chose / propose quelque chose,Exprime la volonté ou l'intention de faire quelque chose / propose quelque chose,Selon l'intonation : déclaratif ou interrogatif,같이 영화 보러 갈래요? (Voulez-vous aller voir un film ensemble ?),1
+130,4,grammar,-지요?,Demande confirmation ou accord de l'interlocuteur sur quelque chose que le locuteur sait ou suppose,Demande confirmation ou accord de l'interlocuteur sur quelque chose que le locuteur sait ou suppose,Se contracte souvent en -죠?,"한국은 여름에 비가 많이 오지요? (Il pleut beaucoup en Corée en été, n'est-ce pas ?)",2
+131,5,vocabulary,집 안을 정리하다,ranger la maison,,,,1
+132,5,vocabulary,청소하다,faire le ménage,,,,2
+133,5,vocabulary,빨래하다,faire la lessive,,,,3
+134,5,vocabulary,출근하다,aller travailler,,,,4
+135,5,vocabulary,퇴근하다,finir le travail / rentrer du travail,,,,5
+136,5,vocabulary,장을 보다,faire les courses,,,,6
+137,5,vocabulary,모임에 가다,aller à une réunion,,,,7
+138,5,vocabulary,외출하다,sortir,,,,8
+139,5,vocabulary,일어나다,se lever,,,,9
+140,5,vocabulary,세수하다,se laver le visage,,,,10
+141,5,vocabulary,손을 씻다,se laver les mains,,,,11
+142,5,vocabulary,이를 닦다,se brosser les dents,,,,12
+143,5,vocabulary,머리를 감다,se laver les cheveux,,,,13
+144,5,vocabulary,머리를 말리다,se sécher les cheveux,,,,14
+145,5,vocabulary,면도를 하다,se raser,,,,15
+146,5,vocabulary,목욕하다,prendre un bain,,,,16
+147,5,vocabulary,샤워하다,prendre une douche,,,,17
+148,5,vocabulary,화장을 하다,se maquiller,,,,18
+149,5,vocabulary,화장을 지우다,enlever le maquillage,,,,19
+150,5,vocabulary,로션을 바르다,appliquer de la lotion,,,,20
+151,5,vocabulary,설거지하다,faire la vaisselle,,,,21
+152,5,vocabulary,조깅하다,faire du jogging,,,,22
+153,5,vocabulary,수영,natation,,,,23
+154,5,vocabulary,수영장,piscine,,,,24
+155,5,vocabulary,몸이 가벼워지다,se sentir plus léger,,,,25
+156,5,vocabulary,잠이 잘 오다,bien dormir,,,,26
+157,5,vocabulary,야식,collation nocturne,,,,27
+158,5,expression,아침마다,tous les matins,,,,1
+159,5,expression,~한 후에,après avoir fait ~,,,,2
+160,5,expression,먼저 ~하세요,faites d'abord ~,,,,3
+161,5,expression,~기 전에,avant de faire ~,,,,4
+162,5,grammar,-은 후에/-ㄴ 후에,Indique que la deuxième action se produit après la première,Indique que la deuxième action se produit après la première,"-은 후에 après consonne, -ㄴ 후에 après voyelle ou ㄹ. Peut aussi s'utiliser avec des noms d'action",식사한 후에 이 약을 드세요 (Prenez ce médicament après le repas),1
+163,5,grammar,-고 있다,Indique une action en cours ou continue au moment présent,Indique une action en cours ou continue au moment présent,Pour les supérieurs : -고 계시다. Passé continu : -고 있었어요,지금 밥을 먹고 있어요 (Je suis en train de manger),2
+164,6,vocabulary,습도가 높다,l'humidité est élevée,,,,1
+165,6,vocabulary,소나기가 오다,avoir une averse,,,,2
+166,6,vocabulary,비가 그치다,la pluie s'arrête,,,,3
+167,6,vocabulary,안개가 끼다,il y a du brouillard,,,,4
+168,6,vocabulary,구름이 끼다,il y a des nuages,,,,5
+169,6,vocabulary,햇빛이 강하다,le soleil est fort,,,,6
+170,6,vocabulary,기온이 높다,la température est élevée,,,,7
+171,6,vocabulary,기온이 낮다,la température est basse,,,,8
+172,6,vocabulary,건조하다,être sec / aride,,,,9
+173,6,vocabulary,태풍이 오다,il y a un typhon,,,,10
+174,6,vocabulary,눈이 오다,il neige,,,,11
+175,6,vocabulary,쌀쌀하다,être frais / frisquet,,,,12
+176,6,vocabulary,따뜻하다,être chaud / doux,,,,13
+177,6,vocabulary,덥다,avoir chaud,,,,14
+178,6,vocabulary,춥다,avoir froid,,,,15
+179,6,vocabulary,우기,saison des pluies,,,,16
+180,6,vocabulary,건기,saison sèche,,,,17
+181,6,vocabulary,마스크를 쓰다,porter un masque,,,,18
+182,6,vocabulary,선크림을 바르다,mettre de la crème solaire,,,,19
+183,6,vocabulary,환기를 시키다,aérer,,,,20
+184,6,vocabulary,우산을 챙기다,prendre un parapluie,,,,21
+185,6,vocabulary,겉옷을 준비하다,préparer un vêtement d'extérieur,,,,22
+186,6,vocabulary,황사,poussière jaune (particules fines),,,,23
+187,6,vocabulary,일기 예보,bulletin météo,,,,24
+188,6,vocabulary,밤사이,pendant la nuit,,,,25
+189,6,vocabulary,전국,tout le pays,,,,26
+190,6,vocabulary,반팔,manches courtes,,,,27
+191,6,vocabulary,차이,différence,,,,28
+192,6,expression,날씨가 어때요?,quel temps fait-il ?,,,,1
+193,6,expression,~니까 ~하세요,"parce que ~, faites ~",,,,2
+194,6,expression,소나기니까 금방 그칠 거예요,"c'est une averse, ça va s'arrêter bientôt",,,,3
+195,6,expression,알려 줘서 고마워요,merci de me l'avoir dit,,,,4
+196,6,grammar,-아지다/-어지다/-여지다,Indique un changement d'état progressif,Indique un changement d'état progressif,"-아지다 si dernière voyelle est ㅏ/ㅗ, -어지다 sinon, -여지다 avec 하다 (→해지다)",날씨가 따뜻해졌어요 (Le temps est devenu doux),1
+197,6,grammar,-으니까/-니까,Exprime la raison ou la cause d'une action ou d'un conseil,Exprime la raison ou la cause d'une action ou d'un conseil,"Suivi naturellement de -으세요, -을까요, -아요(suggestif). Plus fort et subjectif que -아서","비가 오니까 우산을 챙기세요 (Il pleut, pensez à prendre votre parapluie)",2
+198,7,vocabulary,전화를 걸다,passer un appel téléphonique,,,,1
+199,7,vocabulary,전화를 받다,répondre au téléphone,,,,2
+200,7,vocabulary,전화를 끊다,raccrocher,,,,3
+201,7,vocabulary,문자 메시지를 보내다,envoyer un message texte,,,,4
+202,7,vocabulary,음성 메시지를 남기다,laisser un message vocal,,,,5
+203,7,vocabulary,통화 중이다,être en ligne / occupé,,,,6
+204,7,vocabulary,부재중 전화가 있다,avoir un appel manqué,,,,7
+205,7,vocabulary,전원을 켜다,allumer (téléphone),,,,8
+206,7,vocabulary,전원을 끄다,éteindre (téléphone),,,,9
+207,7,vocabulary,진동으로 바꾸다,mettre en mode vibreur,,,,10
+208,7,vocabulary,에스엔에스(SNS),réseaux sociaux,,,,11
+209,7,vocabulary,쇼핑을 하다,faire du shopping en ligne,,,,12
+210,7,vocabulary,음악을 듣다,écouter de la musique,,,,13
+211,7,vocabulary,길을 찾다,chercher son chemin,,,,14
+212,7,vocabulary,메모를 하다,prendre des notes,,,,15
+213,7,vocabulary,날씨를 확인하다,vérifier la météo,,,,16
+214,7,vocabulary,성함,nom (honorifique),,,,17
+215,7,vocabulary,연락처,coordonnées / numéro de contact,,,,18
+216,7,vocabulary,레스토랑,restaurant,,,,19
+217,7,vocabulary,예약,réservation,,,,20
+218,7,vocabulary,안과,ophtalmologue,,,,21
+219,7,vocabulary,진료,consultation médicale,,,,22
+220,7,vocabulary,상담,consultation / conseil,,,,23
+221,7,vocabulary,메모를 남기다,laisser un message,,,,24
+222,7,expression,여보세요?,allô ?,,,,1
+223,7,expression,거기 ~이죠?,c'est bien ~ ?,,,,2
+224,7,expression,~ 좀 바꿔 주세요,passez-moi ~ s'il vous plaît,,,,3
+225,7,expression,메시지 남겨 드릴까요?,voulez-vous laisser un message ?,,,,4
+226,7,expression,전화 잘못 거셨어요,vous avez fait un faux numéro,,,,5
+227,7,expression,성함하고 연락처도 알려 주세요,donnez-moi votre nom et vos coordonnées,,,,6
+228,7,grammar,-아 주세요/-어 주세요,Demander poliment à quelqu'un de faire quelque chose,Demander poliment à quelqu'un de faire quelque chose,Pour offrir de l'aide : -아/어 줄까요? / 드릴까요?,창문 좀 닫아 주세요 (Veuillez fermer la fenêtre),1
+229,7,grammar,-으면/-면,Exprime une hypothèse ou une condition pour la proposition suivante,Exprime une hypothèse ou une condition pour la proposition suivante,"-으면 après consonne, -면 après voyelle ou ㄹ. Passé hypothétique : -았으면","시간이 있으면 같이 갈래요? (Si vous avez le temps, voulez-vous venir ?)",2
+230,8,vocabulary,숙소를 정하다,choisir un hébergement,,,,1
+231,8,vocabulary,여행지를 정하다,choisir une destination,,,,2
+232,8,vocabulary,숙소를 예약하다,réserver un hébergement,,,,3
+233,8,vocabulary,비행기표를 예매하다,réserver des billets d'avion,,,,4
+234,8,vocabulary,차를 빌리다,louer une voiture,,,,5
+235,8,vocabulary,환전하다,changer de l'argent,,,,6
+236,8,vocabulary,비자를 받다,obtenir un visa,,,,7
+237,8,vocabulary,여권을 만들다,faire un passeport,,,,8
+238,8,vocabulary,여행자 보험에 들다,souscrire une assurance voyage,,,,9
+239,8,vocabulary,짐을 싸다,faire ses valises,,,,10
+240,8,vocabulary,맛집을 알아보다,rechercher de bons restaurants,,,,11
+241,8,vocabulary,게스트하우스,maison d'hôtes,,,,12
+242,8,vocabulary,왕궁,palais royal,,,,13
+243,8,vocabulary,시내 관광을 하다,visiter le centre-ville,,,,14
+244,8,vocabulary,공연을 보다,voir un spectacle,,,,15
+245,8,vocabulary,온천욕을 하다,prendre un bain thermal,,,,16
+246,8,vocabulary,기념품을 사다,acheter des souvenirs,,,,17
+247,8,vocabulary,해양 스포츠를 하다,faire des sports nautiques,,,,18
+248,8,vocabulary,불꽃놀이를 보다,regarder des feux d'artifice,,,,19
+249,8,vocabulary,놀이공원에 가다,aller à un parc d'attractions,,,,20
+250,8,vocabulary,유람선을 타다,prendre un bateau de croisière,,,,21
+251,8,vocabulary,번지 점프를 하다,faire du saut à l'élastique,,,,22
+252,8,vocabulary,해운대,Haeundae (plage de Busan),,,,23
+253,8,vocabulary,도시락,boîte bento,,,,24
+254,8,vocabulary,오로라,aurores boréales,,,,25
+255,8,vocabulary,알래스카,Alaska,,,,26
+256,8,vocabulary,스페인,Espagne,,,,27
+257,8,vocabulary,숙소,hébergement / logement,,,,28
+258,8,vocabulary,여행 안내 책,guide de voyage,,,,29
+259,8,expression,어디로 여행을 가고 싶어요?,où voulez-vous voyager ?,,,,1
+260,8,expression,숙소는 정했어요?,avez-vous choisi un hébergement ?,,,,2
+261,8,expression,~ 에 가 봤어요?,êtes-vous déjà allé à ~ ?,,,,3
+262,8,expression,어디가 제일 좋았어요?,quel endroit avez-vous préféré ?,,,,4
+263,8,grammar,-으려고 하다/-려고 하다,Exprime un plan ou une intention future,Exprime un plan ou une intention future,"-으려고 하다 après consonne (sauf ㄹ), -려고 하다 après voyelle ou ㄹ",이번 방학에 한국에 가려고 해요 (Je prévois d'aller en Corée ces vacances),1
+264,8,grammar,-아 보다/-어 보다,Exprime une expérience passée ou l'essai de quelque chose,Exprime une expérience passée ou l'essai de quelque chose,"-아 보다 si voyelle ㅏ/ㅗ, -어 보다 sinon, 해 보다 pour 하다. -아 보세요 = suggestion d'essayer",서울에 가 봤어요 (Je suis déjà allé à Séoul) / 한번 먹어 보세요 (Essayez d'en manger),2
+265,9,vocabulary,설레다,ressentir de l'excitation / être impatient,,,,1
+266,9,vocabulary,아쉽다,être dommage / regrettable,,,,2
+267,9,vocabulary,화가 나다,être en colère,,,,3
+268,9,vocabulary,스트레스를 받다,avoir du stress,,,,4
+269,9,vocabulary,신나다,être excité / s'amuser,,,,5
+270,9,vocabulary,심심하다,s'ennuyer,,,,6
+271,9,vocabulary,우울하다,être déprimé,,,,7
+272,9,vocabulary,떨리다,être nerveux / trembler,,,,8
+273,9,vocabulary,기대되다,avoir hâte / être impatient,,,,9
+274,9,vocabulary,친구들을 초대하다,inviter des amis,,,,10
+275,9,vocabulary,친구에게 연락하다,contacter un ami,,,,11
+276,9,vocabulary,약속 시간을 정하다,fixer l'heure du rendez-vous,,,,12
+277,9,vocabulary,약속 날짜를 바꾸다,changer la date du rendez-vous,,,,13
+278,9,vocabulary,약속을 미루다,reporter un rendez-vous,,,,14
+279,9,vocabulary,약속을 취소하다,annuler un rendez-vous,,,,15
+280,9,vocabulary,모임에 참석하다,assister à une réunion,,,,16
+281,9,vocabulary,약속에 늦다,être en retard à un rendez-vous,,,,17
+282,9,vocabulary,한류 축제,festival hallyu,,,,18
+283,9,vocabulary,케이팝 콘테스트,concours K-pop,,,,19
+284,9,vocabulary,바닷가,bord de mer / plage,,,,20
+285,9,vocabulary,특별하다,être spécial,,,,21
+286,9,expression,꼭 오세요,venez absolument,,,,1
+287,9,expression,꼭 갈게요,j'irai absolument,,,,2
+288,9,expression,정말 재미있겠네요,ça a l'air vraiment amusant,,,,3
+289,9,expression,평생 당신만 사랑할게요,je vous aimerai toute ma vie,,,,4
+290,9,grammar,-을 때/-ㄹ 때,Indique le moment ou la période durant laquelle une action/situation se produit,Indique le moment ou la période durant laquelle une action/situation se produit,"-을 때 après consonne, -ㄹ 때 après voyelle. Pour exprimer un état terminé : -았을 때",심심할 때 뭐 해요? (Que faites-vous quand vous vous ennuyez ?),1
+291,9,grammar,-을게요/-ㄹ게요,Exprime l'intention ou la promesse du locuteur à l'auditeur,Exprime l'intention ou la promesse du locuteur à l'auditeur,"-을게요 après consonne, -ㄹ게요 après voyelle. Uniquement à la 1ère personne",제가 연락할게요 (Je vous contacterai),2
+292,10,vocabulary,활발하다,être dynamique / extraverti,,,,1
+293,10,vocabulary,재미있다,être amusant / intéressant,,,,2
+294,10,vocabulary,착하다,être gentil / bon,,,,3
+295,10,vocabulary,부지런하다,être diligent / travailleur,,,,4
+296,10,vocabulary,조용하다,être calme / silencieux,,,,5
+297,10,vocabulary,친절하다,être aimable / gentil,,,,6
+298,10,vocabulary,마음이 넓다,avoir un grand cœur / être généreux,,,,7
+299,10,vocabulary,똑똑하다,être intelligent,,,,8
+300,10,vocabulary,요리를 잘하다,bien cuisiner,,,,9
+301,10,vocabulary,그림을 잘 그리다,bien dessiner,,,,10
+302,10,vocabulary,춤을 잘 추다,bien danser,,,,11
+303,10,vocabulary,마음이 잘 맞다,être sur la même longueur d'onde,,,,12
+304,10,vocabulary,대화가 잘 통하다,bien communiquer / se comprendre,,,,13
+305,10,vocabulary,공통점이 많다,avoir beaucoup de points communs,,,,14
+306,10,vocabulary,성격,personnalité / caractère,,,,15
+307,10,vocabulary,이상형,type idéal,,,,16
+308,10,vocabulary,소개팅,rencontre arrangée,,,,17
+309,10,vocabulary,뮤지컬,comédie musicale,,,,18
+310,10,vocabulary,유머가 있다,avoir de l'humour,,,,19
+311,10,vocabulary,농담을 잘하다,bien plaisanter,,,,20
+312,10,expression,어떤 사람이에요?,quel genre de personne est-ce ?,,,,1
+313,10,expression,취미가 같은 사람,quelqu'un qui a les mêmes loisirs,,,,2
+314,10,expression,잘됐네요,c'est parfait / tant mieux,,,,3
+315,10,expression,직접 연락해 보세요,contactez-le/la directement,,,,4
+316,10,grammar,-은/-ㄴ (adjectif modifier),Adjectif modificateur indiquant l'état actuel d'un nom,Adjectif modificateur indiquant l'état actuel d'un nom,"-은 après consonne, -ㄴ après voyelle. Certains adjectifs en 있다/없다 prennent -는",재미있는 영화를 봤어요 (J'ai vu un film intéressant),1
+317,10,grammar,-는 (verbe modifier),Modificateur verbal au présent pour décrire un nom,Modificateur verbal au présent pour décrire un nom,"Passé : -은/-ㄴ, Futur : -을/-ㄹ",지금 이야기하는 사람이 누구예요? (Qui est la personne qui parle en ce moment ?),2
+318,11,vocabulary,뛰어다니다,courir partout,,,,1
+319,11,vocabulary,떠들다,faire du bruit / bavarder,,,,2
+320,11,vocabulary,의자를 발로 차다,donner des coups de pied dans les chaises,,,,3
+321,11,vocabulary,새치기를 하다,resquiller / passer devant,,,,4
+322,11,vocabulary,쓰레기를 버리다,jeter des déchets,,,,5
+323,11,vocabulary,담배를 피우다,fumer une cigarette,,,,6
+324,11,vocabulary,큰소리로 통화하다,parler fort au téléphone,,,,7
+325,11,vocabulary,낙서를 하다,faire des graffitis,,,,8
+326,11,vocabulary,핸드폰을 끄다,éteindre le téléphone,,,,9
+327,11,vocabulary,핸드폰을 진동으로 하다,mettre le téléphone en mode vibreur,,,,10
+328,11,vocabulary,질서를 지키다,respecter l'ordre,,,,11
+329,11,vocabulary,조용히 하다,garder le silence,,,,12
+330,11,vocabulary,차례를 기다리다,attendre son tour,,,,13
+331,11,vocabulary,입장하다,entrer / accéder,,,,14
+332,11,vocabulary,음식물,nourriture et boissons,,,,15
+333,11,vocabulary,공연장,salle de spectacle,,,,16
+334,11,vocabulary,클래식 공연,concert classique,,,,17
+335,11,vocabulary,신경 쓰지 말다,ne pas s'inquiéter,,,,18
+336,11,vocabulary,안내원,guide / hôte,,,,19
+337,11,vocabulary,둘러보다,regarder autour / visiter,,,,20
+338,11,vocabulary,오토바이,moto,,,,21
+339,11,expression,~지 마세요,ne faites pas ~,,,,1
+340,11,expression,~아야/어야 돼요,vous devez ~,,,,2
+341,11,expression,~면 안 돼요,il ne faut pas ~,,,,3
+342,11,expression,20분 전에는 입장해야 돼요,vous devez entrer 20 minutes avant,,,,4
+343,11,grammar,-지 말다,Indique qu'une action est interdite. Forme impérative et suggestive,Indique qu'une action est interdite. Forme impérative et suggestive,"말다 est un verbe en ㄹ donc -지 마세요 (ㄹ supprimé), -지 맙시다, -지 마십시오",여기에 쓰레기를 버리지 마세요 (Ne jetez pas de déchets ici),1
+344,11,grammar,-아야 되다/-어야 되다,Exprime une obligation ou une nécessité absolue,Exprime une obligation ou une nécessité absolue,"Équivalent : -아야/어야 하다. -아야 si voyelle ㅏ/ㅗ, -어야 sinon, 해야 pour 하다",공연 전에 핸드폰을 꺼야 돼요 (Vous devez éteindre votre téléphone avant le spectacle),2
+345,12,vocabulary,하루,un jour,,,,1
+346,12,vocabulary,이틀,deux jours,,,,2
+347,12,vocabulary,사흘,trois jours,,,,3
+348,12,vocabulary,나흘,quatre jours,,,,4
+349,12,vocabulary,닷새,cinq jours,,,,5
+350,12,vocabulary,엿새,six jours,,,,6
+351,12,vocabulary,이레,sept jours,,,,7
+352,12,vocabulary,여드레,huit jours,,,,8
+353,12,vocabulary,아흐레,neuf jours,,,,9
+354,12,vocabulary,열흘,dix jours,,,,10
+355,12,vocabulary,보름,quinze jours / deux semaines,,,,11
+356,12,vocabulary,한 달,un mois,,,,12
+357,12,vocabulary,두 달,deux mois,,,,13
+358,12,vocabulary,일 년,un an,,,,14
+359,12,vocabulary,출발하다,partir / démarrer,,,,15
+360,12,vocabulary,늦어지다,être retardé,,,,16
+361,12,vocabulary,길이 막히다,la route est encombrée,,,,17
+362,12,vocabulary,근처에 있다,être à proximité,,,,18
+363,12,vocabulary,들르다,passer par,,,,19
+364,12,vocabulary,오래 걸리다,prendre beaucoup de temps,,,,20
+365,12,vocabulary,거의 다 왔다,être presque arrivé,,,,21
+366,12,vocabulary,도착하다,arriver,,,,22
+367,12,vocabulary,집값,prix du logement,,,,23
+368,12,vocabulary,편의 시설,équipements / commodités,,,,24
+369,12,vocabulary,새집,maison neuve,,,,25
+370,12,vocabulary,이사하다,déménager,,,,26
+371,12,vocabulary,얼른,rapidement / vite,,,,27
+372,12,expression,~은 지 얼마나 됐어요?,cela fait combien de temps que ~ ?,,,,1
+373,12,expression,~한 지 ~ 됐어요,cela fait ~ que ~,,,,2
+374,12,expression,거의 다 왔네요,vous êtes presque arrivé,,,,3
+375,12,expression,방은 좀 작은데 새집이라서 깨끗해요,la chambre est petite mais propre car c'est neuf,,,,4
+376,12,grammar,-은 지/-ㄴ 지,Exprime le temps écoulé depuis qu'une action a été accomplie,Exprime le temps écoulé depuis qu'une action a été accomplie,"-은 지 après consonne, -ㄴ 지 après voyelle ou ㄹ. Souvent suivi de 됐어요, 지났어요, 넘었어요",한국어를 배운 지 3년 됐어요 (Cela fait 3 ans que j'apprends le coréen),1
+377,12,grammar,"-는데, -은데/-ㄴ데","Exprime un contraste entre deux propositions, ou fournit un contexte/arrière-plan","Exprime un contraste entre deux propositions, ou fournit un contexte/arrière-plan","-는데 pour les verbes, -은데 après consonne adjective, -ㄴ데 après voyelle adjective",방은 작은데 깨끗해요 (La chambre est petite mais propre),2
+378,13,vocabulary,죄송하지만,"je suis désolé, mais...",,,,1
+379,13,vocabulary,미안하지만,"pardon, mais...",,,,2
+380,13,vocabulary,부탁이 있다,avoir une faveur à demander,,,,3
+381,13,vocabulary,도와주다,aider,,,,4
+382,13,vocabulary,빌려주다,prêter,,,,5
+383,13,vocabulary,가르쳐 주다,enseigner / montrer,,,,6
+384,13,vocabulary,설명해 주다,expliquer,,,,7
+385,13,vocabulary,찾아 주다,chercher pour quelqu'un,,,,8
+386,13,vocabulary,들어 주다,porter pour quelqu'un,,,,9
+387,13,vocabulary,찍어 주다,prendre une photo pour quelqu'un,,,,10
+388,13,vocabulary,고장나다,être en panne,,,,11
+389,13,vocabulary,실수하다,faire une erreur,,,,12
+390,13,vocabulary,잃어버리다,perdre,,,,13
+391,13,vocabulary,비밀번호를 잊어버리다,oublier son mot de passe,,,,14
+392,13,vocabulary,컴퓨터가 이상하다,l'ordinateur ne fonctionne pas bien,,,,15
+393,13,vocabulary,지갑을 잃어버리다,perdre son portefeuille,,,,16
+394,13,vocabulary,고치다,réparer,,,,17
+395,13,vocabulary,프린터,imprimante,,,,18
+396,13,vocabulary,자전거,vélo,,,,19
+397,13,vocabulary,짐 정리,trier / ranger ses affaires,,,,20
+398,13,vocabulary,왼손,main gauche,,,,21
+399,13,vocabulary,아파트,appartement,,,,22
+400,13,vocabulary,짐,bagages / affaires,,,,23
+401,13,expression,시간 있으면 저 좀 도와주시겠어요?,"si vous avez le temps, pourriez-vous m'aider ?",,,,1
+402,13,expression,뭘 도와 드릴까요?,puis-je vous aider ?,,,,2
+403,13,expression,제가 도와 드릴게요,je vais vous aider,,,,3
+404,13,expression,못 도와줘서 미안해요,désolé de ne pas pouvoir vous aider,,,,4
+405,13,expression,~것 같아요,il me semble que ~ / je pense que ~,,,,5
+406,13,grammar,-을 수 있다/-을 수 없다,Exprime la capacité ou la possibilité de faire quelque chose,Exprime la capacité ou la possibilité de faire quelque chose,"-을 수 있다/없다 après consonne, -ㄹ 수 있다/없다 après voyelle ou ㄹ",저는 수영할 수 있어요 (Je peux nager) / 1시까지 못 갈 수 없어요 (Je ne peux pas y aller avant 1h),1
+407,13,grammar,-는 것 같다/-은 것 같다,"Exprime une hypothèse, une supposition ou une opinion","Exprime une hypothèse, une supposition ou une opinion","Passé : -은/ㄴ 것 같다, Présent : -는 것 같다, Futur : -을/ㄹ 것 같다",밖에 비가 오는 것 같아요 (Je crois qu'il pleut dehors),2
+408,14,vocabulary,잘 못하다,ne pas être très bon,,,,1
+409,14,vocabulary,부족하다,être insuffisant / manquer,,,,2
+410,14,vocabulary,형편없다,être très mauvais / médiocre,,,,3
+411,14,vocabulary,수준이 낮다,avoir un niveau bas,,,,4
+412,14,vocabulary,그저 그렇다,être moyen / ni bon ni mauvais,,,,5
+413,14,vocabulary,잘하다,être bon dans quelque chose,,,,6
+414,14,vocabulary,유창하다,être fluent,,,,7
+415,14,vocabulary,수준이 높다,avoir un niveau élevé,,,,8
+416,14,vocabulary,실력이 늘다,progresser / s'améliorer,,,,9
+417,14,vocabulary,좋아지다,s'améliorer,,,,10
+418,14,vocabulary,자신감이 생기다,gagner en confiance,,,,11
+419,14,vocabulary,잊어버리다,oublier,,,,12
+420,14,vocabulary,드라마를 자막 없이 보다,regarder un drama sans sous-titres,,,,13
+421,14,vocabulary,케이팝을 따라 부르다,chanter du K-pop en suivant,,,,14
+422,14,vocabulary,한국 회사에 취직하다,trouver un emploi dans une entreprise coréenne,,,,15
+423,14,vocabulary,한국 친구를 사귀다,se faire des amis coréens,,,,16
+424,14,vocabulary,유학을 가다,aller étudier à l'étranger,,,,17
+425,14,vocabulary,한국 문학 작품을 읽다,lire des œuvres littéraires coréennes,,,,18
+426,14,vocabulary,취미로 배우다,apprendre comme loisir,,,,19
+427,14,vocabulary,재미로 배우다,apprendre pour le plaisir,,,,20
+428,14,vocabulary,중급,niveau intermédiaire,,,,21
+429,14,vocabulary,발음,prononciation,,,,22
+430,14,vocabulary,실력,niveau / compétence,,,,23
+431,14,expression,한국어 실력이 많이 늘었겠네요,votre coréen a dû beaucoup s'améliorer,,,,1
+432,14,expression,아직 부족해요,je ne suis pas encore assez bon(ne),,,,2
+433,14,expression,열심히 하려고 해요,je vais faire de mon mieux,,,,3
+434,14,expression,~을/를 위해서 ~해요,je fais ~ pour ~,,,,4
+435,14,expression,기회가 되면,si l'occasion se présente,,,,5
+436,14,grammar,-네요,"Exprime la surprise, l'émerveillement ou une réaction naturelle face à quelque chose","Exprime la surprise, l'émerveillement ou une réaction naturelle face à quelque chose",S'attache aux verbes et adjectifs quelle que soit la terminaison. Avec un nom : -이네요,"한국어가 많이 늘었네요 (Oh, votre coréen a vraiment progressé !)",1
+437,14,grammar,-기 위해서,Exprime le but ou l'objectif d'une action,Exprime le but ou l'objectif d'une action,S'attache aux verbes. Avec un nom : 을/를 위해서. 서 peut être omis,건강을 위해서 매일 운동해요 (Je fais du sport tous les jours pour ma santé),2

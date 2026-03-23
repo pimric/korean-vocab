@@ -1,0 +1,1984 @@
+{
+  "source": "King Sejong Institute - Le Coréen pratique 2",
+  "total_lessons": 14,
+  "total_items": 437,
+  "stats": {
+    "vocabulary": 345,
+    "expressions": 64,
+    "grammar": 28
+  },
+  "lessons": {
+    "1": {
+      "title_ko": "졸업식에 가서 사진도 꼭 찍으세요",
+      "title_fr": "Assurez-vous d'aller à la cérémonie de remise des diplômes et de prendre des photos",
+      "topic_ko": "축하와 선물",
+      "topic_fr": "Félicitations et cadeaux",
+      "vocabulary": [
+        {
+          "korean": "꽃다발",
+          "french": "bouquet de fleurs"
+        },
+        {
+          "korean": "향수",
+          "french": "parfum"
+        },
+        {
+          "korean": "손목시계",
+          "french": "montre bracelet"
+        },
+        {
+          "korean": "넥타이",
+          "french": "cravate"
+        },
+        {
+          "korean": "목도리",
+          "french": "cache-nez / écharpe"
+        },
+        {
+          "korean": "화장품",
+          "french": "cosmétiques"
+        },
+        {
+          "korean": "장갑",
+          "french": "gants"
+        },
+        {
+          "korean": "만년필",
+          "french": "stylo plume"
+        },
+        {
+          "korean": "와인",
+          "french": "vin"
+        },
+        {
+          "korean": "소설책",
+          "french": "roman"
+        },
+        {
+          "korean": "스마트폰",
+          "french": "smartphone"
+        },
+        {
+          "korean": "열쇠고리",
+          "french": "porte-clés"
+        },
+        {
+          "korean": "콘서트 입장권",
+          "french": "billet de concert"
+        },
+        {
+          "korean": "상품권",
+          "french": "bon cadeau / chèque-cadeau"
+        },
+        {
+          "korean": "그릇",
+          "french": "vaisselle / bols"
+        },
+        {
+          "korean": "엽서",
+          "french": "carte postale"
+        },
+        {
+          "korean": "기념품",
+          "french": "souvenir"
+        },
+        {
+          "korean": "금반지",
+          "french": "bague en or"
+        },
+        {
+          "korean": "벽시계",
+          "french": "horloge murale"
+        },
+        {
+          "korean": "대학원",
+          "french": "école doctorale / master"
+        },
+        {
+          "korean": "졸업식",
+          "french": "cérémonie de remise des diplômes"
+        },
+        {
+          "korean": "졸업하다",
+          "french": "obtenir son diplôme"
+        },
+        {
+          "korean": "합격하다",
+          "french": "réussir un examen"
+        },
+        {
+          "korean": "취직하다",
+          "french": "trouver un emploi"
+        },
+        {
+          "korean": "결혼하다",
+          "french": "se marier"
+        },
+        {
+          "korean": "아이를 낳다",
+          "french": "accoucher / mettre un enfant au monde"
+        },
+        {
+          "korean": "깜짝 선물",
+          "french": "cadeau surprise"
+        },
+        {
+          "korean": "깜짝 파티",
+          "french": "fête surprise"
+        },
+        {
+          "korean": "케이크",
+          "french": "gâteau"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "축하해요",
+          "french": "félicitations"
+        },
+        {
+          "korean": "정말 축하해요",
+          "french": "toutes mes félicitations"
+        },
+        {
+          "korean": "꼭 찍으세요",
+          "french": "n'oubliez pas de prendre des photos"
+        },
+        {
+          "korean": "걱정 마세요",
+          "french": "ne vous inquiétez pas"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "이나/나, -거나",
+          "explanation": "Relie deux ou plusieurs noms/actions pour exprimer 'ou' — indique la possibilité de choisir entre plusieurs options",
+          "form_note": "이나/나 s'utilise après un nom, -거나 après un verbe ou adjectif",
+          "example": "빵이나 밥을 먹어요 (Je mange du pain ou du riz)"
+        },
+        {
+          "pattern": "-아서/-어서/-여서",
+          "explanation": "Relie deux actions séquentielles étroitement liées",
+          "form_note": "La première action mène naturellement à la seconde",
+          "example": "백화점에 가서 선물을 사요 (Je vais au grand magasin pour acheter un cadeau)"
+        }
+      ]
+    },
+    "2": {
+      "title_ko": "그동안 어떻게 지내셨습니까?",
+      "title_fr": "Comment allez-vous ?",
+      "topic_ko": "안부전하기",
+      "topic_fr": "Donner des nouvelles",
+      "vocabulary": [
+        {
+          "korean": "잘 지내다",
+          "french": "aller bien"
+        },
+        {
+          "korean": "오랜만이다",
+          "french": "cela fait longtemps"
+        },
+        {
+          "korean": "어떻게 지내다",
+          "french": "comment allez-vous"
+        },
+        {
+          "korean": "별일 없다",
+          "french": "rien de spécial"
+        },
+        {
+          "korean": "얼굴이 좋아 보이다",
+          "french": "avoir l'air bien"
+        },
+        {
+          "korean": "얼굴이 안 좋아 보이다",
+          "french": "avoir l'air fatigué"
+        },
+        {
+          "korean": "일이 많다",
+          "french": "avoir beaucoup de travail"
+        },
+        {
+          "korean": "일이 별로 없다",
+          "french": "ne pas avoir beaucoup de travail"
+        },
+        {
+          "korean": "한가하다",
+          "french": "être libre / ne pas être occupé"
+        },
+        {
+          "korean": "그냥 그래요",
+          "french": "comme ci comme ça"
+        },
+        {
+          "korean": "덕분에",
+          "french": "grâce à vous"
+        },
+        {
+          "korean": "학교에 들어가다",
+          "french": "entrer à l'école"
+        },
+        {
+          "korean": "회사에 들어가다",
+          "french": "rejoindre une entreprise"
+        },
+        {
+          "korean": "친구를 사귀다",
+          "french": "se faire des amis"
+        },
+        {
+          "korean": "일자리를 알아보다",
+          "french": "chercher un emploi"
+        },
+        {
+          "korean": "여자/남자 친구가 생기다",
+          "french": "avoir une petite amie / un petit ami"
+        },
+        {
+          "korean": "대학원에 입학하다",
+          "french": "entrer en master/doctorat"
+        },
+        {
+          "korean": "휴가를 다녀오다",
+          "french": "revenir de vacances"
+        },
+        {
+          "korean": "방학을 하다",
+          "french": "commencer les vacances scolaires"
+        },
+        {
+          "korean": "개학을 하다",
+          "french": "retourner à l'école"
+        },
+        {
+          "korean": "회사를 그만두다",
+          "french": "quitter son emploi"
+        },
+        {
+          "korean": "일을 잠시 쉬다",
+          "french": "faire une pause dans le travail"
+        },
+        {
+          "korean": "회사를 옮기다",
+          "french": "changer d'entreprise"
+        },
+        {
+          "korean": "얼마 전",
+          "french": "il y a quelques jours"
+        },
+        {
+          "korean": "잠시",
+          "french": "pendant un court moment"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "잘 지내셨습니까?",
+          "french": "comment allez-vous ? (formel)"
+        },
+        {
+          "korean": "덕분에 잘 지냈어요",
+          "french": "je vais bien, merci"
+        },
+        {
+          "korean": "그동안 어떻게 지내셨습니까?",
+          "french": "comment vous êtes-vous porté tout ce temps ?"
+        },
+        {
+          "korean": "오랜만입니다",
+          "french": "cela fait longtemps (formel)"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-습니다/-브니다, -습니까?/-브니까?",
+          "explanation": "Forme polie formelle pour s'adresser à un supérieur ou une personne âgée",
+          "form_note": "-습니다/-니다 pour les déclarations, -습니까?/-브니까? pour les questions",
+          "example": "어떻게 지내십니까? (Comment allez-vous ?)"
+        },
+        {
+          "pattern": "-고 (séquence)",
+          "explanation": "Relie deux actions dans l'ordre chronologique",
+          "form_note": "L'état de la première action n'est pas maintenu dans la seconde",
+          "example": "밥을 먹고 커피를 마셨어요 (J'ai mangé puis bu du café)"
+        }
+      ]
+    },
+    "3": {
+      "title_ko": "여기에서 시청역까지 어떻게 가요?",
+      "title_fr": "Comment puis-je me rendre à la station de l'hôtel de ville à partir d'ici ?",
+      "topic_ko": "이동방법 말하기",
+      "topic_fr": "Dire comment se déplacer",
+      "vocabulary": [
+        {
+          "korean": "지하철",
+          "french": "métro"
+        },
+        {
+          "korean": "버스",
+          "french": "bus"
+        },
+        {
+          "korean": "택시",
+          "french": "taxi"
+        },
+        {
+          "korean": "기차",
+          "french": "train"
+        },
+        {
+          "korean": "비행기",
+          "french": "avion"
+        },
+        {
+          "korean": "배",
+          "french": "bateau"
+        },
+        {
+          "korean": "오토바이",
+          "french": "moto"
+        },
+        {
+          "korean": "자전거",
+          "french": "vélo"
+        },
+        {
+          "korean": "걸어서 가다",
+          "french": "aller à pied"
+        },
+        {
+          "korean": "타다",
+          "french": "prendre / monter dans"
+        },
+        {
+          "korean": "갈아타다",
+          "french": "changer (transport)"
+        },
+        {
+          "korean": "내리다",
+          "french": "descendre (transport)"
+        },
+        {
+          "korean": "횡단보도를 건너다",
+          "french": "traverser le passage piétons"
+        },
+        {
+          "korean": "계단으로 가다",
+          "french": "prendre les escaliers"
+        },
+        {
+          "korean": "에스컬레이터를 타다",
+          "french": "prendre l'escalator"
+        },
+        {
+          "korean": "엘리베이터를 타다",
+          "french": "prendre l'ascenseur"
+        },
+        {
+          "korean": "사거리",
+          "french": "carrefour"
+        },
+        {
+          "korean": "오른쪽",
+          "french": "droite"
+        },
+        {
+          "korean": "왼쪽",
+          "french": "gauche"
+        },
+        {
+          "korean": "직진하다",
+          "french": "aller tout droit"
+        },
+        {
+          "korean": "보이다",
+          "french": "être visible / apparaître"
+        },
+        {
+          "korean": "걸리다",
+          "french": "prendre (temps)"
+        },
+        {
+          "korean": "얼마나 걸리다",
+          "french": "combien de temps cela prend-il"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "어떻게 가요?",
+          "french": "comment y aller ?"
+        },
+        {
+          "korean": "얼마나 걸려요?",
+          "french": "combien de temps faut-il ?"
+        },
+        {
+          "korean": "무엇을 타고 가요?",
+          "french": "comment vous déplacez-vous ?"
+        },
+        {
+          "korean": "실례합니다",
+          "french": "excusez-moi"
+        },
+        {
+          "korean": "~에서 내리세요",
+          "french": "descendez à ~"
+        },
+        {
+          "korean": "~으로 가세요",
+          "french": "allez vers ~"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "으로/로",
+          "explanation": "Indique le moyen, l'outil ou la direction utilisé pour une action",
+          "form_note": "으로 après consonne (sauf ㄹ), 로 après voyelle ou ㄹ",
+          "example": "지하철로 가요 (Je prends le métro) / 한국어로 말해요 (Je parle en coréen)"
+        },
+        {
+          "pattern": "-에서/부터 -까지",
+          "explanation": "Indique la distance ou la durée entre deux points (lieu ou temps)",
+          "form_note": "에서/부터 = point de départ, 까지 = point d'arrivée",
+          "example": "여기에서 시청역까지 10분 걸려요 (De ici à la mairie, ça prend 10 minutes)"
+        }
+      ]
+    },
+    "4": {
+      "title_ko": "지윤 씨는 매운 음식을 잘 먹죠?",
+      "title_fr": "Jiyoon, vous mangez bien de la nourriture épicée, n'est-ce pas ?",
+      "topic_ko": "주문하기",
+      "topic_fr": "Faire une commande",
+      "vocabulary": [
+        {
+          "korean": "피자",
+          "french": "pizza"
+        },
+        {
+          "korean": "샐러드",
+          "french": "salade"
+        },
+        {
+          "korean": "케이크",
+          "french": "gâteau"
+        },
+        {
+          "korean": "과일",
+          "french": "fruits"
+        },
+        {
+          "korean": "떡",
+          "french": "gâteau de riz"
+        },
+        {
+          "korean": "샌드위치",
+          "french": "sandwich"
+        },
+        {
+          "korean": "음료수",
+          "french": "boisson"
+        },
+        {
+          "korean": "맥주",
+          "french": "bière"
+        },
+        {
+          "korean": "라면",
+          "french": "ramen / nouilles instantanées"
+        },
+        {
+          "korean": "떡볶이",
+          "french": "ddukbokki (gâteau de riz épicé)"
+        },
+        {
+          "korean": "닭갈비",
+          "french": "poulet mariné grillé"
+        },
+        {
+          "korean": "국수",
+          "french": "nouilles"
+        },
+        {
+          "korean": "달다",
+          "french": "être doux / sucré"
+        },
+        {
+          "korean": "짜다",
+          "french": "être salé"
+        },
+        {
+          "korean": "시다",
+          "french": "être aigre"
+        },
+        {
+          "korean": "쓰다",
+          "french": "être amer"
+        },
+        {
+          "korean": "맵다",
+          "french": "être épicé / pimenté"
+        },
+        {
+          "korean": "인분",
+          "french": "(nombre de) portions"
+        },
+        {
+          "korean": "시키다",
+          "french": "commander"
+        },
+        {
+          "korean": "음료",
+          "french": "boisson"
+        },
+        {
+          "korean": "무료",
+          "french": "gratuit"
+        },
+        {
+          "korean": "카레",
+          "french": "curry"
+        },
+        {
+          "korean": "치킨집",
+          "french": "restaurant de poulet"
+        },
+        {
+          "korean": "간장 치킨",
+          "french": "poulet sauce soja"
+        },
+        {
+          "korean": "마라탕",
+          "french": "soupe épicée (malatang)"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "잘 먹죠?",
+          "french": "vous mangez bien ~, n'est-ce pas ?"
+        },
+        {
+          "korean": "여기요!",
+          "french": "excusez-moi ! (pour appeler le serveur)"
+        },
+        {
+          "korean": "~인분 주세요",
+          "french": "~ portions s'il vous plaît"
+        },
+        {
+          "korean": "더 필요한 거 없으세요?",
+          "french": "avez-vous besoin d'autre chose ?"
+        },
+        {
+          "korean": "잘 먹겠습니다",
+          "french": "bon appétit (avant de manger)"
+        },
+        {
+          "korean": "맛있게 드세요",
+          "french": "bon appétit (dit par le serveur)"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-을래요/-ㄹ래요",
+          "explanation": "Exprime la volonté ou l'intention de faire quelque chose / propose quelque chose",
+          "form_note": "Selon l'intonation : déclaratif ou interrogatif",
+          "example": "같이 영화 보러 갈래요? (Voulez-vous aller voir un film ensemble ?)"
+        },
+        {
+          "pattern": "-지요?",
+          "explanation": "Demande confirmation ou accord de l'interlocuteur sur quelque chose que le locuteur sait ou suppose",
+          "form_note": "Se contracte souvent en -죠?",
+          "example": "한국은 여름에 비가 많이 오지요? (Il pleut beaucoup en Corée en été, n'est-ce pas ?)"
+        }
+      ]
+    },
+    "5": {
+      "title_ko": "저는 아침마다 수영을 하고 있어요",
+      "title_fr": "Je nage tous les matins",
+      "topic_ko": "일과 설명하기",
+      "topic_fr": "Expliquer sa routine quotidienne",
+      "vocabulary": [
+        {
+          "korean": "집 안을 정리하다",
+          "french": "ranger la maison"
+        },
+        {
+          "korean": "청소하다",
+          "french": "faire le ménage"
+        },
+        {
+          "korean": "빨래하다",
+          "french": "faire la lessive"
+        },
+        {
+          "korean": "출근하다",
+          "french": "aller travailler"
+        },
+        {
+          "korean": "퇴근하다",
+          "french": "finir le travail / rentrer du travail"
+        },
+        {
+          "korean": "장을 보다",
+          "french": "faire les courses"
+        },
+        {
+          "korean": "모임에 가다",
+          "french": "aller à une réunion"
+        },
+        {
+          "korean": "외출하다",
+          "french": "sortir"
+        },
+        {
+          "korean": "일어나다",
+          "french": "se lever"
+        },
+        {
+          "korean": "세수하다",
+          "french": "se laver le visage"
+        },
+        {
+          "korean": "손을 씻다",
+          "french": "se laver les mains"
+        },
+        {
+          "korean": "이를 닦다",
+          "french": "se brosser les dents"
+        },
+        {
+          "korean": "머리를 감다",
+          "french": "se laver les cheveux"
+        },
+        {
+          "korean": "머리를 말리다",
+          "french": "se sécher les cheveux"
+        },
+        {
+          "korean": "면도를 하다",
+          "french": "se raser"
+        },
+        {
+          "korean": "목욕하다",
+          "french": "prendre un bain"
+        },
+        {
+          "korean": "샤워하다",
+          "french": "prendre une douche"
+        },
+        {
+          "korean": "화장을 하다",
+          "french": "se maquiller"
+        },
+        {
+          "korean": "화장을 지우다",
+          "french": "enlever le maquillage"
+        },
+        {
+          "korean": "로션을 바르다",
+          "french": "appliquer de la lotion"
+        },
+        {
+          "korean": "설거지하다",
+          "french": "faire la vaisselle"
+        },
+        {
+          "korean": "조깅하다",
+          "french": "faire du jogging"
+        },
+        {
+          "korean": "수영",
+          "french": "natation"
+        },
+        {
+          "korean": "수영장",
+          "french": "piscine"
+        },
+        {
+          "korean": "몸이 가벼워지다",
+          "french": "se sentir plus léger"
+        },
+        {
+          "korean": "잠이 잘 오다",
+          "french": "bien dormir"
+        },
+        {
+          "korean": "야식",
+          "french": "collation nocturne"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "아침마다",
+          "french": "tous les matins"
+        },
+        {
+          "korean": "~한 후에",
+          "french": "après avoir fait ~"
+        },
+        {
+          "korean": "먼저 ~하세요",
+          "french": "faites d'abord ~"
+        },
+        {
+          "korean": "~기 전에",
+          "french": "avant de faire ~"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-은 후에/-ㄴ 후에",
+          "explanation": "Indique que la deuxième action se produit après la première",
+          "form_note": "-은 후에 après consonne, -ㄴ 후에 après voyelle ou ㄹ. Peut aussi s'utiliser avec des noms d'action",
+          "example": "식사한 후에 이 약을 드세요 (Prenez ce médicament après le repas)"
+        },
+        {
+          "pattern": "-고 있다",
+          "explanation": "Indique une action en cours ou continue au moment présent",
+          "form_note": "Pour les supérieurs : -고 계시다. Passé continu : -고 있었어요",
+          "example": "지금 밥을 먹고 있어요 (Je suis en train de manger)"
+        }
+      ]
+    },
+    "6": {
+      "title_ko": "비가 오니까 농구공은 여기에 두고 가세요",
+      "title_fr": "Il pleut, alors laissez le ballon de basket ici",
+      "topic_ko": "날씨와 생활",
+      "topic_fr": "La météo et la vie quotidienne",
+      "vocabulary": [
+        {
+          "korean": "습도가 높다",
+          "french": "l'humidité est élevée"
+        },
+        {
+          "korean": "소나기가 오다",
+          "french": "avoir une averse"
+        },
+        {
+          "korean": "비가 그치다",
+          "french": "la pluie s'arrête"
+        },
+        {
+          "korean": "안개가 끼다",
+          "french": "il y a du brouillard"
+        },
+        {
+          "korean": "구름이 끼다",
+          "french": "il y a des nuages"
+        },
+        {
+          "korean": "햇빛이 강하다",
+          "french": "le soleil est fort"
+        },
+        {
+          "korean": "기온이 높다",
+          "french": "la température est élevée"
+        },
+        {
+          "korean": "기온이 낮다",
+          "french": "la température est basse"
+        },
+        {
+          "korean": "건조하다",
+          "french": "être sec / aride"
+        },
+        {
+          "korean": "태풍이 오다",
+          "french": "il y a un typhon"
+        },
+        {
+          "korean": "눈이 오다",
+          "french": "il neige"
+        },
+        {
+          "korean": "쌀쌀하다",
+          "french": "être frais / frisquet"
+        },
+        {
+          "korean": "따뜻하다",
+          "french": "être chaud / doux"
+        },
+        {
+          "korean": "덥다",
+          "french": "avoir chaud"
+        },
+        {
+          "korean": "춥다",
+          "french": "avoir froid"
+        },
+        {
+          "korean": "우기",
+          "french": "saison des pluies"
+        },
+        {
+          "korean": "건기",
+          "french": "saison sèche"
+        },
+        {
+          "korean": "마스크를 쓰다",
+          "french": "porter un masque"
+        },
+        {
+          "korean": "선크림을 바르다",
+          "french": "mettre de la crème solaire"
+        },
+        {
+          "korean": "환기를 시키다",
+          "french": "aérer"
+        },
+        {
+          "korean": "우산을 챙기다",
+          "french": "prendre un parapluie"
+        },
+        {
+          "korean": "겉옷을 준비하다",
+          "french": "préparer un vêtement d'extérieur"
+        },
+        {
+          "korean": "황사",
+          "french": "poussière jaune (particules fines)"
+        },
+        {
+          "korean": "일기 예보",
+          "french": "bulletin météo"
+        },
+        {
+          "korean": "밤사이",
+          "french": "pendant la nuit"
+        },
+        {
+          "korean": "전국",
+          "french": "tout le pays"
+        },
+        {
+          "korean": "반팔",
+          "french": "manches courtes"
+        },
+        {
+          "korean": "차이",
+          "french": "différence"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "날씨가 어때요?",
+          "french": "quel temps fait-il ?"
+        },
+        {
+          "korean": "~니까 ~하세요",
+          "french": "parce que ~, faites ~"
+        },
+        {
+          "korean": "소나기니까 금방 그칠 거예요",
+          "french": "c'est une averse, ça va s'arrêter bientôt"
+        },
+        {
+          "korean": "알려 줘서 고마워요",
+          "french": "merci de me l'avoir dit"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-아지다/-어지다/-여지다",
+          "explanation": "Indique un changement d'état progressif",
+          "form_note": "-아지다 si dernière voyelle est ㅏ/ㅗ, -어지다 sinon, -여지다 avec 하다 (→해지다)",
+          "example": "날씨가 따뜻해졌어요 (Le temps est devenu doux)"
+        },
+        {
+          "pattern": "-으니까/-니까",
+          "explanation": "Exprime la raison ou la cause d'une action ou d'un conseil",
+          "form_note": "Suivi naturellement de -으세요, -을까요, -아요(suggestif). Plus fort et subjectif que -아서",
+          "example": "비가 오니까 우산을 챙기세요 (Il pleut, pensez à prendre votre parapluie)"
+        }
+      ]
+    },
+    "7": {
+      "title_ko": "성함하고 연락처도 알려 주세요",
+      "title_fr": "Veuillez fournir votre nom et vos coordonnées",
+      "topic_ko": "전화와 예약",
+      "topic_fr": "Appel téléphonique et réservation",
+      "vocabulary": [
+        {
+          "korean": "전화를 걸다",
+          "french": "passer un appel téléphonique"
+        },
+        {
+          "korean": "전화를 받다",
+          "french": "répondre au téléphone"
+        },
+        {
+          "korean": "전화를 끊다",
+          "french": "raccrocher"
+        },
+        {
+          "korean": "문자 메시지를 보내다",
+          "french": "envoyer un message texte"
+        },
+        {
+          "korean": "음성 메시지를 남기다",
+          "french": "laisser un message vocal"
+        },
+        {
+          "korean": "통화 중이다",
+          "french": "être en ligne / occupé"
+        },
+        {
+          "korean": "부재중 전화가 있다",
+          "french": "avoir un appel manqué"
+        },
+        {
+          "korean": "전원을 켜다",
+          "french": "allumer (téléphone)"
+        },
+        {
+          "korean": "전원을 끄다",
+          "french": "éteindre (téléphone)"
+        },
+        {
+          "korean": "진동으로 바꾸다",
+          "french": "mettre en mode vibreur"
+        },
+        {
+          "korean": "에스엔에스(SNS)",
+          "french": "réseaux sociaux"
+        },
+        {
+          "korean": "쇼핑을 하다",
+          "french": "faire du shopping en ligne"
+        },
+        {
+          "korean": "음악을 듣다",
+          "french": "écouter de la musique"
+        },
+        {
+          "korean": "길을 찾다",
+          "french": "chercher son chemin"
+        },
+        {
+          "korean": "메모를 하다",
+          "french": "prendre des notes"
+        },
+        {
+          "korean": "날씨를 확인하다",
+          "french": "vérifier la météo"
+        },
+        {
+          "korean": "성함",
+          "french": "nom (honorifique)"
+        },
+        {
+          "korean": "연락처",
+          "french": "coordonnées / numéro de contact"
+        },
+        {
+          "korean": "레스토랑",
+          "french": "restaurant"
+        },
+        {
+          "korean": "예약",
+          "french": "réservation"
+        },
+        {
+          "korean": "안과",
+          "french": "ophtalmologue"
+        },
+        {
+          "korean": "진료",
+          "french": "consultation médicale"
+        },
+        {
+          "korean": "상담",
+          "french": "consultation / conseil"
+        },
+        {
+          "korean": "메모를 남기다",
+          "french": "laisser un message"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "여보세요?",
+          "french": "allô ?"
+        },
+        {
+          "korean": "거기 ~이죠?",
+          "french": "c'est bien ~ ?"
+        },
+        {
+          "korean": "~ 좀 바꿔 주세요",
+          "french": "passez-moi ~ s'il vous plaît"
+        },
+        {
+          "korean": "메시지 남겨 드릴까요?",
+          "french": "voulez-vous laisser un message ?"
+        },
+        {
+          "korean": "전화 잘못 거셨어요",
+          "french": "vous avez fait un faux numéro"
+        },
+        {
+          "korean": "성함하고 연락처도 알려 주세요",
+          "french": "donnez-moi votre nom et vos coordonnées"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-아 주세요/-어 주세요",
+          "explanation": "Demander poliment à quelqu'un de faire quelque chose",
+          "form_note": "Pour offrir de l'aide : -아/어 줄까요? / 드릴까요?",
+          "example": "창문 좀 닫아 주세요 (Veuillez fermer la fenêtre)"
+        },
+        {
+          "pattern": "-으면/-면",
+          "explanation": "Exprime une hypothèse ou une condition pour la proposition suivante",
+          "form_note": "-으면 après consonne, -면 après voyelle ou ㄹ. Passé hypothétique : -았으면",
+          "example": "시간이 있으면 같이 갈래요? (Si vous avez le temps, voulez-vous venir ?)"
+        }
+      ]
+    },
+    "8": {
+      "title_ko": "한국으로 여행을 가려고 해요",
+      "title_fr": "Je vais voyager en Corée",
+      "topic_ko": "여행 계획",
+      "topic_fr": "Planification d'un voyage",
+      "vocabulary": [
+        {
+          "korean": "숙소를 정하다",
+          "french": "choisir un hébergement"
+        },
+        {
+          "korean": "여행지를 정하다",
+          "french": "choisir une destination"
+        },
+        {
+          "korean": "숙소를 예약하다",
+          "french": "réserver un hébergement"
+        },
+        {
+          "korean": "비행기표를 예매하다",
+          "french": "réserver des billets d'avion"
+        },
+        {
+          "korean": "차를 빌리다",
+          "french": "louer une voiture"
+        },
+        {
+          "korean": "환전하다",
+          "french": "changer de l'argent"
+        },
+        {
+          "korean": "비자를 받다",
+          "french": "obtenir un visa"
+        },
+        {
+          "korean": "여권을 만들다",
+          "french": "faire un passeport"
+        },
+        {
+          "korean": "여행자 보험에 들다",
+          "french": "souscrire une assurance voyage"
+        },
+        {
+          "korean": "짐을 싸다",
+          "french": "faire ses valises"
+        },
+        {
+          "korean": "맛집을 알아보다",
+          "french": "rechercher de bons restaurants"
+        },
+        {
+          "korean": "게스트하우스",
+          "french": "maison d'hôtes"
+        },
+        {
+          "korean": "왕궁",
+          "french": "palais royal"
+        },
+        {
+          "korean": "시내 관광을 하다",
+          "french": "visiter le centre-ville"
+        },
+        {
+          "korean": "공연을 보다",
+          "french": "voir un spectacle"
+        },
+        {
+          "korean": "온천욕을 하다",
+          "french": "prendre un bain thermal"
+        },
+        {
+          "korean": "기념품을 사다",
+          "french": "acheter des souvenirs"
+        },
+        {
+          "korean": "해양 스포츠를 하다",
+          "french": "faire des sports nautiques"
+        },
+        {
+          "korean": "불꽃놀이를 보다",
+          "french": "regarder des feux d'artifice"
+        },
+        {
+          "korean": "놀이공원에 가다",
+          "french": "aller à un parc d'attractions"
+        },
+        {
+          "korean": "유람선을 타다",
+          "french": "prendre un bateau de croisière"
+        },
+        {
+          "korean": "번지 점프를 하다",
+          "french": "faire du saut à l'élastique"
+        },
+        {
+          "korean": "해운대",
+          "french": "Haeundae (plage de Busan)"
+        },
+        {
+          "korean": "도시락",
+          "french": "boîte bento"
+        },
+        {
+          "korean": "오로라",
+          "french": "aurores boréales"
+        },
+        {
+          "korean": "알래스카",
+          "french": "Alaska"
+        },
+        {
+          "korean": "스페인",
+          "french": "Espagne"
+        },
+        {
+          "korean": "숙소",
+          "french": "hébergement / logement"
+        },
+        {
+          "korean": "여행 안내 책",
+          "french": "guide de voyage"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "어디로 여행을 가고 싶어요?",
+          "french": "où voulez-vous voyager ?"
+        },
+        {
+          "korean": "숙소는 정했어요?",
+          "french": "avez-vous choisi un hébergement ?"
+        },
+        {
+          "korean": "~ 에 가 봤어요?",
+          "french": "êtes-vous déjà allé à ~ ?"
+        },
+        {
+          "korean": "어디가 제일 좋았어요?",
+          "french": "quel endroit avez-vous préféré ?"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-으려고 하다/-려고 하다",
+          "explanation": "Exprime un plan ou une intention future",
+          "form_note": "-으려고 하다 après consonne (sauf ㄹ), -려고 하다 après voyelle ou ㄹ",
+          "example": "이번 방학에 한국에 가려고 해요 (Je prévois d'aller en Corée ces vacances)"
+        },
+        {
+          "pattern": "-아 보다/-어 보다",
+          "explanation": "Exprime une expérience passée ou l'essai de quelque chose",
+          "form_note": "-아 보다 si voyelle ㅏ/ㅗ, -어 보다 sinon, 해 보다 pour 하다. -아 보세요 = suggestion d'essayer",
+          "example": "서울에 가 봤어요 (Je suis déjà allé à Séoul) / 한번 먹어 보세요 (Essayez d'en manger)"
+        }
+      ]
+    },
+    "9": {
+      "title_ko": "안나 씨 보러 꼭 갈게요",
+      "title_fr": "J'irai certainement voir Anna",
+      "topic_ko": "초대하기",
+      "topic_fr": "Inviter",
+      "vocabulary": [
+        {
+          "korean": "설레다",
+          "french": "ressentir de l'excitation / être impatient"
+        },
+        {
+          "korean": "아쉽다",
+          "french": "être dommage / regrettable"
+        },
+        {
+          "korean": "화가 나다",
+          "french": "être en colère"
+        },
+        {
+          "korean": "스트레스를 받다",
+          "french": "avoir du stress"
+        },
+        {
+          "korean": "신나다",
+          "french": "être excité / s'amuser"
+        },
+        {
+          "korean": "심심하다",
+          "french": "s'ennuyer"
+        },
+        {
+          "korean": "우울하다",
+          "french": "être déprimé"
+        },
+        {
+          "korean": "떨리다",
+          "french": "être nerveux / trembler"
+        },
+        {
+          "korean": "기대되다",
+          "french": "avoir hâte / être impatient"
+        },
+        {
+          "korean": "친구들을 초대하다",
+          "french": "inviter des amis"
+        },
+        {
+          "korean": "친구에게 연락하다",
+          "french": "contacter un ami"
+        },
+        {
+          "korean": "약속 시간을 정하다",
+          "french": "fixer l'heure du rendez-vous"
+        },
+        {
+          "korean": "약속 날짜를 바꾸다",
+          "french": "changer la date du rendez-vous"
+        },
+        {
+          "korean": "약속을 미루다",
+          "french": "reporter un rendez-vous"
+        },
+        {
+          "korean": "약속을 취소하다",
+          "french": "annuler un rendez-vous"
+        },
+        {
+          "korean": "모임에 참석하다",
+          "french": "assister à une réunion"
+        },
+        {
+          "korean": "약속에 늦다",
+          "french": "être en retard à un rendez-vous"
+        },
+        {
+          "korean": "한류 축제",
+          "french": "festival hallyu"
+        },
+        {
+          "korean": "케이팝 콘테스트",
+          "french": "concours K-pop"
+        },
+        {
+          "korean": "바닷가",
+          "french": "bord de mer / plage"
+        },
+        {
+          "korean": "특별하다",
+          "french": "être spécial"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "꼭 오세요",
+          "french": "venez absolument"
+        },
+        {
+          "korean": "꼭 갈게요",
+          "french": "j'irai absolument"
+        },
+        {
+          "korean": "정말 재미있겠네요",
+          "french": "ça a l'air vraiment amusant"
+        },
+        {
+          "korean": "평생 당신만 사랑할게요",
+          "french": "je vous aimerai toute ma vie"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-을 때/-ㄹ 때",
+          "explanation": "Indique le moment ou la période durant laquelle une action/situation se produit",
+          "form_note": "-을 때 après consonne, -ㄹ 때 après voyelle. Pour exprimer un état terminé : -았을 때",
+          "example": "심심할 때 뭐 해요? (Que faites-vous quand vous vous ennuyez ?)"
+        },
+        {
+          "pattern": "-을게요/-ㄹ게요",
+          "explanation": "Exprime l'intention ou la promesse du locuteur à l'auditeur",
+          "form_note": "-을게요 après consonne, -ㄹ게요 après voyelle. Uniquement à la 1ère personne",
+          "example": "제가 연락할게요 (Je vous contacterai)"
+        }
+      ]
+    },
+    "10": {
+      "title_ko": "제 친구도 뮤지컬 보는 거 정말 좋아해요",
+      "title_fr": "Mon ami aime aussi beaucoup regarder des comédies musicales",
+      "topic_ko": "성격과 특징",
+      "topic_fr": "Personnalité et caractéristiques",
+      "vocabulary": [
+        {
+          "korean": "활발하다",
+          "french": "être dynamique / extraverti"
+        },
+        {
+          "korean": "재미있다",
+          "french": "être amusant / intéressant"
+        },
+        {
+          "korean": "착하다",
+          "french": "être gentil / bon"
+        },
+        {
+          "korean": "부지런하다",
+          "french": "être diligent / travailleur"
+        },
+        {
+          "korean": "조용하다",
+          "french": "être calme / silencieux"
+        },
+        {
+          "korean": "친절하다",
+          "french": "être aimable / gentil"
+        },
+        {
+          "korean": "마음이 넓다",
+          "french": "avoir un grand cœur / être généreux"
+        },
+        {
+          "korean": "똑똑하다",
+          "french": "être intelligent"
+        },
+        {
+          "korean": "요리를 잘하다",
+          "french": "bien cuisiner"
+        },
+        {
+          "korean": "그림을 잘 그리다",
+          "french": "bien dessiner"
+        },
+        {
+          "korean": "춤을 잘 추다",
+          "french": "bien danser"
+        },
+        {
+          "korean": "마음이 잘 맞다",
+          "french": "être sur la même longueur d'onde"
+        },
+        {
+          "korean": "대화가 잘 통하다",
+          "french": "bien communiquer / se comprendre"
+        },
+        {
+          "korean": "공통점이 많다",
+          "french": "avoir beaucoup de points communs"
+        },
+        {
+          "korean": "성격",
+          "french": "personnalité / caractère"
+        },
+        {
+          "korean": "이상형",
+          "french": "type idéal"
+        },
+        {
+          "korean": "소개팅",
+          "french": "rencontre arrangée"
+        },
+        {
+          "korean": "뮤지컬",
+          "french": "comédie musicale"
+        },
+        {
+          "korean": "유머가 있다",
+          "french": "avoir de l'humour"
+        },
+        {
+          "korean": "농담을 잘하다",
+          "french": "bien plaisanter"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "어떤 사람이에요?",
+          "french": "quel genre de personne est-ce ?"
+        },
+        {
+          "korean": "취미가 같은 사람",
+          "french": "quelqu'un qui a les mêmes loisirs"
+        },
+        {
+          "korean": "잘됐네요",
+          "french": "c'est parfait / tant mieux"
+        },
+        {
+          "korean": "직접 연락해 보세요",
+          "french": "contactez-le/la directement"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-은/-ㄴ (adjectif modifier)",
+          "explanation": "Adjectif modificateur indiquant l'état actuel d'un nom",
+          "form_note": "-은 après consonne, -ㄴ après voyelle. Certains adjectifs en 있다/없다 prennent -는",
+          "example": "재미있는 영화를 봤어요 (J'ai vu un film intéressant)"
+        },
+        {
+          "pattern": "-는 (verbe modifier)",
+          "explanation": "Modificateur verbal au présent pour décrire un nom",
+          "form_note": "Passé : -은/-ㄴ, Futur : -을/-ㄹ",
+          "example": "지금 이야기하는 사람이 누구예요? (Qui est la personne qui parle en ce moment ?)"
+        }
+      ]
+    },
+    "11": {
+      "title_ko": "공연 20분 전에는 입장해야 돼요",
+      "title_fr": "Nous devons arriver 20 minutes avant la représentation",
+      "topic_ko": "공공 예절",
+      "topic_fr": "Étiquette publique",
+      "vocabulary": [
+        {
+          "korean": "뛰어다니다",
+          "french": "courir partout"
+        },
+        {
+          "korean": "떠들다",
+          "french": "faire du bruit / bavarder"
+        },
+        {
+          "korean": "의자를 발로 차다",
+          "french": "donner des coups de pied dans les chaises"
+        },
+        {
+          "korean": "새치기를 하다",
+          "french": "resquiller / passer devant"
+        },
+        {
+          "korean": "쓰레기를 버리다",
+          "french": "jeter des déchets"
+        },
+        {
+          "korean": "담배를 피우다",
+          "french": "fumer une cigarette"
+        },
+        {
+          "korean": "큰소리로 통화하다",
+          "french": "parler fort au téléphone"
+        },
+        {
+          "korean": "낙서를 하다",
+          "french": "faire des graffitis"
+        },
+        {
+          "korean": "핸드폰을 끄다",
+          "french": "éteindre le téléphone"
+        },
+        {
+          "korean": "핸드폰을 진동으로 하다",
+          "french": "mettre le téléphone en mode vibreur"
+        },
+        {
+          "korean": "질서를 지키다",
+          "french": "respecter l'ordre"
+        },
+        {
+          "korean": "조용히 하다",
+          "french": "garder le silence"
+        },
+        {
+          "korean": "차례를 기다리다",
+          "french": "attendre son tour"
+        },
+        {
+          "korean": "입장하다",
+          "french": "entrer / accéder"
+        },
+        {
+          "korean": "음식물",
+          "french": "nourriture et boissons"
+        },
+        {
+          "korean": "공연장",
+          "french": "salle de spectacle"
+        },
+        {
+          "korean": "클래식 공연",
+          "french": "concert classique"
+        },
+        {
+          "korean": "신경 쓰지 말다",
+          "french": "ne pas s'inquiéter"
+        },
+        {
+          "korean": "안내원",
+          "french": "guide / hôte"
+        },
+        {
+          "korean": "둘러보다",
+          "french": "regarder autour / visiter"
+        },
+        {
+          "korean": "오토바이",
+          "french": "moto"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "~지 마세요",
+          "french": "ne faites pas ~"
+        },
+        {
+          "korean": "~아야/어야 돼요",
+          "french": "vous devez ~"
+        },
+        {
+          "korean": "~면 안 돼요",
+          "french": "il ne faut pas ~"
+        },
+        {
+          "korean": "20분 전에는 입장해야 돼요",
+          "french": "vous devez entrer 20 minutes avant"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-지 말다",
+          "explanation": "Indique qu'une action est interdite. Forme impérative et suggestive",
+          "form_note": "말다 est un verbe en ㄹ donc -지 마세요 (ㄹ supprimé), -지 맙시다, -지 마십시오",
+          "example": "여기에 쓰레기를 버리지 마세요 (Ne jetez pas de déchets ici)"
+        },
+        {
+          "pattern": "-아야 되다/-어야 되다",
+          "explanation": "Exprime une obligation ou une nécessité absolue",
+          "form_note": "Équivalent : -아야/어야 하다. -아야 si voyelle ㅏ/ㅗ, -어야 sinon, 해야 pour 하다",
+          "example": "공연 전에 핸드폰을 꺼야 돼요 (Vous devez éteindre votre téléphone avant le spectacle)"
+        }
+      ]
+    },
+    "12": {
+      "title_ko": "방은 좀 작은데 새집이라서 깨끗해요",
+      "title_fr": "La chambre est un peu petite, mais c'est une maison neuve, donc c'est propre",
+      "topic_ko": "시간 경과 말하기",
+      "topic_fr": "Parler du passage du temps",
+      "vocabulary": [
+        {
+          "korean": "하루",
+          "french": "un jour"
+        },
+        {
+          "korean": "이틀",
+          "french": "deux jours"
+        },
+        {
+          "korean": "사흘",
+          "french": "trois jours"
+        },
+        {
+          "korean": "나흘",
+          "french": "quatre jours"
+        },
+        {
+          "korean": "닷새",
+          "french": "cinq jours"
+        },
+        {
+          "korean": "엿새",
+          "french": "six jours"
+        },
+        {
+          "korean": "이레",
+          "french": "sept jours"
+        },
+        {
+          "korean": "여드레",
+          "french": "huit jours"
+        },
+        {
+          "korean": "아흐레",
+          "french": "neuf jours"
+        },
+        {
+          "korean": "열흘",
+          "french": "dix jours"
+        },
+        {
+          "korean": "보름",
+          "french": "quinze jours / deux semaines"
+        },
+        {
+          "korean": "한 달",
+          "french": "un mois"
+        },
+        {
+          "korean": "두 달",
+          "french": "deux mois"
+        },
+        {
+          "korean": "일 년",
+          "french": "un an"
+        },
+        {
+          "korean": "출발하다",
+          "french": "partir / démarrer"
+        },
+        {
+          "korean": "늦어지다",
+          "french": "être retardé"
+        },
+        {
+          "korean": "길이 막히다",
+          "french": "la route est encombrée"
+        },
+        {
+          "korean": "근처에 있다",
+          "french": "être à proximité"
+        },
+        {
+          "korean": "들르다",
+          "french": "passer par"
+        },
+        {
+          "korean": "오래 걸리다",
+          "french": "prendre beaucoup de temps"
+        },
+        {
+          "korean": "거의 다 왔다",
+          "french": "être presque arrivé"
+        },
+        {
+          "korean": "도착하다",
+          "french": "arriver"
+        },
+        {
+          "korean": "집값",
+          "french": "prix du logement"
+        },
+        {
+          "korean": "편의 시설",
+          "french": "équipements / commodités"
+        },
+        {
+          "korean": "새집",
+          "french": "maison neuve"
+        },
+        {
+          "korean": "이사하다",
+          "french": "déménager"
+        },
+        {
+          "korean": "얼른",
+          "french": "rapidement / vite"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "~은 지 얼마나 됐어요?",
+          "french": "cela fait combien de temps que ~ ?"
+        },
+        {
+          "korean": "~한 지 ~ 됐어요",
+          "french": "cela fait ~ que ~"
+        },
+        {
+          "korean": "거의 다 왔네요",
+          "french": "vous êtes presque arrivé"
+        },
+        {
+          "korean": "방은 좀 작은데 새집이라서 깨끗해요",
+          "french": "la chambre est petite mais propre car c'est neuf"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-은 지/-ㄴ 지",
+          "explanation": "Exprime le temps écoulé depuis qu'une action a été accomplie",
+          "form_note": "-은 지 après consonne, -ㄴ 지 après voyelle ou ㄹ. Souvent suivi de 됐어요, 지났어요, 넘었어요",
+          "example": "한국어를 배운 지 3년 됐어요 (Cela fait 3 ans que j'apprends le coréen)"
+        },
+        {
+          "pattern": "-는데, -은데/-ㄴ데",
+          "explanation": "Exprime un contraste entre deux propositions, ou fournit un contexte/arrière-plan",
+          "form_note": "-는데 pour les verbes, -은데 après consonne adjective, -ㄴ데 après voyelle adjective",
+          "example": "방은 작은데 깨끗해요 (La chambre est petite mais propre)"
+        }
+      ]
+    },
+    "13": {
+      "title_ko": "저 좀 도와줄 수 있어요?",
+      "title_fr": "Pouvez-vous m'aider ?",
+      "topic_ko": "부탁",
+      "topic_fr": "Demandes et faveurs",
+      "vocabulary": [
+        {
+          "korean": "죄송하지만",
+          "french": "je suis désolé, mais..."
+        },
+        {
+          "korean": "미안하지만",
+          "french": "pardon, mais..."
+        },
+        {
+          "korean": "부탁이 있다",
+          "french": "avoir une faveur à demander"
+        },
+        {
+          "korean": "도와주다",
+          "french": "aider"
+        },
+        {
+          "korean": "빌려주다",
+          "french": "prêter"
+        },
+        {
+          "korean": "가르쳐 주다",
+          "french": "enseigner / montrer"
+        },
+        {
+          "korean": "설명해 주다",
+          "french": "expliquer"
+        },
+        {
+          "korean": "찾아 주다",
+          "french": "chercher pour quelqu'un"
+        },
+        {
+          "korean": "들어 주다",
+          "french": "porter pour quelqu'un"
+        },
+        {
+          "korean": "찍어 주다",
+          "french": "prendre une photo pour quelqu'un"
+        },
+        {
+          "korean": "고장나다",
+          "french": "être en panne"
+        },
+        {
+          "korean": "실수하다",
+          "french": "faire une erreur"
+        },
+        {
+          "korean": "잃어버리다",
+          "french": "perdre"
+        },
+        {
+          "korean": "비밀번호를 잊어버리다",
+          "french": "oublier son mot de passe"
+        },
+        {
+          "korean": "컴퓨터가 이상하다",
+          "french": "l'ordinateur ne fonctionne pas bien"
+        },
+        {
+          "korean": "지갑을 잃어버리다",
+          "french": "perdre son portefeuille"
+        },
+        {
+          "korean": "고치다",
+          "french": "réparer"
+        },
+        {
+          "korean": "프린터",
+          "french": "imprimante"
+        },
+        {
+          "korean": "자전거",
+          "french": "vélo"
+        },
+        {
+          "korean": "짐 정리",
+          "french": "trier / ranger ses affaires"
+        },
+        {
+          "korean": "왼손",
+          "french": "main gauche"
+        },
+        {
+          "korean": "아파트",
+          "french": "appartement"
+        },
+        {
+          "korean": "짐",
+          "french": "bagages / affaires"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "시간 있으면 저 좀 도와주시겠어요?",
+          "french": "si vous avez le temps, pourriez-vous m'aider ?"
+        },
+        {
+          "korean": "뭘 도와 드릴까요?",
+          "french": "puis-je vous aider ?"
+        },
+        {
+          "korean": "제가 도와 드릴게요",
+          "french": "je vais vous aider"
+        },
+        {
+          "korean": "못 도와줘서 미안해요",
+          "french": "désolé de ne pas pouvoir vous aider"
+        },
+        {
+          "korean": "~것 같아요",
+          "french": "il me semble que ~ / je pense que ~"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-을 수 있다/-을 수 없다",
+          "explanation": "Exprime la capacité ou la possibilité de faire quelque chose",
+          "form_note": "-을 수 있다/없다 après consonne, -ㄹ 수 있다/없다 après voyelle ou ㄹ",
+          "example": "저는 수영할 수 있어요 (Je peux nager) / 1시까지 못 갈 수 없어요 (Je ne peux pas y aller avant 1h)"
+        },
+        {
+          "pattern": "-는 것 같다/-은 것 같다",
+          "explanation": "Exprime une hypothèse, une supposition ou une opinion",
+          "form_note": "Passé : -은/ㄴ 것 같다, Présent : -는 것 같다, Futur : -을/ㄹ 것 같다",
+          "example": "밖에 비가 오는 것 같아요 (Je crois qu'il pleut dehors)"
+        }
+      ]
+    },
+    "14": {
+      "title_ko": "한국어 실력이 많이 늘었겠네요",
+      "title_fr": "Vous avez dû beaucoup améliorer vos compétences en coréen",
+      "topic_ko": "한국어 학습 목적",
+      "topic_fr": "Objectifs d'apprentissage du coréen",
+      "vocabulary": [
+        {
+          "korean": "잘 못하다",
+          "french": "ne pas être très bon"
+        },
+        {
+          "korean": "부족하다",
+          "french": "être insuffisant / manquer"
+        },
+        {
+          "korean": "형편없다",
+          "french": "être très mauvais / médiocre"
+        },
+        {
+          "korean": "수준이 낮다",
+          "french": "avoir un niveau bas"
+        },
+        {
+          "korean": "그저 그렇다",
+          "french": "être moyen / ni bon ni mauvais"
+        },
+        {
+          "korean": "잘하다",
+          "french": "être bon dans quelque chose"
+        },
+        {
+          "korean": "유창하다",
+          "french": "être fluent"
+        },
+        {
+          "korean": "수준이 높다",
+          "french": "avoir un niveau élevé"
+        },
+        {
+          "korean": "실력이 늘다",
+          "french": "progresser / s'améliorer"
+        },
+        {
+          "korean": "좋아지다",
+          "french": "s'améliorer"
+        },
+        {
+          "korean": "자신감이 생기다",
+          "french": "gagner en confiance"
+        },
+        {
+          "korean": "잊어버리다",
+          "french": "oublier"
+        },
+        {
+          "korean": "드라마를 자막 없이 보다",
+          "french": "regarder un drama sans sous-titres"
+        },
+        {
+          "korean": "케이팝을 따라 부르다",
+          "french": "chanter du K-pop en suivant"
+        },
+        {
+          "korean": "한국 회사에 취직하다",
+          "french": "trouver un emploi dans une entreprise coréenne"
+        },
+        {
+          "korean": "한국 친구를 사귀다",
+          "french": "se faire des amis coréens"
+        },
+        {
+          "korean": "유학을 가다",
+          "french": "aller étudier à l'étranger"
+        },
+        {
+          "korean": "한국 문학 작품을 읽다",
+          "french": "lire des œuvres littéraires coréennes"
+        },
+        {
+          "korean": "취미로 배우다",
+          "french": "apprendre comme loisir"
+        },
+        {
+          "korean": "재미로 배우다",
+          "french": "apprendre pour le plaisir"
+        },
+        {
+          "korean": "중급",
+          "french": "niveau intermédiaire"
+        },
+        {
+          "korean": "발음",
+          "french": "prononciation"
+        },
+        {
+          "korean": "실력",
+          "french": "niveau / compétence"
+        }
+      ],
+      "expressions": [
+        {
+          "korean": "한국어 실력이 많이 늘었겠네요",
+          "french": "votre coréen a dû beaucoup s'améliorer"
+        },
+        {
+          "korean": "아직 부족해요",
+          "french": "je ne suis pas encore assez bon(ne)"
+        },
+        {
+          "korean": "열심히 하려고 해요",
+          "french": "je vais faire de mon mieux"
+        },
+        {
+          "korean": "~을/를 위해서 ~해요",
+          "french": "je fais ~ pour ~"
+        },
+        {
+          "korean": "기회가 되면",
+          "french": "si l'occasion se présente"
+        }
+      ],
+      "grammar": [
+        {
+          "pattern": "-네요",
+          "explanation": "Exprime la surprise, l'émerveillement ou une réaction naturelle face à quelque chose",
+          "form_note": "S'attache aux verbes et adjectifs quelle que soit la terminaison. Avec un nom : -이네요",
+          "example": "한국어가 많이 늘었네요 (Oh, votre coréen a vraiment progressé !)"
+        },
+        {
+          "pattern": "-기 위해서",
+          "explanation": "Exprime le but ou l'objectif d'une action",
+          "form_note": "S'attache aux verbes. Avec un nom : 을/를 위해서. 서 peut être omis",
+          "example": "건강을 위해서 매일 운동해요 (Je fais du sport tous les jours pour ma santé)"
+        }
+      ]
+    }
+  }
+}
