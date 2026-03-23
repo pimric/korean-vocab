@@ -134,10 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function updateWordCounter() {
-    const { data, error } = await client.from('vocabulary').select('id', { count: 'exact' });
-    if (!error && data) {
-        document.getElementById('totalWordCount').innerText = data.length;
-    }
+    const [{ data: vocab }, { data: items }] = await Promise.all([
+        client.from('vocabulary').select('id', { count: 'exact' }),
+        client.from('items').select('id', { count: 'exact' })
+    ]);
+    const total = (vocab?.length || 0) + (items?.length || 0);
+    document.getElementById('totalWordCount').innerText = total;
 }
 
 function subscribeToChanges() {
